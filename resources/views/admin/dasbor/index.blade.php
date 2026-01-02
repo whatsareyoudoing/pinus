@@ -50,16 +50,16 @@
   <!-- /.col -->
   <div class="col-12 col-sm-6 col-md-3">
     <div class="info-box mb-3">
-      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-image"></i></span>
+      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-calendar-week"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Galeri</span>
+        <span class="info-box-text">Agenda</span>
         <span class="info-box-number">
         	<?php 
-          $galeri = DB::table('galeri')->get(); 
+          $galeri = DB::table('agenda')->get(); 
           echo $galeri->count();
           ?>
-          <small>Gambar</small>
+          <small>Agenda</small>
         </span>
       </div>
       <!-- /.info-box-content -->
@@ -68,6 +68,26 @@
   </div>
   <!-- /.col -->
   
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user-tag"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Mitra</span>
+        <span class="info-box-number">
+        	<?php 
+          $galeri = DB::table('mitra')->get(); 
+          echo $galeri->count();
+          ?>
+          <small>Mitra</small>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
 
 </div>
 <!-- /.row -->

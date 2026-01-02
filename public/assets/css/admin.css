@@ -7,12 +7,14 @@ body.login-page {
 }
 .login-card-body {
 	border-radius: 10px;
+	background-color: #4baf47;
+  	color: white;
 }
 .link-bawah {
 	font-size: 1em;
 }
 .link-bawah a {
-	color: #666;
+	color: white;
 }
 .link-bawah a:hover {
 	color: black;
