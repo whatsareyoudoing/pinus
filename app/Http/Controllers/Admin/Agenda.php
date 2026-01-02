@@ -236,7 +236,8 @@ class Agenda extends Controller
                 'jam_selesai'       => $request->jam_selesai,
                
                 'tempat'            => $request->tempat,
-               
+               'gambar'            => $input['nama_file'],
+                
             
                 'tanggal_post'      => date('Y-m-d H:i:s')
             ]);
@@ -299,7 +300,8 @@ class Agenda extends Controller
                 'tanggal_selesai'   => tanggal('tanggal_input',$request->tanggal_selesai),
                 'jam_mulai'         => $request->jam_mulai,
                 'jam_selesai'       => $request->jam_selesai,
-                'tempat'            => $request->tempat
+                'tempat'            => $request->tempat,
+                'gambar'            => $input['nama_file']
                 
             ]);
         }else{
