@@ -1,13 +1,16 @@
 <?php
 namespace App\Http\Controllers;
+use App\Http\Controllers\Admin\Agenda;
 use App\Http\Controllers\Controller;
+use App\Models\Agenda_model;
+use App\Models\Berita_model;
+use App\Models\Download_model;
+use App\Models\Mitra_model;
+use App\Models\Rekening_model;
+use App\Models\Staff_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use App\Models\Rekening_model;
-use App\Models\Berita_model;
-use App\Models\Staff_model;
-use App\Models\Download_model;
 use PDF;
 
 class Home extends Controller
@@ -20,7 +23,11 @@ class Home extends Controller
     	$slider         = DB::table('galeri')->where('jenis_galeri','Homepage')->limit(5)->orderBy('id_galeri', 'DESC')->get();
         $layanan        = DB::table('berita')->where(array('jenis_berita'=>'Layanan','status_berita'=>'Publish'))->orderBy('urutan', 'ASC')->get();
         $news           = new Berita_model();
+        $event           = new Agenda_model();
+        $partner           = new Mitra_model();
         $berita         = $news->home();
+        $agenda         = $event->home();
+        $mitra         = $partner->home();
 
         $data = array(  'title'         => $site_config->namaweb.' - '.$site_config->tagline,
                         'deskripsi'     => $site_config->namaweb.' - '.$site_config->tagline,
@@ -28,12 +35,13 @@ class Home extends Controller
                         'slider'        => $slider,
                         'site_config'   => $site_config,
                         'berita'        => $berita,
-                        'beritas'       => $berita,
+                        'agenda'       => $agenda,
+                        'mitra'       => $mitra,
                         'layanan'       => $layanan,
                         'videos'         => $videos,
                         'content'       => 'home/index'
                     );
-        return view('layout/wrapper',$data);
+        return view('myview/home',$data);
     }
 
     // Homepage
