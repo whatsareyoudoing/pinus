@@ -1,0 +1,197 @@
+<?php
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+/*  Route::get('/', function () {
+     return view('welcome');
+ });
+ */
+/* FRONT END */
+// Home
+Route::get('/', 'App\Http\Controllers\Home@index');
+Route::get('home', 'App\Http\Controllers\Home@index');
+Route::get('kontak', 'App\Http\Controllers\Home@kontak');
+Route::get('pemesanan', 'App\Http\Controllers\Home@pemesanan');
+Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
+Route::get('pembayaran', 'App\Http\Controllers\Home@pembayaran');
+Route::post('proses_pemesanan', 'App\Http\Controllers\Home@proses_pemesanan');
+Route::get('berhasil/{par1}', 'App\Http\Controllers\Home@berhasil');
+Route::get('cetak/{par1}', 'App\Http\Controllers\Home@cetak');
+Route::get('info', 'App\Http\Controllers\Home@info');
+Route::get('aksi', 'App\Http\Controllers\Aksi@index');
+Route::get('aksi/status/{par1}', 'App\Http\Controllers\Aksi@status');
+// Login
+Route::get('login', 'App\Http\Controllers\Login@index');
+Route::post('login/check', 'App\Http\Controllers\Login@check');
+Route::get('login/forgot', 'App\Http\Controllers\Login@lupa');
+Route::get('login/logout', 'App\Http\Controllers\Login@logout');
+// Berita
+Route::get('berita', 'App\Http\Controllers\Berita@index');
+Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
+Route::get('berita/layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
+Route::get('berita/terjadi/{par1}', 'App\Http\Controllers\Berita@terjadi');
+Route::get('berita/kategori/{par1}', 'App\Http\Controllers\Berita@kategori');
+// Akreditasi
+Route::get('provider-akreditasi', 'App\Http\Controllers\Akreditasi@index');
+Route::get('akreditasi/read/{par1}', 'App\Http\Controllers\Akreditasi@read');
+// Route::get('layanan/{par1}', 'App\Http\Controllers\Akreditasi@layanan');
+Route::get('layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
+Route::get('akreditasi/kategori/{par1}', 'App\Http\Controllers\Akreditasi@kategori');
+// project
+Route::get('project', 'App\Http\Controllers\Download@index');
+Route::get('project/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
+Route::get('project/kategori/{par1}', 'App\Http\Controllers\Download@kategori');
+Route::get('dokumen', 'App\Http\Controllers\Download@index');
+Route::get('dokumen/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
+Route::get('dokumen/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
+Route::get('project/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
+// galeri
+Route::get('galeri', 'App\Http\Controllers\Galeri@index');
+Route::get('galeri/detail/{par1}', 'App\Http\Controllers\Galeri@detail');
+// video
+Route::get('video', 'App\Http\Controllers\Video@index');
+Route::get('video/detail/{par1}', 'App\Http\Controllers\Video@detail');
+Route::get('webinar', 'App\Http\Controllers\Video@index');
+Route::get('webinar/detail/{par1}/{par2}', 'App\Http\Controllers\Video@detail');
+// Proyek
+Route::get('proyek', 'App\Http\Controllers\Proyek@index');
+Route::get('proyek/kategori/{par1}', 'App\Http\Controllers\Proyek@kategori');
+Route::get('proyek/detail/{par1}', 'App\Http\Controllers\Proyek@detail');
+Route::get('proyek/cetak/{par1}', 'App\Http\Controllers\Proyek@cetak');
+/* END FRONT END */
+
+/* BACK END BARU */
+    // dasbor
+Route::get('admin/dasbor', 'App\Http\Controllers\Admin\Dasbor@index');
+Route::get('admin/dasbor/konfigurasi', 'App\Http\Controllers\Admin\Dasbor@konfigurasi');
+
+// Login
+Route::get('login', 'App\Http\Controllers\Login@index');
+Route::post('login/check', 'App\Http\Controllers\Login@check');
+Route::get('login/forgot', 'App\Http\Controllers\Login@fogot');
+Route::get('login/logout', 'App\Http\Controllers\Login@logout');
+
+    // berita
+Route::get('admin/berita', 'App\Http\Controllers\Admin\Berita@index');
+Route::get('admin/berita/tambah', 'App\Http\Controllers\Admin\Berita@tambah');
+Route::post('admin/berita/tambah_proses', 'App\Http\Controllers\Admin\Berita@tambah_proses');
+Route::get('admin/berita/cari', 'App\Http\Controllers\Admin\Berita@cari');
+Route::get('admin/berita/kategori/{par1}', 'App\Http\Controllers\Admin\Berita@kategori');
+Route::get('admin/berita/author/{par1}', 'App\Http\Controllers\Admin\Berita@author');
+Route::get('admin/berita/edit/{par1}', 'App\Http\Controllers\Admin\Berita@edit');
+Route::post('admin/berita/edit_proses', 'App\Http\Controllers\Admin\Berita@edit_proses');
+Route::get('admin/berita/delete/{par1}/{par2}', 'App\Http\Controllers\Admin\Berita@delete');
+Route::get('admin/berita/status_berita/{par1}', 'App\Http\Controllers\Admin\Berita@status_berita');
+
+// kategori berita
+Route::get('admin/kategori', 'App\Http\Controllers\Admin\Kategori@index');
+Route::post('admin/kategori/tambah', 'App\Http\Controllers\Admin\Kategori@tambah');
+Route::post('admin/kategori/edit', 'App\Http\Controllers\Admin\Kategori@edit');
+Route::get('admin/kategori/delete/{par1}', 'App\Http\Controllers\Admin\Kategori@delete');
+
+
+// agenda
+Route::get('admin/agenda', 'App\Http\Controllers\Admin\Agenda@index');
+Route::get('admin/agenda/cari', 'App\Http\Controllers\Admin\Agenda@cari');
+Route::get('admin/agenda/status_agenda/{par1}', 'App\Http\Controllers\Admin\Agenda@status_agenda');
+Route::get('admin/agenda/kategori/{par1}', 'App\Http\Controllers\Admin\Agenda@kategori');
+Route::get('admin/agenda/author/{par1}', 'App\Http\Controllers\Admin\Agenda@author');
+Route::get('admin/agenda/tambah', 'App\Http\Controllers\Admin\Agenda@tambah');
+Route::get('admin/agenda/edit/{par1}', 'App\Http\Controllers\Admin\Agenda@edit');
+Route::get('admin/agenda/delete/{par1}', 'App\Http\Controllers\Admin\Agenda@delete');
+Route::post('admin/agenda/tambah_proses', 'App\Http\Controllers\Admin\Agenda@tambah_proses');
+Route::post('admin/agenda/edit_proses', 'App\Http\Controllers\Admin\Agenda@edit_proses');
+
+
+// kategori agenda
+Route::get('admin/kategori_agenda', 'App\Http\Controllers\Admin\Kategori_agenda@index');
+Route::post('admin/kategori_agenda/tambah', 'App\Http\Controllers\Admin\Kategori_agenda@tambah');
+Route::post('admin/kategori_agenda/edit', 'App\Http\Controllers\Admin\Kategori_agenda@edit');
+Route::get('admin/kategori_agenda/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_agenda@delete');
+
+
+
+// mitra
+
+Route::get('admin/mitra', 'App\Http\Controllers\Admin\Mitra@index');
+Route::get('admin/mitra/cari', 'App\Http\Controllers\Admin\Mitra@cari');
+Route::get('admin/mitra/status_mitra/{par1}', 'App\Http\Controllers\Admin\Mitra@status_mitra');
+Route::get('admin/mitra/kategori/{par1}', 'App\Http\Controllers\Admin\Mitra@kategori');
+Route::get('admin/mitra/author/{par1}', 'App\Http\Controllers\Admin\Mitra@author');
+Route::get('admin/mitra/tambah', 'App\Http\Controllers\Admin\Mitra@tambah');
+Route::get('admin/mitra/edit/{par1}', 'App\Http\Controllers\Admin\Mitra@edit');
+Route::get('admin/mitra/delete/{par1}', 'App\Http\Controllers\Admin\Mitra@delete');
+Route::post('admin/mitra/tambah_proses', 'App\Http\Controllers\Admin\Mitra@tambah_proses');
+Route::post('admin/mitra/edit_proses', 'App\Http\Controllers\Admin\Mitra@edit_proses');
+
+
+// user
+Route::get('admin/user', 'App\Http\Controllers\Admin\User@index');
+Route::post('admin/user/tambah', 'App\Http\Controllers\Admin\User@tambah');
+Route::get('admin/user/edit/{par1}', 'App\Http\Controllers\Admin\User@edit');
+Route::post('admin/user/proses_edit', 'App\Http\Controllers\Admin\User@proses_edit');
+Route::get('admin/user/delete/{par1}', 'App\Http\Controllers\Admin\User@delete');
+Route::post('admin/user/proses', 'App\Http\Controllers\Admin\User@proses');
+// konfigurasi
+Route::get('admin/konfigurasi', 'App\Http\Controllers\Admin\Konfigurasi@index');
+Route::get('admin/konfigurasi/logo', 'App\Http\Controllers\Admin\Konfigurasi@logo');
+Route::get('admin/konfigurasi/profil', 'App\Http\Controllers\Admin\Konfigurasi@profil');
+Route::get('admin/konfigurasi/icon', 'App\Http\Controllers\Admin\Konfigurasi@icon');
+Route::get('admin/konfigurasi/email', 'App\Http\Controllers\Admin\Konfigurasi@email');
+Route::get('admin/konfigurasi/gambar', 'App\Http\Controllers\Admin\Konfigurasi@gambar');
+
+Route::post('admin/konfigurasi/proses', 'App\Http\Controllers\Admin\Konfigurasi@proses');
+Route::post('admin/konfigurasi/proses_logo', 'App\Http\Controllers\Admin\Konfigurasi@proses_logo');
+Route::post('admin/konfigurasi/proses_icon', 'App\Http\Controllers\Admin\Konfigurasi@proses_icon');
+Route::post('admin/konfigurasi/proses_email', 'App\Http\Controllers\Admin\Konfigurasi@proses_email');
+Route::post('admin/konfigurasi/proses_gambar', 'App\Http\Controllers\Admin\Konfigurasi@proses_gambar');
+
+Route::post('admin/konfigurasi/proses_profil', 'App\Http\Controllers\Admin\Konfigurasi@proses_profil');
+
+
+// galeri depan
+Route::get('admin/galeri', 'App\Http\Controllers\Admin\Galeri@index');
+Route::get('admin/galeri/cari', 'App\Http\Controllers\Admin\Galeri@cari');
+Route::get('admin/galeri/status_galeri/{par1}', 'App\Http\Controllers\Admin\Galeri@status_galeri');
+Route::get('admin/galeri/kategori/{par1}', 'App\Http\Controllers\Admin\Galeri@kategori');
+Route::get('admin/galeri/tambah', 'App\Http\Controllers\Admin\Galeri@tambah');
+Route::get('admin/galeri/edit/{par1}', 'App\Http\Controllers\Admin\Galeri@edit');
+Route::get('admin/galeri/delete/{par1}', 'App\Http\Controllers\Admin\Galeri@delete');
+Route::post('admin/galeri/tambah_proses', 'App\Http\Controllers\Admin\Galeri@tambah_proses');
+Route::post('admin/galeri/edit_proses', 'App\Http\Controllers\Admin\Galeri@edit_proses');
+Route::post('admin/galeri/proses', 'App\Http\Controllers\Admin\Galeri@proses');
+
+
+// download
+Route::get('admin/project', 'App\Http\Controllers\Admin\Download@index');
+Route::get('admin/project/cari', 'App\Http\Controllers\Admin\Download@cari');
+Route::get('admin/project/status_project/{par1}', 'App\Http\Controllers\Admin\Download@status_download');
+Route::get('admin/project/kategori/{par1}', 'App\Http\Controllers\Admin\Download@kategori');
+Route::get('admin/project/tambah', 'App\Http\Controllers\Admin\Download@tambah');
+Route::get('admin/project/edit/{par1}', 'App\Http\Controllers\Admin\Download@edit');
+Route::get('admin/project/unduh/{par1}', 'App\Http\Controllers\Admin\Download@unduh');
+Route::get('admin/project/delete/{par1}', 'App\Http\Controllers\Admin\Download@delete');
+Route::post('admin/project/tambah_proses', 'App\Http\Controllers\Admin\Download@tambah_proses');
+Route::post('admin/project/edit_proses', 'App\Http\Controllers\Admin\Download@edit_proses');
+Route::post('admin/project/proses', 'App\Http\Controllers\Admin\Download@proses');
+
+/* END BACK END*/
+
+Route::get('myview-home', function () {
+    return view('myview/home');
+})->name('beranda');
+Route::get('myview-berita', function () {
+    return view('myview/berita');
+})->name('berita');
+Route::get('myview-event', function () {
+    return view('myview/event');
+})->name('event');

@@ -1,0 +1,123 @@
+<div class="position-absolute d-none d-md-block" style="width:450px;height:50px">
+        <div class="position-absolute" style="
+            width:450px;
+            height:50px;
+            z-index: 9999;
+            border-left:0px solid transparent;
+            border-right:90px solid transparent;
+            border-top:145px solid #4baf47;
+        ">
+    </div>
+    <div class="ml-5 pt-4 position-absolute text-white" style="
+        z-index:10000;
+        padding-left:80px;
+        font-size:50px">
+        <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}" class="img-fluid" alt="" style="width: 130px;">
+
+    </div>
+         <div class="position-absolute" style="
+            width:459px;
+            height:50px;
+            z-index: 9998;
+            border-left:0px solid transparent;
+            border-right:90px solid transparent;
+            border-top:145px solid rgb(0, 0, 0);
+        ">
+    </div>
+</div>
+
+<div class="position-absolute d-block d-md-none" style="width:100px;height:50px">
+        <div class="position-absolute" style="
+            width:250px;
+            height:50px;
+            z-index: 9999;
+            border-left:0px solid transparent;
+            border-right:90px solid transparent;
+            border-top:145px solid #4baf47;
+        ">
+    </div>
+    <div class="ml-5 pt-4 position-absolute text-white" style="
+        z-index:10000;
+        padding-left:10px;
+        font-size:50px">
+        <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}" alt="" style="width: 100px;">
+
+    </div>
+         <div class="position-absolute" style="
+            width:259px;
+            height:50px;
+            z-index: 9998;
+            border-left:0px solid transparent;
+            border-right:90px solid transparent;
+            border-top:145px solid rgb(0, 0, 0);
+        ">
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+    <div class="container-fluid">
+        <div class="ml-auto d-flex justify-content-between " style="width:70%;">
+            <ul class="navbar-nav flex-row d-none d-md-flex">
+                <li class="nav-item mx-4">
+                    <a class="nav-link p-0" href="#">
+                        <i class="fas fa-phone-alt"></i>
+                        0897178674888
+                    </a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link p-0" href="#">
+                        <i class="fas fa-envelope"></i>
+                        rabin.zainal@pinus.or.id
+                    </a>
+                </li>
+                {{-- <li class="nav-item mx-4">
+                    <a class="nav-link p-0" href="#">Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630</a>
+                </li> --}}
+            </ul>
+            <ul class="navbar-nav flex-row ml-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link p-0" href="#"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link p-0" href="#"><i class="fab fa-instagram" style="font-size: 20px"></i></a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link p-0" href="#"><i class="fab fa-facebook-square" style="font-size: 20px"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container-fluid">
+        <button class="ml-auto navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mt-5 mt-lg-auto ml-auto">
+                <li class="nav-item px-4 {{ request()->routeIs('beranda') ? 'active' : '' }}" style="font-size:2.5vh;">
+                    <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
+                </li>
+                <li class="nav-item px-4 {{ request()->routeIs('berita') ? 'active' : '' }}" style="font-size:2.5vh;">
+                    <a class="nav-link" href="{{ route('berita') }}">Berita</a>
+                </li>
+                <li class="nav-item px-4 {{ request()->routeIs('event') ? 'active' : '' }}" style="font-size:2.5vh;">
+                    <a class="nav-link" href="{{ route('event') }}">Program dan Kegiatan</a>
+                </li>
+                <li class="nav-item px-4" style="font-size:2.5vh;">
+                    <a class="nav-link" href="#">Mitra</a>
+                </li>
+                <li class="nav-item px-4" style="font-size:2.5vh;">
+                    <a class="nav-link" href="#">Dokumen</a>
+                </li>
+                <li class="nav-item px-4" style="font-size:2.5vh;">
+                    <a class="nav-link" href="#">Kontak Kami</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
