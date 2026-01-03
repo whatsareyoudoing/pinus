@@ -125,6 +125,10 @@
     <input type="text" name="nama_instagram" placeholder="Nama akun instagram" value="<?php echo $site->nama_instagram ?>" class="form-control">
     </div>
     
+    <div class="form-group btn-group">
+        <input type="submit" name="submit" value="Save Configuration" class="btn btn-success ">
+        <input type="reset" name="reset" value="Reset" class="btn btn-primary ">
+    </div>
 </div>
 
 
