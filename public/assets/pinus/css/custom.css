@@ -43,3 +43,31 @@ object-fit:cover; /* penting biar gak gepeng */
     border-bottom: none;
   }
 }
+
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+}
+
+.clamp-3::after{
+
+  position:absolute;
+  bottom:0;
+  right:0;
+  padding-left:5px;
+  background: linear-gradient(to right, transparent, white 40%);
+}
+
+
+.page-item.active .page-link {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color:#fff !important;
+}
+.page-link {
+    color: #28a745!important;
+ }

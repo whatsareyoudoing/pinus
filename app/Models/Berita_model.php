@@ -125,7 +125,13 @@ class Berita_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where(array('berita.status_berita'=>'Publish','berita.jenis_berita' => 'Berita'))
             ->orderBy('id_berita','DESC')
-            ->paginate(12);
+            ->paginate(4);
+        return $query;
+    }
+
+    //listing
+    public function list_kategori(){
+        $query = DB::table('kategori')->select('kategori.*')->orderBy('id_kategori','DESC')->get();
         return $query;
     }
 
@@ -166,6 +172,43 @@ class Berita_model extends Model
             ->where('berita.id_berita',$id_berita)
             ->orderBy('id_berita','DESC')
             ->first();
+        return $query;
+    }
+
+     // detail
+    public function detailFrontend($id_berita)
+    {
+        $query = DB::table('berita')
+             ->join('kategori', 'kategori.id_kategori', '=', 'berita.id_kategori','LEFT')
+            ->join('users', 'users.id_user', '=', 'berita.id_user','LEFT')
+            ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
+            ->where('berita.id_berita',$id_berita)
+            ->orderBy('id_berita','DESC')
+            ->first();
+        return $query;
+    }
+
+        // listing
+    public function cariFrontend($keywords)
+    {
+    $query = DB::table('berita')
+        ->leftJoin('kategori', 'kategori.id_kategori', '=', 'berita.id_kategori')
+        ->leftJoin('users', 'users.id_user', '=', 'berita.id_user')
+        ->select(
+            'berita.*',
+            'kategori.slug_kategori',
+            'kategori.nama_kategori',
+            'users.nama'
+        )
+        ->where('berita.status_berita', 'Publish')
+        ->where('berita.jenis_berita', 'Berita')
+        ->where(function($q) use ($keywords) {
+            $q->where('berita.judul_berita', 'LIKE', "%{$keywords}%")
+            ->orWhere('berita.isi', 'LIKE', "%{$keywords}%");
+        })
+        ->orderBy('berita.id_berita', 'DESC')
+        ->paginate(4);
+
         return $query;
     }
 }

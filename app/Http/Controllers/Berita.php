@@ -8,7 +8,7 @@ Paginator::useBootstrap();
 
 class Berita extends Controller
 {
- 
+
     // Beritapage
     public function index()
     {
@@ -16,16 +16,19 @@ class Berita extends Controller
     	$site 	= DB::table('konfigurasi')->first();
     	$model 	= new Berita_model();
 		$berita = $model->listing();
+		$kategori = $model->list_kategori();
+		$recent_berita = $model->home();
 
         $data = array(  'title'     => 'Berita dan Update',
                         'deskripsi' => 'Berita dan Update',
                         'keywords'  => 'Berita dan Update',
                         'site'		=> $site,
                         'berita'	=> $berita,
-                        'beritas'    => $berita,
+                        'kategori'    => $kategori,
+                        'recent_berita'    => $recent_berita,
                         'content'   => 'berita/index'
                     );
-        return view('layout/wrapper',$data);
+        return view('myview/berita',$data);
     }
 
     // Beritapage
@@ -33,25 +36,28 @@ class Berita extends Controller
     {
         Paginator::useBootstrap();
         $site       = DB::table('konfigurasi')->first();
-        $kategori   = DB::table('kategori')->where('slug_kategori',$slug_kategori)->first();
-         if(!$kategori)
+        $kategori_show   = DB::table('kategori')->where('slug_kategori',$slug_kategori)->first();
+         if(!$kategori_show)
         {
             return redirect('berita');
         }
-        $id_kategori= $kategori->id_kategori;
+        $id_kategori= $kategori_show->id_kategori;
         $model      = new Berita_model();
         $berita     = $model->kategori_depan($id_kategori);
+        $kategori = $model->list_kategori();
+		$recent_berita = $model->home();
 
 
-        $data = array(  'title'     => $kategori->nama_kategori,
-                        'deskripsi' => $kategori->nama_kategori,
-                        'keywords'  => $kategori->nama_kategori,
+        $data = array(  'title'     => $kategori_show->nama_kategori,
+                        'deskripsi' => $kategori_show->nama_kategori,
+                        'keywords'  => $kategori_show->nama_kategori,
                         'site'      => $site,
                         'berita'    => $berita,
-                        'beritas'    => $berita,
+                        'kategori'    => $kategori,
+                        'recent_berita'    => $recent_berita,
                         'content'   => 'berita/index'
                     );
-        return view('layout/wrapper',$data);
+        return view('myview/berita',$data);
     }
 
     // kontak
@@ -124,6 +130,29 @@ class Berita extends Controller
                         'read'      => $read,
                         'content'   => 'berita/read'
                     );
-        return view('layout/wrapper',$data);
+        return view('myview/beritaDetail',$data);
+    }
+
+        // Cari
+    public function cari(Request $request)
+    {
+        Paginator::useBootstrap();
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Berita_model();
+		$berita             = $model->cariFrontend($request->keywords);
+		$kategori = $model->list_kategori();
+		$recent_berita = $model->home();
+
+        $data = array(  'title'     => 'Berita dan Update',
+                        'deskripsi' => 'Berita dan Update',
+                        'keywords'  => 'Berita dan Update',
+                        'site'		=> $site,
+                        'berita'	=> $berita,
+                        'kategori'    => $kategori,
+                        'recent_berita'    => $recent_berita,
+                        'content'   => 'berita/index'
+                    );
+        return view('myview/berita',$data);
+
     }
 }

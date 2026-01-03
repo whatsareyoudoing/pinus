@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
  */
 /* FRONT END */
 // Home
-Route::get('/', 'App\Http\Controllers\Home@index');
+Route::get('/', 'App\Http\Controllers\Home@index')->name('beranda');
 Route::get('home', 'App\Http\Controllers\Home@index');
 Route::get('kontak', 'App\Http\Controllers\Home@kontak');
 Route::get('pemesanan', 'App\Http\Controllers\Home@pemesanan');
@@ -35,7 +35,8 @@ Route::post('login/check', 'App\Http\Controllers\Login@check');
 Route::get('login/forgot', 'App\Http\Controllers\Login@lupa');
 Route::get('login/logout', 'App\Http\Controllers\Login@logout');
 // Berita
-Route::get('berita', 'App\Http\Controllers\Berita@index');
+Route::get('berita', 'App\Http\Controllers\Berita@index')->name('berita');
+Route::get('berita/cari', 'App\Http\Controllers\Berita@cari')->name('cari-berita');
 Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
 Route::get('berita/layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
 Route::get('berita/terjadi/{par1}', 'App\Http\Controllers\Berita@terjadi');
@@ -188,10 +189,10 @@ Route::post('admin/project/proses', 'App\Http\Controllers\Admin\Download@proses'
 
 Route::get('myview-home', function () {
     return view('myview/home');
-})->name('beranda');
+});
 Route::get('myview-berita', function () {
     return view('myview/berita');
-})->name('berita');
+});
 Route::get('myview-event', function () {
     return view('myview/event');
 })->name('event');

@@ -25,10 +25,10 @@
         <div class="col-md-6">
             <h4 class="text-success">Selamat Datang di Pinus</h4>
             <h1 style="font-size:4rem;font-weight:bolder;">{{ $site_config->nama_singkat }}</h1>
-            <p class="text-justify">
+            <div class="text-justify clamp-3 mb-3">
                 {!! $site_config->tentang !!}
-            </p>
-            <a href="#" class="btn btn-success mb-3">
+            </div>
+            <a href="{{ route('berita') }}" class="btn btn-success mb-3">
                 Selengkapnya
             </a>
         </div>
@@ -54,39 +54,12 @@
     </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <a href="#" class="btn btn-success ">Selengkapnya</a>
+            <a href="{{ route('berita') }}" class="btn btn-success ">Selengkapnya</a>
         </div>
     </div>
 </div>
-{{-- tentang --}}
 
-{{-- Program dan kegiatan --}}
-<div class="container-fluid p-5">
-    <h5 class="text-success text-center">Acara Kami</h5>
-    <h1 class="text-center">Program dan Kegiatan</h1>
-    <div class="row">
-        <div class="row d-flex justify-content-center">
-            @foreach ( $agenda as $a )
 
-            <div class="col-12 col-md-3 p-4">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ asset('assets/upload/image/' . $a->gambar) }}" class="card-img-top img-card" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">
-                            {{ $a->judul_agenda }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <button class="btn btn-success ">Selengkapnya</button>
-        </div>
-    </div>
-</div>
 {{-- Mitra --}}
 <div class="container my-5">
     <h5 class="text-center text-success">Mitra Kami</h5>
@@ -94,38 +67,14 @@
     <div class="row">
         @foreach ( $mitra as $m )
         <div class="col-12 col-md-3">
-            <div class="card border-0 shadow-sm">
-                <img src="{{ asset('assets/upload/image/thumbs' . $m->gambar) }}" class="card-img-top img-card" alt="...">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-top img-card" alt="...">
                 <div class="card-body">
                     <p class="card-text text-center">{{ $m->nama_mitra }}</p>
                 </div>
             </div>
         </div>
         @endforeach
-        <div class="col-12 col-md-3">
-                <div class="card border-0 shadow-sm">
-                <img src="https://eftindonesia.org/images/home/feature.png" class="card-img-top img-card" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Lorem, ipsum dolor.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-3">
-                <div class="card border-0 shadow-sm">
-                <img src="https://eftindonesia.org/images/home/feature.png" class="card-img-top img-card" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Lorem, ipsum dolor.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-3">
-                <div class="card border-0 shadow-sm">
-                <img src="https://eftindonesia.org/images/home/feature.png" class="card-img-top img-card" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Lorem, ipsum dolor.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
