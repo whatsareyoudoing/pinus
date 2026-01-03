@@ -11,6 +11,8 @@
      
           <a href="{{ asset('admin/agenda/tambah') }}" class="btn btn-success">
           <i class="fa fa-plus"></i> Tambah Baru</a>
+          <a href="{{ asset('admin/agenda/') }}" class="btn btn-info" title="refresh">
+            <i class="fas fa-sync-alt"></i> </a>
        
       </span>
     </div>
@@ -94,10 +96,7 @@
     <a href="{{ asset('admin/agenda/edit/'.$agenda->id_agenda) }}">
     <?php echo $agenda->judul_agenda ?> <sup><i class="fa fa-pencil"></i></sup>
     </a>
-      <small>
-        <br>Posted: <?php echo date('d M Y H:i: s',strtotime($agenda->tanggal_post)) ?>
-    
-      </small>
+      
     </td>
     <td>
       <small>

@@ -34,7 +34,7 @@
        <option value="<?php echo $kategori->id_kategori ?>"><?php echo $kategori->nama_kategori ?></option>
      <?php } ?>
     </select>
-    <small class="text-success">Kategori konten</small>
+    
   </div>
 </div>
 <input type="hidden" name="jenis_berita" value="Berita">
@@ -57,7 +57,7 @@
 </div>
 
 <div class="row form-group">
-  <label class="col-md-3 text-right">Status, Tanggal &amp; Jam Publish</label>
+  <label class="col-md-3 text-right">Status</label>
   <div class="col-md-2">
     <select name="status_berita" class="form-control select2">
       <option value="Publish">Publikasikan</option>
@@ -65,7 +65,20 @@
     </select>
   </div>
  
+ 
 </div>
+<div class="row form-group">
+  <label class="col-md-3 text-right"> Tanggal &amp; Jam post</label>
+  
+  <div class="col-md-2">
+    <input type="text" name="tanggal_post" class="form-control tanggal" placeholder="Tanggal post" value="<?php if(isset($_POST['tanggal_publish'])) { echo old('tanggal_publish'); }else{ echo date('d-m-Y'); } ?>" data-date-format="dd-mm-yyyy">
+  </div>
+  <div class="col-md-2">
+    <input type="text" name="jam_post" class="form-control time-picker" placeholder="Jam post" value="<?php if(isset($_POST['jam_publish'])) { echo old('jam_publish'); }else{ echo date('H:i:s'); } ?>">
+  </div>
+ 
+</div>
+
 
 <div class="row form-group">
   <label class="col-md-3 text-right"></label>

@@ -11,6 +11,8 @@
         
           <a href="{{ asset('admin/berita/tambah') }}" class="btn btn-success">
           <i class="fa fa-plus"></i> Tambah Baru</a>
+          <a href="{{ asset('admin/berita/') }}" class="btn btn-info" title="refresh">
+            <i class="fas fa-sync-alt"></i> </a>
        
       </span>
     </div>
@@ -90,8 +92,8 @@
     </td>
     
     <td>
-    <a href="{{ asset('admin/berita/edit/'.$berita->id_berita) }}">
-    <?php echo $berita->judul_berita ?> <sup><i class="fa fa-pencil"></i></sup>
+   
+        <?php echo $berita->judul_berita ?> 
     </a>
       <small>
         <br>Posted: <?php echo date('d M Y H:i: s',strtotime($berita->tanggal_post)) ?>

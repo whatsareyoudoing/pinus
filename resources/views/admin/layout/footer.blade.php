@@ -226,10 +226,16 @@ $(document).on("click", ".approval-link", function(e){
 // instance, using default configuration.
 CKEDITOR.replace( 'kontenku',
       {
-        filebrowserBrowseUrl : '{{ asset("assets/ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=") }}',
-        filebrowserUploadUrl : '{{ asset("assets/ckeditor/filemanager/dialog.php?type=2&editor=ckeditor&fldr=") }}',
-        filebrowserImageBrowseUrl : '{{ asset("assets/ckeditor/filemanager/dialog.php?type=1&editor=ckeditor&fldr==") }}'
-  } 
+        
+        removePlugins: 'elementspath,save,font,flash',
+          removeButtons: 'Underline,Subscript,Superscript',
+          toolbarGroups: [
+              { name: 'basicstyles', groups: ['basicstyles'] },
+              { name: 'links' },
+              { name: 'insert', groups: ['insert'] }
+          ]
+  
+      } 
 );
 </script>
 <!-- Page Script -->

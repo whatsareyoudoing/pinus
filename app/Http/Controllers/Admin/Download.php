@@ -17,7 +17,7 @@ class Download extends Controller
     	$mydownload 			= new Download_model();
 		$download 			= $mydownload->semua();
 	
-		$data = array(  'title'				=> 'Data Project',
+		$data = array(  'title'				=> 'Data File',
 						'download'			=> $download,
 						
                         'content'			=> 'admin/project/index'
@@ -34,7 +34,7 @@ class Download extends Controller
         $download             = $mydownload->cari($keywords);
       
 
-        $data = array(  'title'             => 'Data Project',
+        $data = array(  'title'             => 'Data File',
                         'download'            => $download,
                       
                         'content'           => 'admin/project/index'
@@ -74,7 +74,7 @@ class Download extends Controller
         $download             = $mydownload->status_download($status_download);
        
 
-        $data = array(  'title'             => 'Data Project',
+        $data = array(  'title'             => 'Data File',
                         'download'            => $download,
                         
                         'content'           => 'admin/project/index'
@@ -118,7 +118,7 @@ class Download extends Controller
         $download             = $mydownload->detail($id_download);
        
 
-        $data = array(  'title'             => 'Edit Project',
+        $data = array(  'title'             => 'Edit File',
                         'download'            => $download,
                        
                         'content'           => 'admin/project/edit'

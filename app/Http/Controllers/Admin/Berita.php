@@ -44,13 +44,15 @@ class Berita extends Controller
         $myberita           = new Berita_model();
         $keywords           = $request->keywords;
         $berita             = $myberita->cari($keywords);
+        
         $kategori           = DB::table('kategori')->orderBy('urutan','ASC')->get();
 
         $data = array(  'title'             => 'Data Berita',
                         'berita'            => $berita,
-                        'kategori'   => $kategori,
+                        'kategori'           => $kategori,
                         'content'           => 'admin/berita/index'
                     );
+       
         return view('admin/layout/wrapper',$data);
     }
 
@@ -231,7 +233,8 @@ class Berita extends Controller
                 'jenis_berita'      => 'Berita',
                 'status_berita'     => $request->status_berita,
                 'gambar'            => $input['nama_file'],
-                'tanggal_post'      => date('Y-m-d H:i:s')
+                'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
+               
             ]);
         }else{
             $slug_berita = Str::slug($request->judul_berita, '-');
@@ -243,7 +246,7 @@ class Berita extends Controller
                 'isi'               => $request->isi,
                 'jenis_berita'      => 'Berita',
                 'status_berita'     => $request->status_berita,
-                'tanggal_post'      => date('Y-m-d H:i:s')
+                'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
             ]);
         }
         
@@ -285,7 +288,8 @@ class Berita extends Controller
                 'isi'               => $request->isi,
                 'jenis_berita'      => 'Berita',
                 'status_berita'     => $request->status_berita,
-                'gambar'            => $input['nama_file']
+                'gambar'            => $input['nama_file'],
+                'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
             ]);
         }else{
             $slug_berita = Str::slug($request->judul_berita, '-');
@@ -296,7 +300,8 @@ class Berita extends Controller
                 'judul_berita'      => $request->judul_berita,
                 'isi'               => $request->isi,
                 'jenis_berita'      => 'Berita',
-                'status_berita'     => $request->status_berita
+                'status_berita'     => $request->status_berita,
+                'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
             ]);
         }
       

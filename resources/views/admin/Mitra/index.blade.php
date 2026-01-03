@@ -11,6 +11,8 @@
      
           <a href="{{ asset('admin/mitra/tambah') }}" class="btn btn-success">
           <i class="fa fa-plus"></i> Tambah Baru</a>
+          <a href="{{ asset('admin/mitra/') }}" class="btn btn-info" title="refresh">
+            <i class="fas fa-sync-alt"></i> </a>
        
       </span>
     </div>
