@@ -62,28 +62,40 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link p-0" href="#">
                         <i class="fas fa-phone-alt"></i>
-                        0897178674888
+                        {{ $site->telepon }}
                     </a>
                 </li>
                 <li class="nav-item mx-4">
                     <a class="nav-link p-0" href="#">
                         <i class="fas fa-envelope"></i>
-                        rabin.zainal@pinus.or.id
+                        {{ $site->email }}
                     </a>
                 </li>
                 {{-- <li class="nav-item mx-4">
                     <a class="nav-link p-0" href="#">Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630</a>
                 </li> --}}
             </ul>
+            @php
+                // Ambil nomor
+                $telp = $site->telepon ?? '';
+
+                // Hilangkan semua karakter non-angka
+                $telp = preg_replace('/\D+/', '', $telp);
+
+                // Kalau masih pakai 0 di depan → ubah ke 62
+                if (substr($telp, 0, 1) === '0') {
+                    $telp = '62' . substr($telp, 1);
+                }
+            @endphp
             <ul class="navbar-nav flex-row ml-auto">
                 <li class="nav-item mx-2">
-                    <a class="nav-link p-0" href="#"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
+                    <a class="nav-link p-0" href="https://wa.me/{{ $telp }}" target="_blank"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link p-0" href="#"><i class="fab fa-instagram" style="font-size: 20px"></i></a>
+                    <a class="nav-link p-0" href="https://www.instagram.com/{{ $site->instagram }}" target="_blank"><i class="fab fa-instagram" style="font-size: 20px"></i></a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link p-0" href="#"><i class="fab fa-facebook-square" style="font-size: 20px"></i></a>
+                    <a class="nav-link p-0" href="https://www.facebook.com/{{ $site->facebook }}" target="_blank"><i class="fab fa-facebook-square" style="font-size: 20px"></i></a>
                 </li>
             </ul>
         </div>
@@ -100,7 +112,10 @@
                 <li class="nav-item px-4 {{ request()->routeIs('beranda') ? 'active' : '' }}" style="font-size:2.5vh;">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
-                <li class="nav-item px-4 {{ request()->routeIs('berita') ? 'active' : '' }}" style="font-size:2.5vh;">
+                <li class="nav-item px-4 {{ request()->is('tentang*') ? 'active' : '' }}" style="font-size:2.5vh;">
+                    <a class="nav-link" href="{{ route('tentang') }}">Tentang</a>
+                </li>
+                <li class="nav-item px-4 {{ request()->is('berita*') ? 'active' : '' }}" style="font-size:2.5vh;">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
                 <li class="nav-item px-4 {{ request()->routeIs('event') ? 'active' : '' }}" style="font-size:2.5vh;">
@@ -114,6 +129,12 @@
                 </li>
                 <li class="nav-item px-4" style="font-size:2.5vh;">
                     <a class="nav-link" href="#">Kontak Kami</a>
+                </li>
+                <!-- Google Translate Widget -->
+                 <li class="nav-item px-4">
+                    <div class="translate-container">
+                        <div id="google_translate_element"></div>
+                    </div>
                 </li>
             </ul>
         </div>

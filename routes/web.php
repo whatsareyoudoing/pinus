@@ -19,16 +19,16 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/', 'App\Http\Controllers\Home@index')->name('beranda');
 Route::get('home', 'App\Http\Controllers\Home@index');
+Route::get('tentang', 'App\Http\Controllers\Home@info')->name('tentang');
 Route::get('kontak', 'App\Http\Controllers\Home@kontak');
-Route::get('pemesanan', 'App\Http\Controllers\Home@pemesanan');
-Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
-Route::get('pembayaran', 'App\Http\Controllers\Home@pembayaran');
-Route::post('proses_pemesanan', 'App\Http\Controllers\Home@proses_pemesanan');
-Route::get('berhasil/{par1}', 'App\Http\Controllers\Home@berhasil');
-Route::get('cetak/{par1}', 'App\Http\Controllers\Home@cetak');
-Route::get('info', 'App\Http\Controllers\Home@info');
-Route::get('aksi', 'App\Http\Controllers\Aksi@index');
-Route::get('aksi/status/{par1}', 'App\Http\Controllers\Aksi@status');
+// Route::get('pemesanan', 'App\Http\Controllers\Home@pemesanan');
+// Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
+// Route::get('pembayaran', 'App\Http\Controllers\Home@pembayaran');
+// Route::post('proses_pemesanan', 'App\Http\Controllers\Home@proses_pemesanan');
+// Route::get('berhasil/{par1}', 'App\Http\Controllers\Home@berhasil');
+// Route::get('cetak/{par1}', 'App\Http\Controllers\Home@cetak');
+// Route::get('aksi', 'App\Http\Controllers\Aksi@index');
+// Route::get('aksi/status/{par1}', 'App\Http\Controllers\Aksi@status');
 // Login
 Route::get('login', 'App\Http\Controllers\Login@index');
 Route::post('login/check', 'App\Http\Controllers\Login@check');
@@ -38,9 +38,9 @@ Route::get('login/logout', 'App\Http\Controllers\Login@logout');
 Route::get('berita', 'App\Http\Controllers\Berita@index')->name('berita');
 Route::get('berita/cari', 'App\Http\Controllers\Berita@cari')->name('cari-berita');
 Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
-Route::get('berita/layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
-Route::get('berita/terjadi/{par1}', 'App\Http\Controllers\Berita@terjadi');
 Route::get('berita/kategori/{par1}', 'App\Http\Controllers\Berita@kategori');
+// Route::get('berita/layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
+// Route::get('berita/terjadi/{par1}', 'App\Http\Controllers\Berita@terjadi');
 // Akreditasi
 Route::get('provider-akreditasi', 'App\Http\Controllers\Akreditasi@index');
 Route::get('akreditasi/read/{par1}', 'App\Http\Controllers\Akreditasi@read');

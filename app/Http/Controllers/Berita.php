@@ -116,6 +116,7 @@ class Berita extends Controller
         $slider = DB::table('galeri')->where('jenis_galeri','Beritapage')->orderBy('id_galeri', 'DESC')->first();
         // $berita = DB::table('berita')->where('status_berita','Publish')->orderBy('id_berita', 'DESC')->get();
         $model  = new Berita_model();
+        $recent_berita = $model->home();
         $read   = $model->read($slug_berita);
         if(!$read)
         {
@@ -128,6 +129,7 @@ class Berita extends Controller
                         'slider'    => $slider,
                         'site'      => $site,
                         'read'      => $read,
+                        'recent_berita'        => $recent_berita,
                         'content'   => 'berita/read'
                     );
         return view('myview/beritaDetail',$data);

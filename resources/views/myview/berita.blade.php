@@ -65,7 +65,7 @@
                                 </li>
                                 @foreach ( $kategori as $k )
                                 <li class="list-group-item">
-                                    <a href="" style="color:green;">
+                                    <a href="{{ asset('berita/kategori/'.$k->nama_kategori) }}" style="color:green;">
                                         {{ $k->nama_kategori }}
                                     </a>
                                 </li>

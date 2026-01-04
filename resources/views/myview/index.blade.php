@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CMS</title>
+    <title>PINUS</title>
     {{-- <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.$site_config->icon) }}"> --}}
     <link rel="shortcut icon" href="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}">
     <!-- Font Awesome -->
@@ -17,6 +17,7 @@
     <link href="{{ asset('assets/pinus/css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/pinus/css/all.min.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/pinus/js/marked.min.js') }}"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
     @include('myview.components.navbar')
@@ -32,5 +33,38 @@
 <script src="{{ asset('assets/pinus/js/isotope.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
+<script>
+    // Inisialisasi Google Translate
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'id',
+            includedLanguages: 'en,id',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+
+
+    // Handle Google Translate UI
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hilangkan banner Google
+        const banner = document.querySelector('.goog-te-banner-frame');
+        if (banner) {
+            banner.style.display = 'none';
+        }
+
+        // Set body position
+        document.body.style.top = '0px';
+    });
+
+    // Deteksi perubahan bahasa
+    setInterval(function() {
+        const iframe = document.querySelector('.goog-te-menu-frame');
+        if (iframe) {
+            iframe.style.zIndex = '999999';
+        }
+    }, 1000);
+</script>
 </body>
 </html>

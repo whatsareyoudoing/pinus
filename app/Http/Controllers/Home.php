@@ -18,7 +18,7 @@ class Home extends Controller
     // Homepage
     public function index()
     {
-    	$site_config   = DB::table('konfigurasi')->first();
+    	$site   = DB::table('konfigurasi')->first();
         $videos         = DB::table('video')->orderBy('id_video','DESC')->get();
     	$slider         = DB::table('galeri')->where('jenis_galeri','Homepage')->limit(5)->orderBy('id_galeri', 'DESC')->get();
         $layanan        = DB::table('berita')->where(array('jenis_berita'=>'Layanan','status_berita'=>'Publish'))->orderBy('urutan', 'ASC')->get();
@@ -29,12 +29,13 @@ class Home extends Controller
         $agenda         = $event->home();
         $mitra         = $partner->home();
 
-        $data = array(  'title'         => $site_config->namaweb.' - '.$site_config->tagline,
-                        'deskripsi'     => $site_config->namaweb.' - '.$site_config->tagline,
-                        'keywords'      => $site_config->namaweb.' - '.$site_config->tagline,
+        $data = array(  'title'         => $site->namaweb.' - '.$site->tagline,
+                        'deskripsi'     => $site->namaweb.' - '.$site->tagline,
+                        'keywords'      => $site->namaweb.' - '.$site->tagline,
                         'slider'        => $slider,
-                        'site_config'   => $site_config,
+                        'site'   => $site,
                         'berita'        => $berita,
+                        'recent_berita'        => $berita,
                         'agenda'       => $agenda,
                         'mitra'       => $mitra,
                         'layanan'       => $layanan,
@@ -47,23 +48,24 @@ class Home extends Controller
     // Homepage
     public function info()
     {
-        $site_config   = DB::table('konfigurasi')->first();
+        $site   = DB::table('konfigurasi')->first();
         $news   = new Berita_model();
         $berita = $news->home();
         // Staff
         $kategori_staff  = DB::table('kategori_staff')->orderBy('urutan','ASC')->get();
         $layanan = DB::table('berita')->where(array('jenis_berita' => 'Layanan','status_berita' => 'Publish'))->orderBy('urutan', 'ASC')->get();
 
-        $data = array(  'title'     => 'Tentang '.$site_config->namaweb,
-                        'deskripsi' => 'Tentang '.$site_config->namaweb,
-                        'keywords'  => 'Tentang '.$site_config->namaweb,
-                        'site_config'      => $site_config,
+        $data = array(  'title'     => 'Tentang '.$site->namaweb,
+                        'deskripsi' => 'Tentang '.$site->namaweb,
+                        'keywords'  => 'Tentang '.$site->namaweb,
+                        'site'      => $site,
                         'berita'    => $berita,
+                        'recent_berita'       => $berita,
                         'layanan'   => $layanan,
                         'kategori_staff'     => $kategori_staff,
                         'content'   => 'home/aws'
                     );
-        return view('layout/wrapper',$data);
+        return view('myview/about',$data);
     }
 
     // kontak

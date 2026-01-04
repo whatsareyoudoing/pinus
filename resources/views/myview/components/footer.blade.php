@@ -24,9 +24,9 @@
         <div class="row">
             <div class="col-12 mobile-border col-md-4 text-justify">
                 <h5>Tentang Kami</h5>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae dignissimos voluptatem similique accusantium doloremque quibusdam perspiciatis asperiores laboriosam mollitia temporibus.
-                </p>
+                <div class="clamp-3">
+                    {!! $site->tentang !!}
+                </div>
             </div>
             <div class="col-12 mobile-border col-md-2 text-justify">
                 <h5>Halaman</h5>
@@ -50,21 +50,13 @@
             </div>
             <div class="col-12 mobile-border col-md-3 text-justify">
                 <h5>Berita</h5>
+                @foreach ( $recent_berita as $r )
                 <div class="d-flex flex-column my-2">
                     <div class="row my-2">
-                        <a href="#" class="text-reset col-10 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, assumenda?</a>
+                        <a href="{{ asset('berita/read/'.$r->slug_berita) }}" class="text-reset col-10 mt-1">{{ $r->judul_berita }}</a>
                     </div>
                 </div>
-                <div class="d-flex flex-column my-2">
-                    <div class="row my-2">
-                        <a href="#" class="text-reset col-10 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, assumenda?</a>
-                    </div>
-                </div>
-                <div class="d-flex flex-column my-2">
-                    <div class="row my-2">
-                        <a href="#" class="text-reset col-10 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, assumenda?</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="col-12 mobile-border col-md-3 text-justify">
                 <h5>Kontak</h5>

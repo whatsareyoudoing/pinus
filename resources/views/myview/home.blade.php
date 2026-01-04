@@ -24,9 +24,9 @@
     <div class="row">
         <div class="col-md-6">
             <h4 class="text-success">Selamat Datang di Pinus</h4>
-            <h1 style="font-size:4rem;font-weight:bolder;">{{ $site_config->nama_singkat }}</h1>
+            <h1 style="font-size:4rem;font-weight:bolder;">{{ $site->nama_singkat }}</h1>
             <div class="text-justify clamp-3 mb-3">
-                {!! $site_config->tentang !!}
+                {!! $site->tentang !!}
             </div>
             <a href="{{ route('berita') }}" class="btn btn-success mb-3">
                 Selengkapnya

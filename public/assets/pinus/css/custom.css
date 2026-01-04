@@ -71,3 +71,47 @@ object-fit:cover; /* penting biar gak gepeng */
 .page-link {
     color: #28a745!important;
  }
+
+ /* google translate*/
+/* .goog-te-banner-frame {
+  display: none !important;
+} */
+ /* Google Translate Widget Styles */
+ .translate-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #4baf47;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  font-size: 2.5vh;
+  color: black;
+}
+
+#google_translate_element {
+  min-width: 140px;
+}
+
+/* Custom styling untuk Google Translate dropdown */
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: white !important;
+}
+
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+}
+
+.goog-te-gadget-simple a {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+}
+
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+  color: white !important;
+}
