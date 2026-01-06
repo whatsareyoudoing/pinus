@@ -18,6 +18,7 @@ class Berita extends Controller
 		$berita = $model->listing();
 		$kategori = $model->list_kategori();
 		$recent_berita = $model->home();
+        // dd($recent_berita);
 
         $data = array(  'title'     => 'Berita dan Update',
                         'deskripsi' => 'Berita dan Update',
@@ -118,6 +119,7 @@ class Berita extends Controller
         $model  = new Berita_model();
         $recent_berita = $model->home();
         $read   = $model->read($slug_berita);
+        dd($read);
         if(!$read)
         {
             return redirect('berita');

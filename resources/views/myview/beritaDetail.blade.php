@@ -9,7 +9,7 @@
                     <div class="row mb-5">
                         <div class="col-12">
                             <div class="">
-                                <img src="https://eftindonesia.org/images/home/feature.png" class="img-content rounded-top" alt="...">
+                                <img src="{{ asset('assets/upload/image/' . $read->gambar) }}" class="img-content rounded-top" alt="...">
                                 <div class="border">
                                     <div class="d-flex border-bottom mx-2 p-3">
                                         <div class="mx-2">

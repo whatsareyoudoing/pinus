@@ -10,7 +10,7 @@
                     <div class="row mb-5">
                         <div class="col-12">
                             <div class="">
-                                <img src="https://eftindonesia.org/images/home/feature.png" class="img-content rounded-top" alt="...">
+                                <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top" alt="...">
                                 <div class="border">
                                     <div class="d-flex border-bottom mx-2 p-3">
                                         <div class="mx-2">
@@ -19,7 +19,7 @@
                                         </div>
                                         <div class="mx-2">
                                             <i class="fas fa-calendar"></i>
-                                            {{ \Carbon\Carbon::parse($b->tanggal_publish)->translatedFormat('l, d F Y') }}
+                                            {{ \Carbon\Carbon::parse($b->tanggal)->translatedFormat('l, d F Y') }}
                                         </div>
                                         <div class="mx-2">
                                             <i class="fas fa-folder"></i>
@@ -49,7 +49,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Cari Berita" aria-label="Cari Berita" name="keywords" aria-describedby="button-addon2">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Cari</button>
+                                        <button class="btn btn-outline-success" type="submit" id="button-addon2">Cari</button>
                                     </div>
                                 </div>
                             </form>
@@ -78,7 +78,7 @@
                             <ul class="list-group">
                                 <li class="list-group-item bg-success text-white font-weight-bold">
                                     <h5>
-                                        Recent Post
+                                        Berita Terbaru
                                     </h5>
                                 </li>
                                 @foreach ( $recent_berita as $r )

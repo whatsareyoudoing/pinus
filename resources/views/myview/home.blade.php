@@ -28,7 +28,7 @@
             <div class="text-justify clamp-3 mb-3">
                 {!! $site->tentang !!}
             </div>
-            <a href="{{ route('berita') }}" class="btn btn-success mb-3">
+            <a href="{{ route('tentang') }}" class="btn btn-success mb-3">
                 Selengkapnya
             </a>
         </div>

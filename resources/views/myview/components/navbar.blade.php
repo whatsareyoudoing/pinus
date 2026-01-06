@@ -109,31 +109,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mt-5 mt-lg-auto ml-auto">
-                <li class="nav-item px-4 {{ request()->routeIs('beranda') ? 'active' : '' }}" style="font-size:2.5vh;">
+                <li class="nav-item px-2 {{ request()->routeIs('beranda') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
-                <li class="nav-item px-4 {{ request()->is('tentang*') ? 'active' : '' }}" style="font-size:2.5vh;">
+                <li class="nav-item px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('tentang') }}">Tentang</a>
                 </li>
-                <li class="nav-item px-4 {{ request()->is('berita*') ? 'active' : '' }}" style="font-size:2.5vh;">
+                <li class="nav-item px-2 {{ request()->is('berita*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
-                <li class="nav-item px-4 {{ request()->routeIs('event') ? 'active' : '' }}" style="font-size:2.5vh;">
+                <li class="nav-item px-2 {{ request()->routeIs('event') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('event') }}">Program dan Kegiatan</a>
                 </li>
-                <li class="nav-item px-4" style="font-size:2.5vh;">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="#">Mitra</a>
                 </li>
-                <li class="nav-item px-4" style="font-size:2.5vh;">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="#">Dokumen</a>
                 </li>
-                <li class="nav-item px-4" style="font-size:2.5vh;">
+                <li class="nav-item px-2">
                     <a class="nav-link" href="#">Kontak Kami</a>
                 </li>
                 <!-- Google Translate Widget -->
-                 <li class="nav-item px-4">
+                <li class="nav-item">
                     <div class="translate-container">
                         <div id="google_translate_element"></div>
+                        <button class="reset-btn" onclick="resetTranslation()">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 4v6h-6"></path>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+
+                        </button>
                     </div>
                 </li>
             </ul>
