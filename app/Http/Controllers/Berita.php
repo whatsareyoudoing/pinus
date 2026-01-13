@@ -119,7 +119,6 @@ class Berita extends Controller
         $model  = new Berita_model();
         $recent_berita = $model->home();
         $read   = $model->read($slug_berita);
-        dd($read);
         if(!$read)
         {
             return redirect('berita');

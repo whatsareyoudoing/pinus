@@ -118,8 +118,8 @@
                 <li class="nav-item px-2 {{ request()->is('berita*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
-                <li class="nav-item px-2 {{ request()->routeIs('event') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('event') }}">Program dan Kegiatan</a>
+                <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('agenda') }}">Program dan Kegiatan</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="#">Mitra</a>

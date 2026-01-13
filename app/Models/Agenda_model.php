@@ -42,8 +42,8 @@ class Agenda_model extends Model
             ->join('kategori_agenda', 'kategori_agenda.id_kategori_agenda', '=', 'agenda.id_kategori_agenda','LEFT')
             ->join('users', 'users.id_user', '=', 'agenda.id_user','LEFT')
             ->select('agenda.*', 'kategori_agenda.slug_kategori_agenda', 'kategori_agenda.nama_kategori_agenda','users.nama')
-            ->where('agenda.judul_agenda', 'LIKE', "%{$keywords}%") 
-            ->orWhere('agenda.isi', 'LIKE', "%{$keywords}%") 
+            ->where('agenda.judul_agenda', 'LIKE', "%{$keywords}%")
+            ->orWhere('agenda.isi', 'LIKE', "%{$keywords}%")
             ->orderBy('id_agenda','DESC')
            ->paginate(25);
         return $query;
@@ -63,14 +63,11 @@ class Agenda_model extends Model
     }
 
     // kategori_agenda
-    public function status_agenda($status_agenda)
+    public function kategori_agenda()
     {
-        $query = DB::table('agenda')
-             ->join('kategori_agenda', 'kategori_agenda.id_kategori_agenda', '=', 'agenda.id_kategori_agenda','LEFT')
-            ->join('users', 'users.id_user', '=', 'agenda.id_user','LEFT')
-            ->select('agenda.*', 'kategori_agenda.slug_kategori_agenda', 'kategori_agenda.nama_kategori_agenda','users.nama')
-            ->where(array(  'agenda.status_agenda'         => $status_agenda))
-            ->orderBy('id_agenda','DESC')
+        $query = DB::table('kategori_agenda')
+            ->select('kategori_agenda.slug_kategori_agenda', 'kategori_agenda.nama_kategori_agenda')
+            ->orderBy('id_kategori_agenda','DESC')
             ->paginate(25);
         return $query;
     }

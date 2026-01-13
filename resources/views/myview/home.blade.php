@@ -43,7 +43,7 @@
     <div class="row d-flex justify-content-center">
         @foreach ($berita as $b)
             <div class="col-12 col-md-3 p-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100 card-img-top">
                     <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="card-img-top img-card" alt="...">
                     <div class="card-body">
                         <p class="card-text">{{ $b->judul_berita }}</p>

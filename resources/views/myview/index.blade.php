@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CMS</title>
+    <title>Pinus</title>
     {{-- <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.$site_config->icon) }}"> --}}
     <link rel="shortcut icon" href="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}">
     <!-- Font Awesome -->
@@ -42,8 +42,11 @@
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
+
         })();
+
     </script>
+
 </head>
 <body>
     @include('myview.components.navbar')

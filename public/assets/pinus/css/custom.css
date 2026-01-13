@@ -13,6 +13,7 @@ object-fit:cover; /* penting biar gak gepeng */
 
 .img-card{
 width:80px;
+height: 300px;
 object-fit:cover; /* penting biar gak gepeng */
 }
 
@@ -142,3 +143,10 @@ div#google_translate_element .goog-te-gadget-simple {
   width: 18px;
   height: 18px;
 }
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(1.9rem - 16px)!important;
+    border-top-right-radius: calc(1.9rem - 16px)!important;
+}
+
+
