@@ -76,6 +76,8 @@ Route::get('proyek/cetak/{par1}', 'App\Http\Controllers\Proyek@cetak');
 Route::get('admin/dasbor', 'App\Http\Controllers\Admin\Dasbor@index');
 Route::get('admin/dasbor/konfigurasi', 'App\Http\Controllers\Admin\Dasbor@konfigurasi');
 
+Route::post('admin/upload/content', 'App\Http\Controllers\Admin\UploadContent@main')->name('upload-content');
+
 // Login
 Route::get('login', 'App\Http\Controllers\Login@index');
 Route::post('login/check', 'App\Http\Controllers\Login@check');

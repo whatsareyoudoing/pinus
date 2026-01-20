@@ -15,7 +15,7 @@ tinymce.init({
 });
 </script>
 
-<?php 
+<?php
 $sek  = date('Y');
 $awal = $sek-100;
 ?>
@@ -157,7 +157,7 @@ $(document).on("click", ".approval-link", function(e){
 <!-- /.content-wrapper -->
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-  <strong>Copyright &copy; <?php echo date('Y'); ?> 
+  <strong>Copyright &copy; <?php echo date('Y'); ?>
 </footer>
 
 <!-- Control Sidebar -->
@@ -188,7 +188,6 @@ $(document).on("click", ".approval-link", function(e){
 <!-- Summernote -->
 <script src="{{ asset('assets/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- tinymce -->
-  <script src="{{ asset('assets/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
@@ -196,61 +195,51 @@ $(document).on("click", ".approval-link", function(e){
 <script src="{{ asset('assets/admin/plugins/pace-progress/pace.min.js') }}"></script>
 <script src="{{ asset('assets/admin/dist/js/adminlte.js') }}"></script>
 <script>
-    CKEDITOR.replace('editorku', {
-      height: 60,
-      // Define the toolbar groups as it is a more accessible solution.
-      toolbarGroups: [{
-          "name": "basicstyles",
-          "groups": ["basicstyles"]
-        },
-        {
-          "name": "links",
-          "groups": ["links"]
-        },
-        {
-          "name": "paragraph",
-          "groups": ["list", "blocks"]
-        },
-        {
-          "name": "document",
-          "groups": ["mode"]
-        },
-        
-      ],
-      // Remove the redundant buttons from toolbar groups defined above.
-      removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar'
+    $(document).ready(function() {
+        $('#kontenku').summernote({
+            height: 300,
+            callbacks: {
+                onImageUpload: function(files) {
+                    uploadImage(files[0]);
+                }
+            }
+        });
+
+        function uploadImage(file) {
+            let data = new FormData();
+            data.append("image", file);
+            data.append("_token", "{{ csrf_token() }}"); // Pastikan ada CSRF token
+
+            $.ajax({
+                url: "{{ route('upload-content') }}",
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "POST",
+                success: function(response) {
+                    // Masukkan gambar ke editor menggunakan URL dari server
+                    $('#kontenku').summernote('insertImage', response.url);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+
     });
-    // Tes
-    
-// Replace the <textarea id="editor1"> with a CKEditor 4
-// instance, using default configuration.
-CKEDITOR.replace( 'kontenku',
-      {
-        
-        removePlugins: 'elementspath,save,font,flash',
-          removeButtons: 'Underline,Subscript,Superscript',
-          toolbarGroups: [
-              { name: 'basicstyles', groups: ['basicstyles'] },
-              { name: 'links' },
-              { name: 'insert', groups: ['insert'] }
-          ]
-  
-      } 
-);
-</script>
-<!-- Page Script -->
-<script>
+
   $(function () {
      //Initialize Select2 Elements
     //Initialize Select2 Elements
     $('.select2').select2({
       theme: 'bootstrap4'
     })
-    
+
     $('.mselect2').select2({
       dropdownParent: $('.Tambah')
     });
-   
+
     $('.checkbox-toggle').click(function () {
       var clicks = $(this).data('clicks')
       if (clicks) {

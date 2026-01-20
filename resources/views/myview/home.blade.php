@@ -38,11 +38,11 @@
     </div>
 </div>
 <div class="container-fluid p-5" style="background-color: #00190a;">
-    <h5 class="text-center text-success">Berita Kami</h5>
+    <h5 class="text-center text-success">Blog Kami</h5>
     <h1 class="text-center text-white">Berita Terkini</h1>
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center px-5">
         @foreach ($berita as $b)
-            <div class="col-12 col-md-3 p-4">
+            <div class="col-12 col-md-4 p-4">
                 <div class="card border-0 shadow-sm h-100 card-img-top">
                     <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="card-img-top img-card" alt="...">
                     <div class="card-body">

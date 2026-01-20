@@ -5,17 +5,19 @@
 }
 
 
+.card-img, .card-img-bottom, .card-img-top{
+    height: 300px;
+    object-fit: cover;
+
+}
+
 .carousel-inner img{
-max-height:400px;
+max-height:601px;
 width:100%;
 object-fit:cover; /* penting biar gak gepeng */
 }
 
-.img-card{
-width:80px!important;
-height: 300px!important;
-object-fit:cover; /* penting biar gak gepeng */
-}
+
 
 .img-content{
     width:100%;
@@ -28,8 +30,6 @@ object-fit:cover; /* penting biar gak gepeng */
         height: 600px;
     }
 }
-
-
 
 
 /* Default: mobile → border aktif */

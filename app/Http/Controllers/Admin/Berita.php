@@ -44,7 +44,7 @@ class Berita extends Controller
         $myberita           = new Berita_model();
         $keywords           = $request->keywords;
         $berita             = $myberita->cari($keywords);
-        
+
         $kategori           = DB::table('kategori')->orderBy('urutan','ASC')->get();
 
         $data = array(  'title'             => 'Data Berita',
@@ -52,7 +52,7 @@ class Berita extends Controller
                         'kategori'           => $kategori,
                         'content'           => 'admin/berita/index'
                     );
-       
+
         return view('admin/layout/wrapper',$data);
     }
 
@@ -234,7 +234,7 @@ class Berita extends Controller
                 'status_berita'     => $request->status_berita,
                 'gambar'            => $input['nama_file'],
                 'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
-               
+
             ]);
         }else{
             $slug_berita = Str::slug($request->judul_berita, '-');
@@ -249,9 +249,9 @@ class Berita extends Controller
                 'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
             ]);
         }
-        
+
          return redirect('admin/berita')->with(['sukses' => 'Data telah ditambah']);
-        
+
     }
 
     // edit
@@ -304,9 +304,9 @@ class Berita extends Controller
                 'tanggal_post'   => date('Y-m-d',strtotime($request->tanggal_post)).' '.$request->jam_post
             ]);
         }
-      
+
             return redirect('admin/berita')->with(['sukses' => 'Data telah ditambah']);
-       
+
     }
 
     // Delete
@@ -316,6 +316,8 @@ class Berita extends Controller
         DB::table('berita')->where('id_berita',$id_berita)->delete();
         return redirect('admin/berita')->with(['sukses' => 'Data telah dihapus']);
 
-        
+
     }
+
+
 }
