@@ -12,7 +12,7 @@
 }
 
 .carousel-inner img{
-max-height:601px;
+max-height:601px!important;
 width:100%;
 object-fit:cover; /* penting biar gak gepeng */
 }
