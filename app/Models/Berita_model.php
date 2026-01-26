@@ -57,7 +57,7 @@ class Berita_model extends Model
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where('berita.judul_berita', 'LIKE', "%{$keywords}%")
             ->orWhere('berita.isi', 'LIKE', "%{$keywords}%")
-            ->orderBy('id_berita','DESC')
+            ->orderBy('berita.tanggal','DESC')
            ->paginate(25);
         return $query;
     }
@@ -111,7 +111,7 @@ class Berita_model extends Model
             ->where(array(  'berita.id_kategori'         => $id_kategori,
                             'berita.jenis_berita'       => 'Berita',
                             'berita.status_berita'      => 'Publish'))
-            ->orderBy('id_berita','DESC')
+            ->orderBy('tanggal','DESC')
             ->paginate(12);
         return $query;
     }
@@ -124,7 +124,7 @@ class Berita_model extends Model
             ->join('users', 'users.id_user', '=', 'berita.id_user','LEFT')
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where(array('berita.status_berita'=>'Publish','berita.jenis_berita' => 'Berita'))
-            ->orderBy('id_berita','DESC')
+            ->orderBy('tanggal','DESC')
             ->paginate(4);
         return $query;
     }
@@ -143,7 +143,7 @@ class Berita_model extends Model
             ->join('users', 'users.id_user', '=', 'berita.id_user','LEFT')
             ->select('berita.*', 'kategori.slug_kategori', 'kategori.nama_kategori','users.nama')
             ->where(array('berita.status_berita'=>'Publish','berita.jenis_berita' => 'Berita'))
-            ->orderBy('id_berita','DESC')
+            ->orderBy('tanggal','DESC')
             ->limit(3)
             ->get();
         return $query;
@@ -206,7 +206,7 @@ class Berita_model extends Model
             $q->where('berita.judul_berita', 'LIKE', "%{$keywords}%")
             ->orWhere('berita.isi', 'LIKE', "%{$keywords}%");
         })
-        ->orderBy('berita.id_berita', 'DESC')
+        ->orderBy('berita.tanggal', 'DESC')
         ->paginate(4);
 
         return $query;

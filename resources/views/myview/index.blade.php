@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pinus</title>
+    <title class="notranslate">Pinus</title>
     {{-- <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.$site_config->icon) }}"> --}}
     <link rel="shortcut icon" href="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}">
     <!-- Font Awesome -->
@@ -24,7 +24,7 @@
 
             new google.translate.TranslateElement({
                 pageLanguage: 'id',
-                includedLanguages: 'en,id,es,fr,de',
+                includedLanguages: 'en,id',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false,
                 // Simpan instance untuk akses nanti
@@ -261,12 +261,7 @@
         const languages = {
             'id': 'Indonesia',
             'en': 'English',
-            'es': 'Español',
-            'fr': 'Français',
-            'de': 'Deutsch',
-            'ja': '日本語',
-            'ko': '한국어',
-            'zh-CN': '中文'
+
         };
 
         const langName = languages[detectedLang] || detectedLang;

@@ -46,21 +46,46 @@ class Agenda extends Controller
         return view('admin/agenda/add',$data);
     }
 
-    // Cari
+    // // Cari
+    // public function cari(Request $request)
+    // {
+    //     if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+    //     $myagenda           = new Agenda_model();
+    //     $keywords           = $request->keywords;
+    //     $agenda             = $myagenda->cari($keywords);
+    //     $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
+
+    //     $data = array(  'title'             => 'Data Agenda',
+    //                     'agenda'            => $agenda,
+    //                     'kategori_agenda'   => $kategori_agenda,
+    //                     'content'           => 'admin/agenda/index'
+    //                 );
+    //     return view('admin/layout/wrapper',$data);
+    // }
+
     public function cari(Request $request)
     {
-        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-        $myagenda           = new Agenda_model();
-        $keywords           = $request->keywords;
-        $agenda             = $myagenda->cari($keywords);
-        $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
+        Paginator::useBootstrap();
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Agenda_model();
+    	$model_berita 	= new Berita_model();
+        $agenda = $model->cariFrontend($request->keywords);
+		$kategori = $model->kategori_agenda();
+		$recent_agenda = $model->home();
+		$recent_berita = $model_berita->home();
 
-        $data = array(  'title'             => 'Data Agenda',
-                        'agenda'            => $agenda,
-                        'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/index'
+        $data = array(  'title'     => 'Berita dan Update',
+                        'deskripsi' => 'Berita dan Update',
+                        'keywords'  => 'Berita dan Update',
+                        'site'		=> $site,
+                        'agenda'	=> $agenda,
+                        'kategori'    => $kategori,
+                        'recent_berita'    => $recent_berita,
+                        'recent_agenda'    => $recent_agenda,
+                        'content'   => 'berita/index'
                     );
-        return view('admin/layout/wrapper',$data);
+        return view('myview/agenda',$data);
+
     }
 
     // Proses
@@ -160,21 +185,69 @@ class Agenda extends Controller
     }
 
     //Kategori
-    public function kategori_agenda($id_kategori_agenda)
+    public function kategori($slug_kategori)
     {
-        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         Paginator::useBootstrap();
-        $myagenda    = new Agenda_model();
-        $agenda      = $myagenda->all_kategori_agenda($id_kategori_agenda);
-        $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
-        $detail      = DB::table('kategori_agenda')->where('id_kategori_agenda',$id_kategori_agenda)->first();
-        $data = array(  'title'             => 'Kategori: '.$detail->nama_kategori_agenda,
-                        'agenda'            => $agenda,
-                        'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/index'
+        $site       = DB::table('konfigurasi')->first();
+        $kategori_show   = DB::table('kategori_agenda')->where('slug_kategori_agenda',$slug_kategori)->first();
+        // dd($kategori_show,$slug_kategori);
+         if(!$kategori_show)
+        {
+            return redirect('agenda');
+        }
+        $id_kategori= $kategori_show->id_kategori_agenda;
+
+        $model      = new Agenda_model();
+        $model_berita     = new Berita_model();
+        $agenda     = $model->kategori_depan($id_kategori);
+        $kategori = $model->list_kategori();
+		$recent_agenda = $model->home();
+		$recent_berita = $model_berita->home();
+
+
+        $data = array(  'title'     => $kategori_show->nama_kategori_agenda,
+                        'deskripsi' => $kategori_show->nama_kategori_agenda,
+                        'keywords'  => $kategori_show->nama_kategori_agenda,
+                        'site'      => $site,
+                        'agenda'    => $agenda,
+                        'kategori'    => $kategori,
+                        'recent_agenda'    => $recent_agenda,
+                        'recent_berita'    => $recent_berita,
+                        'content'   => 'agenda/index'
                     );
-        return view('admin/layout/wrapper',$data);
+        return view('myview/agenda',$data);
     }
+
+    public function read($slug_agenda)
+    {
+        Paginator::useBootstrap();
+        $site   = DB::table('konfigurasi')->first();
+        $slider = DB::table('galeri')->where('jenis_galeri','Beritapage')->orderBy('id_galeri', 'DESC')->first();
+        // $agenda = DB::table('agenda')->where('status_berita','Publish')->orderBy('id_berita', 'DESC')->get();
+        $model  = new Agenda_model();
+        $model_berita     = new Berita_model();
+        $recent_berita = $model_berita->home();
+        $recent_agenda = $model->home();
+        $read   = $model->read($slug_agenda);
+        if(!$read)
+        {
+            return redirect('agenda');
+        }
+
+        $data = array(  'title'     => $read->judul_agenda,
+                        'deskripsi' => $read->judul_agenda,
+                        'keywords'  => $read->judul_agenda,
+                        'slider'    => $slider,
+                        'site'      => $site,
+                        'read'      => $read,
+                        'recent_agenda'        => $recent_agenda,
+                        'recent_berita'    => $recent_berita,
+                        'content'   => 'agenda/read'
+                    );
+        // dd($data);
+        return view('myview/agendaDetail',$data);
+    }
+
 
     // Tambah
     public function tambah()

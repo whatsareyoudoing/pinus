@@ -1,6 +1,10 @@
-@section('title', 'Tentang Pinus')
+@section('title', 'Tentang Pilar Nusantara')
 @extends('myview.index')
 @section('content')
+@section('link')
+    <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
+    <li class="breadcrumb-item active">Tentang</li>
+@endsection
 @include('myview.components.hero')
 {{-- Halaman Article --}}
 

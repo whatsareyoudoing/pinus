@@ -11,7 +11,7 @@ class Kategori extends Controller
     public function index()
     {
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-		$kategori 	= DB::table('kategori')->orderBy('urutan','ASC')->get();
+		$kategori 	= DB::table('kategori')->orderBy('tanggal','DESC')->get();
 
 		$data = array(  'title'     => 'Kategori Berita',
 						'kategori'	=> $kategori,
@@ -26,7 +26,7 @@ class Kategori extends Controller
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     	request()->validate([
 					        'nama_kategori' => 'required|unique:kategori',
-					       
+
 					        ]);
     	$slug_kategori = Str::slug($request->nama_kategori, '-');
         DB::table('kategori')->insert([

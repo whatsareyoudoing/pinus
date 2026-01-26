@@ -121,9 +121,9 @@
                 <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('agenda') }}">Program dan Kegiatan</a>
                 </li>
-                <li class="nav-item px-2">
+                {{-- <li class="nav-item px-2">
                     <a class="nav-link" href="#">Mitra</a>
-                </li>
+                </li> --}}
                 <li class="nav-item px-2">
                     <a class="nav-link" href="#">Dokumen</a>
                 </li>

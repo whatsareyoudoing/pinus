@@ -1,6 +1,10 @@
 <div class="jumbotron jumbotron-fluid text-white" style="background-color:black; ">
   <div class="container">
     <h1 class="display-4">@yield('title')</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent">
+            @yield('link')
+        </ol>
+    </nav>
   </div>
 </div>

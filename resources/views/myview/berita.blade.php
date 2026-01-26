@@ -1,13 +1,20 @@
-@section('title', 'Berita Pinus')
+@section('title', 'Berita Pilar Nusantara')
 @extends('myview.index')
 @section('content')
+@section('link')
+    <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
+    <li class="breadcrumb-item active">Berita</li>
+@endsection
 @include('myview.components.hero')
     <div class="container-fluid px-0 px-md-5 mb-5">
         <div class="row">
             <div class="col-12 col-md-9">
                 <div class="container-fluid">
+                    @if(count($berita)== 0)
+                            <h5>Tidak Ada Data</h5>
+                    @endif
                     @foreach ( $berita as $b )
-                    <div class="row mb-5">
+                    {{-- <div class="row mb-5">
                         <div class="col-12">
                             <div class="">
                                 <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top" alt="...">
@@ -27,14 +34,48 @@
                                         </div>
                                     </div>
                                     <h3 class="p-3">{{ $b->judul_berita }}</h3>
-                                    <div class="text-justify clamp-3 pb-5 px-3">
-                                        {!! $b->isi !!}
-                                    </div>
+
                                     <div class="d-flex justify-content-end pb-5 pr-3">
                                         <a href="{{ asset('berita/read/'.$b->slug_berita) }}" class="btn btn-success">Read More</a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div> --}}
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
+                                <div class="card-hover-effect"> {{-- Opsional: tambah class untuk efek hover --}}
+                                    <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top w-100" alt="..." style="height: 400px; object-fit: cover;">
+
+                                    <div class="border">
+                                        <div class="d-flex border-bottom mx-2 p-3" style="font-size: 0.9rem;">
+                                            <div class="mx-2">
+                                                <i class="fas fa-user text-success"></i>
+                                                {{ $b->nama }}
+                                            </div>
+                                            <div class="mx-2">
+                                                <i class="fas fa-calendar text-success"></i>
+                                                {{-- Tanggal diubah jadi nomor saja --}}
+                                                {{ \Carbon\Carbon::parse($b->tanggal)->format('d/m/Y') }}
+                                            </div>
+                                            <div class="mx-2">
+                                                <i class="fas fa-folder text-success"></i>
+                                                {{ $b->nama_kategori }}
+                                            </div>
+                                        </div>
+
+                                        {{-- Judul dibatasi 20 karakter --}}
+                                        <h3 class="p-3">
+                                            {{ Str::limit($b->judul_berita, 20, '...') }}
+                                        </h3>
+
+                                        <div class="d-flex justify-content-end pb-4 px-3">
+                                            <span class="btn btn-success">Selengkapnya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     @endforeach
@@ -83,7 +124,7 @@
                                 </li>
                                 @foreach ( $recent_berita as $r )
                                 <li class="list-group-item">
-                                    <a href="" style="color:green;">
+                                    <a href="{{ url('berita/read/'.$r->slug_berita) }}" style="color:green;">
                                         {{ $r->judul_berita }}
                                     </a>
                                 </li>

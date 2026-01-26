@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Image;
 
@@ -80,7 +81,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'	        => $request->email,
                 'username'   	=> $request->username,
-                'password'      => sha1($request->password),
+                'password'      => Hash::make($request->password),
                 'akses_level'   => $request->akses_level,
                 'gambar'        => $input['nama_file']
             ]);
@@ -89,7 +90,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => Hash::make($request->password),
                 'akses_level'   => $request->akses_level
             ]);
         }
@@ -129,7 +130,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => Hash::make($request->password),
                 'akses_level'   => $request->akses_level,
                 'gambar'        => $input['nama_file']
             ]);
@@ -139,7 +140,7 @@ class User extends Controller
                 'nama'          => $request->nama,
                 'email'         => $request->email,
                 'username'      => $request->username,
-                'password'      => sha1($request->password),
+                'password'      => Hash::make($request->password),
                 'akses_level'   => $request->akses_level
             ]);
         }

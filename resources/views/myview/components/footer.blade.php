@@ -2,7 +2,7 @@
 <div class="container-fluid bg-light pb-5 pt-5" style="">
     <div class="container border-bottom">
         <div class="row">
-            <div class="col-md-6" style="font-size:7vh;">
+            <div class="col-md-6 notranslate" style="font-size:7vh;">
             PINUS
             </div>
             <div class="col-md-6 d-flex justify-content-end mt-5">
@@ -28,23 +28,23 @@
                     {!! $site->tentang !!}
                 </div>
             </div>
-            <div class="col-12 mobile-border col-md-2 text-justify">
+            <div class="col-12 mobile-border col-md-2">
                 <h5>Halaman</h5>
                 <div class="d-flex flex-column">
-                    <a href="#" class="text-reset my-1">
+                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
                         Beranda
                     </a>
-                    <a href="#" class="text-reset my-1">
+                    <a href="{{ route('berita') }}" class="text-reset my-1  {{ request()->is('berita*') ? 'font-weight-bold' : '' }}">
                         Berita
                     </a>
-                    <a href="#" class="text-reset my-1">
+                    <a href="{{ route('agenda') }}" class="text-reset my-1  {{ request()->is('agenda*') ? 'font-weight-bold' : '' }}">
                         Program dan kegiatan
                     </a>
-                    <a href="#" class="text-reset my-1">
-                        Mitra
-                    </a>
-                    <a href="#" class="text-reset my-1">
+                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
                         Dokumen
+                    </a>
+                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
+                        Kontak Kami
                     </a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="col-12 mobile-border col-md-3 text-justify">
+            <div class="col-12 mobile-border col-md-3">
                 <h5>Kontak</h5>
                 <div class="mb-3">
                     Hubungi kami untuk pertanyaan, kerjasama, atau informasi lebih lanjut mengenai EFT Indonesia.

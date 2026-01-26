@@ -18,7 +18,7 @@ class Berita extends Controller
         Paginator::useBootstrap();
     	$myberita 	= new Berita_model();
 		$berita 	= $myberita->berita_update();
-		$kategori 	= DB::table('kategori')->orderBy('urutan','ASC')->get();
+		$kategori 	= DB::table('kategori')->orderBy('tanggal','Desc')->get();
 
 		$data = array(  'title'       => 'Data Berita / Artikel',
 						'berita'      => $berita,

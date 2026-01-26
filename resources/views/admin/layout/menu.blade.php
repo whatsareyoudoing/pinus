@@ -3,7 +3,7 @@
     font-size: 12px;
   }
   .infoku {
-    margin-left: 20px; 
+    margin-left: 20px;
     text-transform: uppercase;
     color: yellow;
     font-size: 11px;
@@ -15,13 +15,13 @@
 <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ asset('admin/dasbor') }}" class="brand-link">
+    {{-- <a href="{{ asset('admin/dasbor') }}" class="brand-link">
       <img src="{{ asset('assets/upload/image/'.website('icon')) }}"
          alt="{{ website('namaweb') }}"
          class="brand-image img-circle elevation-3"
          style="opacity: .8">
       <span class="brand-text font-weight-light">{{ website('nama_singkat') }}</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -38,13 +38,13 @@
               </p>
             </a>
           </li>
-          
+
           <!-- LAYANAN -->
-          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Layanan </span></li>          
+          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Layanan </span></li>
           <li class="batas"><hr></li>
 
 
-         
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
@@ -57,21 +57,21 @@
               </li>
             </ul>
           </li>
-          
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar"></i>
-              <p>Event &amp; Agenda<i class="fas fa-angle-left right"></i></p>
+              <p>Program &amp; Kegiatan<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/agenda') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Event &amp; Agenda</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/agenda') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Program &amp; Kegiatan</p></a>
               </li>
-             
-              <li class="nav-item"><a href="{{ asset('admin/kategori_agenda') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori Event &amp; Agenda</p></a>
+
+              <li class="nav-item"><a href="{{ asset('admin/kategori_agenda') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Kategori Program &amp; Kegiatan</p></a>
               </li>
             </ul>
           </li>
-          
+
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -81,12 +81,12 @@
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/project') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data File</p></a>
               </li>
-             
-              
+
+
             </ul>
           </li>
 
-          
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-tags nav-icon"></i>
@@ -95,12 +95,12 @@
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/mitra') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Mitra</p></a>
               </li>
-            
-           
+
+
             </ul>
           </li>
 
-        
+
           <!-- Website Content -->
           <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Profil &amp; Layanan</span></li>
           <li class="batas"><hr></li>
@@ -120,12 +120,12 @@
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/galeri') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Galeri</p></a>
               </li>
-            
-           
+
+
             </ul>
           </li>
 
-         
+
 
           <!-- Website Content -->
           <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Website Setting</span></li>
@@ -137,8 +137,8 @@
             </a>
           </li>
 
-        
-          
+
+
           <!-- MENU -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -146,24 +146,24 @@
               <p>
                 Konfigurasi
                 <i class="fas fa-angle-left right"></i>
-                
+
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/konfigurasi') }}" class="nav-link"><i class="fas fa-tools nav-icon"></i><p>Konfigurasi Umum</p></a>
               </li>
-            
+
               <li class="nav-item"><a href="{{ asset('admin/konfigurasi/logo') }}" class="nav-link"><i class="fa fa-home nav-icon"></i><p>Ganti Logo</p></a>
               </li>
               <li class="nav-item"><a href="{{ asset('admin/konfigurasi/icon') }}" class="nav-link"><i class="fa fa-upload nav-icon"></i><p>Ganti Icon</p></a>
               </li>
-              
-              
+
+
             </ul>
           </li>
 
-          
-          
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -177,7 +177,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row">
-          
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -191,10 +191,10 @@
             <div class="card-header">
               <div class="row">
               <div class="col-md-12">
-                 <h2 class="card-title"><?php echo $title ?></h2> 
+                 <h2 class="card-title"><?php echo $title ?></h2>
               </div>
-             
-              
+
+
               </div>
             </div>
             <!-- /.card-header -->

@@ -4,16 +4,16 @@
   <div class="col-md-6">
     <form action="{{ asset('admin/berita/cari') }}" method="get" accept-charset="utf-8">
       {{ csrf_field() }}
-    <div class="input-group">                  
+    <div class="input-group">
       <input type="text" name="keywords" class="form-control" placeholder="Ketik kata kunci..." value="<?php if(isset($_GET['keywords'])) { echo strip_tags($_GET['keywords']); } ?>" required>
       <span class="input-group-btn btn-flat">
         <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Cari</button>
-        
+
           <a href="{{ asset('admin/berita/tambah') }}" class="btn btn-success">
           <i class="fa fa-plus"></i> Tambah Baru</a>
           <a href="{{ asset('admin/berita/') }}" class="btn btn-info" title="refresh">
             <i class="fas fa-sync-alt"></i> </a>
-       
+
       </span>
     </div>
     </form>
@@ -35,11 +35,11 @@
     <div class="input-group">
       <button class="btn btn-default btn-sm" type="submit" name="hapus" onClick="check();" >
           <i class="fa fa-trash"></i>
-        </button> 
-        <select name="id_kategori" class="form-control form-control-sm" 
+        </button>
+        <select name="id_kategori" class="form-control form-control-sm"
               onchange="if(this.value) window.location.href = this.value;">
           <option value="{{ url('admin/berita') }}">-- SEMUA --</option>
-          
+
           @foreach($kategori as $item)
               <option value="{{ url('admin/berita/kategori/' . $item->id_kategori) }}"
                   {{ request()->is('admin/berita/kategori/' . $item->id_kategori) ? 'selected' : '' }}>
@@ -48,8 +48,8 @@
           @endforeach
       </select>
 
-      
-      
+
+
     </div>
   </div>
     </div>
@@ -90,24 +90,24 @@
       <img src="{{ asset('assets/upload/image/thumbs/'.$site->icon) }}" class="img-thumbnail img-size-50 mr-2" >
       <?php } ?>
     </td>
-    
+
     <td>
-   
-        <?php echo $berita->judul_berita ?> 
+
+        <?php echo $berita->judul_berita ?>
     </a>
       <small>
         <br>Posted: <?php echo date('d M Y H:i: s',strtotime($berita->tanggal_post)) ?>
-        
-    
+
+
     </a>
       </small>
     </td>
-    
- 
+
+
     <td>
-   
+
     <?php echo $berita->nama_kategori ?>
-    
+
     </td>
 
     <td><a href="{{ asset('admin/berita/status_berita/'.$berita->status_berita) }}">
@@ -115,18 +115,18 @@
         <i class="fa <?php if($berita->status_berita=="Publish") { echo 'fa-check-circle'; }else{ echo 'fa-times'; } ?>"></i> <?php echo $berita->status_berita ?></small>
     </a></td>
     <td>
-    
-   
+
+
       <a href="{{ asset('admin/berita/author/'.$berita->id_user) }}">
       <?php echo $berita->nama ?><sup><i class="fa fa-link"></i></sup>
       </a>
- 
+
     </td>
     <td>
       <div class="btn-group">
-       
 
-        <a href="{{ asset('admin/berita/edit/'.$berita->id_berita) }}" 
+
+        <a href="{{ asset('admin/berita/edit/'.$berita->id_berita) }}"
         class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
 
         <a href="{{ asset('admin/berita/delete/'.$berita->id_berita.'/'.$berita->jenis_berita) }}" class="btn btn-danger btn-sm delete-link"><i class="fas fa-trash-alt"></i></a>

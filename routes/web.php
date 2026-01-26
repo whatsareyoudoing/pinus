@@ -33,6 +33,9 @@ Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
 Route::get('berita/kategori/{par1}', 'App\Http\Controllers\Berita@kategori');
 //agenda
 Route::get('agenda', 'App\Http\Controllers\Agenda@index')->name('agenda');
+Route::get('agenda/cari', 'App\Http\Controllers\Agenda@cari')->name('cari-agenda');
+Route::get('agenda/read/{par1}', 'App\Http\Controllers\Agenda@read');
+Route::get('agenda/kategori/{par1}', 'App\Http\Controllers\Agenda@kategori');
 // Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
 // Route::get('pembayaran', 'App\Http\Controllers\Home@pembayaran');
 // Route::post('proses_pemesanan', 'App\Http\Controllers\Home@proses_pemesanan');
@@ -46,29 +49,29 @@ Route::get('agenda', 'App\Http\Controllers\Agenda@index')->name('agenda');
 // Route::get('provider-akreditasi', 'App\Http\Controllers\Akreditasi@index');
 // Route::get('akreditasi/read/{par1}', 'App\Http\Controllers\Akreditasi@read');
 // Route::get('layanan/{par1}', 'App\Http\Controllers\Akreditasi@layanan');
-Route::get('layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
-Route::get('akreditasi/kategori/{par1}', 'App\Http\Controllers\Akreditasi@kategori');
-// project
-Route::get('project', 'App\Http\Controllers\Download@index');
-Route::get('project/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
-Route::get('project/kategori/{par1}', 'App\Http\Controllers\Download@kategori');
+// Route::get('layanan/{par1}', 'App\Http\Controllers\Berita@layanan');
+// Route::get('akreditasi/kategori/{par1}', 'App\Http\Controllers\Akreditasi@kategori');
+// // project
+// Route::get('project', 'App\Http\Controllers\Download@index');
+// Route::get('project/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
+// Route::get('project/kategori/{par1}', 'App\Http\Controllers\Download@kategori');
 Route::get('dokumen', 'App\Http\Controllers\Download@index');
 Route::get('dokumen/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
-Route::get('dokumen/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
-Route::get('project/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
-// galeri
-Route::get('galeri', 'App\Http\Controllers\Galeri@index');
-Route::get('galeri/detail/{par1}', 'App\Http\Controllers\Galeri@detail');
-// video
-Route::get('video', 'App\Http\Controllers\Video@index');
-Route::get('video/detail/{par1}', 'App\Http\Controllers\Video@detail');
-Route::get('webinar', 'App\Http\Controllers\Video@index');
-Route::get('webinar/detail/{par1}/{par2}', 'App\Http\Controllers\Video@detail');
-// Proyek
-Route::get('proyek', 'App\Http\Controllers\Proyek@index');
-Route::get('proyek/kategori/{par1}', 'App\Http\Controllers\Proyek@kategori');
-Route::get('proyek/detail/{par1}', 'App\Http\Controllers\Proyek@detail');
-Route::get('proyek/cetak/{par1}', 'App\Http\Controllers\Proyek@cetak');
+// Route::get('dokumen/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
+// Route::get('project/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
+// // galeri
+// Route::get('galeri', 'App\Http\Controllers\Galeri@index');
+// Route::get('galeri/detail/{par1}', 'App\Http\Controllers\Galeri@detail');
+// // video
+// Route::get('video', 'App\Http\Controllers\Video@index');
+// Route::get('video/detail/{par1}', 'App\Http\Controllers\Video@detail');
+// Route::get('webinar', 'App\Http\Controllers\Video@index');
+// Route::get('webinar/detail/{par1}/{par2}', 'App\Http\Controllers\Video@detail');
+// // Proyek
+// Route::get('proyek', 'App\Http\Controllers\Proyek@index');
+// Route::get('proyek/kategori/{par1}', 'App\Http\Controllers\Proyek@kategori');
+// Route::get('proyek/detail/{par1}', 'App\Http\Controllers\Proyek@detail');
+// Route::get('proyek/cetak/{par1}', 'App\Http\Controllers\Proyek@cetak');
 /* END FRONT END */
 
 /* BACK END BARU */

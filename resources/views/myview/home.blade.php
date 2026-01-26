@@ -23,8 +23,8 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6">
-            <h4 class="text-success">Selamat Datang di Pinus</h4>
-            <h1 style="font-size:4rem;font-weight:bolder;">{{ $site->nama_singkat }}</h1>
+            <h4 class="text-success">Selamat Datang di Pilar Nusantara</h4>
+            <h1 style="font-size:4rem;font-weight:bolder;" class="notranslate">{{ $site->nama_singkat }}</h1>
             <div class="text-justify clamp-3 mb-3">
                 {!! $site->tentang !!}
             </div>

@@ -45,6 +45,7 @@ class Berita extends Controller
         $id_kategori= $kategori_show->id_kategori;
         $model      = new Berita_model();
         $berita     = $model->kategori_depan($id_kategori);
+        // dd($berita);
         $kategori = $model->list_kategori();
 		$recent_berita = $model->home();
 
