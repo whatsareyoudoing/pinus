@@ -8,13 +8,25 @@
             <div class="col-md-6 d-flex justify-content-end mt-5">
                 <ul class="d-flex mr-5" style="font-size:3vh;">
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="#"><i class="fab fa-whatsapp" style=""></i></a>
+                        @php
+                            // Ambil nomor
+                            $telp = $site->telepon ?? '';
+
+                            // Hilangkan semua karakter non-angka
+                            $telp = preg_replace('/\D+/', '', $telp);
+
+                            // Kalau masih pakai 0 di depan → ubah ke 62
+                            if (substr($telp, 0, 1) === '0') {
+                                $telp = '62' . substr($telp, 1);
+                            }
+                        @endphp
+                        <a class="p-0 text-dark" href="https://wa.me/{{ $telp }}"><i class="fab fa-whatsapp" style=""></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="#"><i class="fab fa-instagram" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.instagram.com/{{ $site->instagram }}"><i class="fab fa-instagram" style=""></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="#"><i class="fab fa-facebook-square" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.facebook.com/{{ $site->facebook }}"><i class="fab fa-facebook-square" style=""></i></a>
                     </div>
                 </ul>
             </div>

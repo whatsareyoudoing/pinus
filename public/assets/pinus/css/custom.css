@@ -21,6 +21,40 @@ object-fit:cover; /* penting biar gak gepeng */
    display: none;
 }
 
+/* Ukuran default (untuk layar kecil/hp) */
+.text-custom {
+    font-size: 12px;
+}
+
+/* Jika layar Medium (md) ke atas (>= 768px) */
+@media (min-width: 768px) {
+    .text-custom {
+        font-size: 14px;
+    }
+}
+
+/* Jika layar Large (lg) ke atas (>= 992px) */
+@media (min-width: 1281px) {
+    .text-custom {
+        font-size: 18px;
+    }
+}
+
+.ml-custom{
+    margin-left: 0px;
+}
+@media (min-width: 821px) {
+    .ml-custom {
+        margin-left: 122px;
+    }
+}
+@media (min-width: 1281px) {
+    .ml-custom {
+        margin-left: 100px;
+    }
+}
+
+
 .img-content{
     width:100%;
     height: 200px;

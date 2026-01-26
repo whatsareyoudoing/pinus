@@ -57,23 +57,20 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container-fluid">
-        <div class="ml-auto d-flex justify-content-between " style="width:70%;">
-            <ul class="navbar-nav flex-row d-none d-md-flex">
-                <li class="nav-item mx-4">
+        <div class="ml-auto d-flex justify-content-between " style="width:75%;">
+            <ul class="navbar-nav flex-row d-none d-md-none d-lg-flex">
+                <li class="nav-item ml-custom">
                     <a class="nav-link p-0" href="#">
                         <i class="fas fa-phone-alt"></i>
                         {{ $site->telepon }}
                     </a>
                 </li>
-                <li class="nav-item mx-4">
+                <li class="nav-item pl-3">
                     <a class="nav-link p-0" href="#">
                         <i class="fas fa-envelope"></i>
                         {{ $site->email }}
                     </a>
                 </li>
-                {{-- <li class="nav-item mx-4">
-                    <a class="nav-link p-0" href="#">Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630</a>
-                </li> --}}
             </ul>
             @php
                 // Ambil nomor
@@ -108,7 +105,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mt-5 mt-lg-auto ml-auto">
+            <ul class="navbar-nav mt-5 mt-lg-auto ml-md-auto text-custom">
                 <li class="nav-item px-2 {{ request()->routeIs('beranda') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
@@ -124,11 +121,11 @@
                 {{-- <li class="nav-item px-2">
                     <a class="nav-link" href="#">Mitra</a>
                 </li> --}}
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Dokumen</a>
+                <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('dokumen') }}">Dokumen</a>
                 </li>
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Kontak Kami</a>
+                <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('kontak') }}">Kontak Kami</a>
                 </li>
                 <!-- Google Translate Widget -->
                 <li class="nav-item">

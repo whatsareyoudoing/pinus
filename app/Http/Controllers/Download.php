@@ -5,81 +5,231 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Illuminate\Pagination\Paginator;
+use Image;
 use App\Models\Download_model;
+use App\Models\Agenda_model;
+use App\Models\Berita_model;
+use Illuminate\Pagination\Paginator;
+
 
 class Download extends Controller
 {
     // Main page
     public function index()
     {
-        Paginator::useBootstrap();
-        $kategori_download = DB::table('kategori_download')
-                    ->orderBy('kategori_download.urutan','ASC')
-                    ->get();
 
-		$data = array(  'title'		             => 'Projects '.website('namaweb'),
-						'deskripsi'	          => 'Projects '.website('namaweb'),
-						'keywords'	           => 'Projects '.website('namaweb'),
-						'kategori_download'	  => $kategori_download,
-                        'content'	          => 'project/kategori'
+        Paginator::useBootstrap();
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Agenda_model();
+		$kategori = $model->kategori_agenda();
+		$recent_agenda = $model->home();
+        $news           = new Berita_model();
+        $berita         = $news->home();
+        $mydownload 			= new Download_model();
+		$download 			= $mydownload->semua();
+        // dd($recent_agenda);
+
+        $data = array(  'title'     => 'Dokumen Pinus',
+                        'deskripsi' => 'Dokumen Pinus',
+                        'keywords'  => 'Dokumen Pinus',
+                        'recent_berita'        => $berita,
+                        'site'		=> $site,
+                        'download'			=> $download,
+                        'kategori'    => $kategori,
+                        'recent_agenda'    => $recent_agenda,
                     );
-        return view('layout/wrapper',$data);
+
+        return view('myview/dokumen',$data);
     }
 
-    // Main page
-    public function kategori($slug_kategori_download)
+    // Cari
+    public function cari(Request $request)
     {
         Paginator::useBootstrap();
-        $kategori   = DB::table('kategori_download')
-                    ->where('kategori_download.slug_kategori_download',$slug_kategori_download)
-                    ->first();
-        $download = DB::table('download')
-                    ->join('kategori_download', 'kategori_download.id_kategori_download', '=', 'download.id_kategori_download','LEFT')
-                    ->select('download.*', 'kategori_download.nama_kategori_download')
-                    ->where('download.id_kategori_download',$kategori->id_kategori_download)
-                    ->orderBy('download.id_download','DESC')
-                    ->paginate(25);
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Agenda_model();
+		$kategori = $model->kategori_agenda();
+		$recent_agenda = $model->home();
+        $news           = new Berita_model();
+        $berita         = $news->home();
+        $mydownload 			= new Download_model();
+        $keywords           = $request->keywords;
+        $download             = $mydownload->cari($keywords);
+        // dd($recent_agenda);
 
-        $data = array(  'title'     => $kategori->nama_kategori_download,
-                        'deskripsi' => $kategori->nama_kategori_download,
-                        'keywords'  => $kategori->nama_kategori_download,
-                        'downloads' => $download,
-                        'kategori'  => $kategori,
-                        'content'   => 'project/index'
+        $data = array(  'title'     => 'Dokumen Pinus',
+                        'deskripsi' => 'Dokumen Pinus',
+                        'keywords'  => 'Dokumen Pinus',
+                        'recent_berita'        => $berita,
+                        'site'		=> $site,
+                        'download'			=> $download,
+                        'kategori'    => $kategori,
+                        'recent_agenda'    => $recent_agenda,
                     );
-        return view('layout/wrapper',$data);
+
+        return view('myview/dokumen',$data);
     }
 
-    // detail
-    public function detail($id_download,$slug_download)
+    // Proses
+    public function proses(Request $request)
     {
-        $mydownload = new Download_model();
-        $download   = $mydownload->detail($id_download);
-        $hits       = $download->hits+1;
-        DB::table('download')->where('id_download',$download->id_download)->update([
-            'hits'      => $hits
-        ]);
-        $data = array(  'title'     => $download->judul_download,
-                        'deskripsi' => $download->judul_download,
-                        'keywords'  => $download->judul_download,
-                        'download'  => $download,
-                        'content'   => 'download/detail'
+        $site   = DB::table('konfigurasi')->first();
+        // PROSES HAPUS MULTIPLE
+        if(isset($_POST['hapus'])) {
+            $id_downloadnya       = $request->id_download;
+            for($i=0; $i < sizeof($id_downloadnya);$i++) {
+                DB::table('download')->where('id_download',$id_downloadnya[$i])->delete();
+            }
+            return redirect('admin/project')->with(['sukses' => 'Data telah dihapus']);
+        // PROSES SETTING DRAFT
+        }elseif(isset($_POST['update'])) {
+            $id_downloadnya       = $request->id_download;
+            for($i=0; $i < sizeof($id_downloadnya);$i++) {
+                DB::table('download')->where('id_download',$id_downloadnya[$i])->update([
+                        'id_user'               => Session()->get('id_user')
+
+                    ]);
+            }
+            return redirect('admin/project')->with(['sukses' => 'Data kategori telah diubah']);
+        }
+    }
+
+    //Status
+    public function status_download($status_download)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        $mydownload           = new Download_model();
+        $download             = $mydownload->status_download($status_download);
+
+
+        $data = array(  'title'             => 'Data File',
+                        'download'            => $download,
+
+                        'content'           => 'admin/project/index'
                     );
-        return view('layout/wrapper',$data);
+        return view('admin/layout/wrapper',$data);
+    }
+
+
+
+    // Tambah
+    public function tambah()
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+
+        $data = array(  'title'             => 'Tambah Project',
+
+                        'content'           => 'admin/project/tambah'
+                    );
+        return view('admin/layout/wrapper',$data);
     }
 
     // Unduh
     public function unduh($id_download)
     {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         $mydownload = new Download_model();
         $download   = $mydownload->detail($id_download);
         $hits       = $download->hits+1;
         DB::table('download')->where('id_download',$download->id_download)->update([
             'hits'      => $hits
         ]);
-        $pathToFile           = './assets/upload/file/'.$download->gambar;
+        $pathToFile           = './public/upload/file/'.$download->gambar;
         return response()->download($pathToFile, $download->gambar);
     }
 
+    // edit
+    public function edit($id_download)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        $mydownload           = new Download_model();
+        $download             = $mydownload->detail($id_download);
+
+
+        $data = array(  'title'             => 'Edit File',
+                        'download'            => $download,
+
+                        'content'           => 'admin/project/edit'
+                    );
+        return view('admin/layout/wrapper',$data);
+    }
+
+    // tambah
+    public function tambah_proses(Request $request)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        request()->validate([
+                            'judul_download'  => 'required|unique:download',
+                            'gambar'        => 'required|file|mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx|max:8024',
+
+                            ]);
+
+        // UPLOAD START
+        $image                  = $request->file('gambar');
+        $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
+        $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+        $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = './assets/upload/file';
+        $image->move($destinationPath, $input['nama_file']);
+        // END UPLOAD
+
+        DB::table('download')->insert([
+
+            'id_user'               => Session()->get('id_user'),
+            'judul_download'        => $request->judul_download,
+            'jenis_download'        =>'Download',
+            'isi'                   => $request->isi,
+            'file'                => $input['nama_file']
+
+        ]);
+        return redirect('admin/project')->with(['sukses' => 'Data telah ditambah']);
+    }
+
+    // edit
+    public function edit_proses(Request $request)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        request()->validate([
+                            'judul_download'    => 'required',
+                            'gambar'        => 'required|file|mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx|max:8024',
+
+                            ]);
+        // UPLOAD START
+        $image                  = $request->file('gambar');
+        if(!empty($image)) {
+            $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
+            $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+            $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = './assets/upload/file';
+            $image->move($destinationPath, $input['nama_file']);
+            // END UPLOAD
+            DB::table('download')->where('id_download',$request->id_download)->update([
+
+                'id_user'               => Session()->get('id_user'),
+                'judul_download'        => $request->judul_download,
+                'jenis_download'        =>'Download',
+                'isi'                   => $request->isi,
+                'file'                => $input['nama_file']
+
+            ]);
+        }else{
+            DB::table('download')->where('id_download',$request->id_download)->update([
+
+                'id_user'               => Session()->get('id_user'),
+                'judul_download'        => $request->judul_download,
+                'jenis_download'        =>'Download',
+                'isi'                   => $request->isi
+
+            ]);
+        }
+        return redirect('admin/project')->with(['sukses' => 'Data telah ditambah']);
+    }
+
+    // Delete
+    public function delete($id_download)
+    {
+        if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+        DB::table('download')->where('id_download',$id_download)->delete();
+        return redirect('admin/project')->with(['sukses' => 'Data telah dihapus']);
+    }
 }

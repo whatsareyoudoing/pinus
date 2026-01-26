@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="col-md-6">
-            <img class="img-fluid rounded-lg" src="https://eftindonesia.org/images/home/feature.png" alt="">
+            <img class="img-fluid rounded-lg" src="{{ asset('assets/upload/image/'.$site->gambar) }}" alt="">
         </div>
     </div>
 </div>

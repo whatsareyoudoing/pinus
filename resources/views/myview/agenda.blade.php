@@ -40,11 +40,11 @@
                                             </div>
 
                                             <div class="card-text text-muted" style="font-size: 0.9rem;">
-                                                {!! Str::limit(strip_tags($a->isi), 40, '...') !!}
+                                                {!! Str::limit(strip_tags($a->isi), 30, '...') !!}
                                             </div>
 
-                                            <div class="mt-3 text-success fw-bold" style="font-size: 0.85rem;">
-                                                Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
+                                            <div class="mt-3 text-success fw-bold d-flex justify-content-between" style="font-size: 0.85rem;">
+                                                Selengkapnya <i class="fas fa-arrow-right"></i>
                                             </div>
                                         </div>
                                     </div>

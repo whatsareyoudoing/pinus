@@ -36,6 +36,11 @@ Route::get('agenda', 'App\Http\Controllers\Agenda@index')->name('agenda');
 Route::get('agenda/cari', 'App\Http\Controllers\Agenda@cari')->name('cari-agenda');
 Route::get('agenda/read/{par1}', 'App\Http\Controllers\Agenda@read');
 Route::get('agenda/kategori/{par1}', 'App\Http\Controllers\Agenda@kategori');
+//dokumen
+Route::get('dokumen', 'App\Http\Controllers\Download@index')->name('dokumen');
+Route::get('dokumen/cari', 'App\Http\Controllers\Download@cari')->name('cari-dokumen');
+//kontak
+Route::get('kontak', 'App\Http\Controllers\Kontak@index')->name('kontak');
 // Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
 // Route::get('pembayaran', 'App\Http\Controllers\Home@pembayaran');
 // Route::post('proses_pemesanan', 'App\Http\Controllers\Home@proses_pemesanan');
@@ -55,8 +60,7 @@ Route::get('agenda/kategori/{par1}', 'App\Http\Controllers\Agenda@kategori');
 // Route::get('project', 'App\Http\Controllers\Download@index');
 // Route::get('project/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
 // Route::get('project/kategori/{par1}', 'App\Http\Controllers\Download@kategori');
-Route::get('dokumen', 'App\Http\Controllers\Download@index');
-Route::get('dokumen/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
+
 // Route::get('dokumen/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
 // Route::get('project/detail/{par1}/{par2}', 'App\Http\Controllers\Download@detail');
 // // galeri
