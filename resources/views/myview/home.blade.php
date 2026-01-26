@@ -80,23 +80,15 @@
     </div>
 </div> --}}
 
-<div class="d-lg-none d-md-block container my-5">
-    {{-- Carousel Wrapper --}}
-    <div id="mitraCarousel" class="carousel slide" data-ride="carousel">
-
+{{-- TAMPILAN MOBILE & TABLET (1 Gambar) --}}
+<div class="d-block d-lg-none container my-5">
+    <div id="mitraCarouselmb" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            {{-- 1. Gunakan array_chunk untuk memecah array $mitra menjadi grup isi 4 --}}
             @foreach ( array_chunk($mitra, 1) as $mitraChunk )
-
-                {{-- 2. Tentukan slide aktif pertama --}}
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-
-                    {{-- 3. Bungkus dengan Row agar grid system berfungsi --}}
                     <div class="row">
-
-                        {{-- Loop items di dalam grup (chunk) tersebut --}}
                         @foreach ( $mitraChunk as $m )
-                            <div class="col-12 col-md-3 p-5 p-lg-3">
+                            <div class="col-12 p-5">
                                 <div class="card border-0 shadow-sm h-100">
                                     <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-top img-card" alt="...">
                                     <div class="card-body">
@@ -105,44 +97,32 @@
                                 </div>
                             </div>
                         @endforeach
-
-                    </div> {{-- End Row --}}
-                </div> {{-- End Carousel Item --}}
-
+                    </div>
+                </div>
             @endforeach
         </div>
 
-        {{-- Tombol Navigasi Kiri/Kanan --}}
-        {{-- Saya tambahkan bg-dark pada icon agar terlihat jika background putih --}}
-        <a class="carousel-control-prev" href="#mitraCarousel" role="button" data-slide="prev" style="width: 5%;">
-            <span class="carousel-control-prev-icon rounded-circle p-3" aria-hidden="true"></span>
+        {{-- Navigasi Mobile --}}
+        <a class="carousel-control-prev" href="#mitraCarouselmb" role="button" data-slide="prev" style="width: 5%;">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#mitraCarousel" role="button" data-slide="next" style="width: 5%;">
-            <span class="carousel-control-next-icon rounded-circle p-3" aria-hidden="true"></span>
+        <a class="carousel-control-next" href="#mitraCarouselmb" role="button" data-slide="next" style="width: 5%;">
+            <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-
     </div>
 </div>
 
+{{-- TAMPILAN DESKTOP (4 Gambar) --}}
 <div class="d-none d-lg-block container my-5">
-    {{-- Carousel Wrapper --}}
     <div id="mitraCarousel" class="carousel slide" data-ride="carousel">
-
         <div class="carousel-inner">
-            {{-- 1. Gunakan array_chunk untuk memecah array $mitra menjadi grup isi 4 --}}
             @foreach ( array_chunk($mitra, 4) as $mitraChunk )
-
-                {{-- 2. Tentukan slide aktif pertama --}}
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-
-                    {{-- 3. Bungkus dengan Row agar grid system berfungsi --}}
                     <div class="row">
-
-                        {{-- Loop items di dalam grup (chunk) tersebut --}}
                         @foreach ( $mitraChunk as $m )
-                            <div class="col-12 col-md-3 p-5 p-lg-3">
+                            <div class="col-md-3 p-lg-3">
                                 <div class="card border-0 shadow-sm h-100">
                                     <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-top img-card" alt="...">
                                     <div class="card-body">
@@ -151,15 +131,12 @@
                                 </div>
                             </div>
                         @endforeach
-
-                    </div> {{-- End Row --}}
-                </div> {{-- End Carousel Item --}}
-
+                    </div>
+                </div>
             @endforeach
         </div>
 
-        {{-- Tombol Navigasi Kiri/Kanan --}}
-        {{-- Saya tambahkan bg-dark pada icon agar terlihat jika background putih --}}
+        {{-- Navigasi Desktop --}}
         <a class="carousel-control-prev" href="#mitraCarousel" role="button" data-slide="prev" style="width: 5%;">
             <span class="carousel-control-prev-icon rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -168,7 +145,6 @@
             <span class="carousel-control-next-icon rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-
     </div>
 </div>
 
