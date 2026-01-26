@@ -104,11 +104,11 @@
 
         {{-- Navigasi Mobile --}}
         <a class="carousel-control-prev" href="#mitraCarouselmb" role="button" data-slide="prev" style="width: 5%;">
-            <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#mitraCarouselmb" role="button" data-slide="next" style="width: 5%;">
-            <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon rounded-circle p-3" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     </div>
