@@ -14,38 +14,10 @@
                             <h5>Tidak Ada Data</h5>
                     @endif
                     @foreach ( $berita as $b )
-                    {{-- <div class="row mb-5">
-                        <div class="col-12">
-                            <div class="">
-                                <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top" alt="...">
-                                <div class="border">
-                                    <div class="d-flex border-bottom mx-2 p-3">
-                                        <div class="mx-2">
-                                            <i class="fas fa-user"></i>
-                                            {{ $b->nama }}
-                                        </div>
-                                        <div class="mx-2">
-                                            <i class="fas fa-calendar"></i>
-                                            {{ \Carbon\Carbon::parse($b->tanggal)->translatedFormat('l, d F Y') }}
-                                        </div>
-                                        <div class="mx-2">
-                                            <i class="fas fa-folder"></i>
-                                            {{ $b->nama_kategori }}
-                                        </div>
-                                    </div>
-                                    <h3 class="p-3">{{ $b->judul_berita }}</h3>
-
-                                    <div class="d-flex justify-content-end pb-5 pr-3">
-                                        <a href="{{ asset('berita/read/'.$b->slug_berita) }}" class="btn btn-success">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="row mb-5">
                         <div class="col-12">
                             <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
-                                <div class="card-hover-effect"> {{-- Opsional: tambah class untuk efek hover --}}
+                                <div class="card-hover-effect">
                                     <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top w-100" alt="..." style="height: 400px; object-fit: cover;">
 
                                     <div class="border">
