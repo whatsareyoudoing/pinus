@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+    {{-- font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <!-- CSS FILES START -->
     <link href="{{ asset('assets/pinus/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/pinus/css/color.css') }}" rel="stylesheet">
@@ -63,6 +65,19 @@
 <script src="{{ asset('assets/pinus/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
 <script>
+
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 50) {
+            $('#mainNavbar')
+                .addClass('navbar-scrolled bg-success')
+                .removeClass('bg-transparent');
+        } else {
+            $('#mainNavbar')
+                .removeClass('navbar-scrolled bg-success')
+                .addClass('bg-transparent');
+        }
+    });
+
     // ========== FUNGSI RESET YANG BERFUNGSI ==========
 
     // Method 1: Reset dengan instance Google Translate

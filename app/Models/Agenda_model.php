@@ -140,7 +140,7 @@ class Agenda_model extends Model
             ->select('agenda.*', 'kategori_agenda.slug_kategori_agenda', 'kategori_agenda.nama_kategori_agenda','users.nama')
             ->where('agenda.status_agenda','Publish')
             ->orderBy('id_agenda','DESC')
-            ->paginate(25);
+            ->paginate(12);
         return $query;
     }
 

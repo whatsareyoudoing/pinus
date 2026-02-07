@@ -53,6 +53,9 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="mt-3">
+                    {{ $agenda->links() }}
+                </div>
             </div>
             <div class="col-12 col-md-3">
                 <div class="container-fluid">

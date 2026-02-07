@@ -1,4 +1,4 @@
-<div class="position-absolute d-none d-md-block" style="width:450px;height:50px">
+{{-- <div class="position-absolute d-none d-md-block" style="width:450px;height:50px">
         <div class="position-absolute" style="
             width:450px;
             height:50px;
@@ -24,9 +24,9 @@
             border-top:145px solid rgb(0, 0, 0);
         ">
     </div>
-</div>
+</div> --}}
 
-<div class="position-absolute d-block d-md-none" style="width:100px;height:50px">
+{{-- <div class="position-absolute d-block d-md-none" style="width:100px;height:50px">
         <div class="position-absolute" style="
             width:250px;
             height:50px;
@@ -52,10 +52,10 @@
             border-top:145px solid rgb(0, 0, 0);
         ">
     </div>
-</div>
+</div> --}}
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+{{--
+<nav class="navbar navbar-expand-lg navbar-light bg-trnasparent py-3">
     <div class="container-fluid">
         <div class="ml-auto d-flex justify-content-between " style="width:75%;">
             <ul class="navbar-nav flex-row d-none d-md-none d-lg-flex">
@@ -97,15 +97,18 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> --}}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-transparent pt-lg-5 pb-lg-4 py-sm-3 position-fixed w-100" style=" z-index:1030;">
     <div class="container-fluid">
         <button class="ml-auto navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mt-5 mt-lg-auto ml-md-auto text-custom">
+            <ul class="navbar-nav mt-5 mt-lg-auto mx-md-auto text-custom">
+                <li class="nav-item px-2 ">
+                    <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}" class="img-fluid" alt="" style="width: 100px;">
+                </li>
                 <li class="nav-item px-2 {{ request()->routeIs('beranda') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
@@ -118,9 +121,6 @@
                 <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('agenda') }}">Program dan Kegiatan</a>
                 </li>
-                {{-- <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Mitra</a>
-                </li> --}}
                 <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('dokumen') }}">Dokumen</a>
                 </li>

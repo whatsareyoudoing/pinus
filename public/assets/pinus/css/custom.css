@@ -11,10 +11,31 @@
 
 }
 
-.carousel-inner img{
-max-height:601px!important;
+/* Gunakan Montserrat untuk Judul (seperti di CELIOS) */
+h1, h2, h3, .navbar {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Tebal */
+}
+
+/* Gunakan Roboto untuk isi teks agar mudah dibaca */
+body, p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* Normal */
+    line-height: 1.6; /* Tambahkan jarak antar baris agar lebih lega */
+}
+
+.carousel-1{
+min-height:760px!important;
+max-height:760px!important;
 width:100%;
 object-fit:cover; /* penting biar gak gepeng */
+}
+
+.carousel-dark {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1); /* makin besar = makin gelap */
+    z-index: 1;
 }
 
 .VIpgJd-ZVi9od-ORHb-OEVmcd{
@@ -119,7 +140,7 @@ object-fit:cover; /* penting biar gak gepeng */
   display: flex;
   align-items: center;
   gap: o.5rem;
-  background: #4baf47;
+  background: #4aaf4700;
   padding: 0.5rem 0rem;
   border-radius: 8px;
   backdrop-filter: blur(10px);
@@ -134,7 +155,7 @@ object-fit:cover; /* penting biar gak gepeng */
 /* Custom styling untuk Google Translate dropdown */
 .goog-te-gadget {
   font-family: inherit !important;
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 div#google_translate_element .goog-te-gadget-simple {
@@ -148,18 +169,18 @@ div#google_translate_element .goog-te-gadget-simple {
 }
 
 .goog-te-gadget-simple a {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
   text-decoration: none !important;
   font-size: 0.9rem !important;
 }
 
 .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
  .reset-btn {
-  background: #4baf47;
-  color: white;
+  background: #41b53d00;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 8px 14px;
   border-radius: 6px;
@@ -184,5 +205,14 @@ div#google_translate_element .goog-te-gadget-simple {
     border-top-left-radius: calc(1.9rem - 16px)!important;
     border-top-right-radius: calc(1.9rem - 16px)!important;
 }
+
+.goog-te-gadget-icon{
+    display: none;
+}
+
+.navbar-scrolled {
+    transition: all 0.5s ease;
+}
+
 
 

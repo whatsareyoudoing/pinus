@@ -6,8 +6,9 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     @foreach ( $slider as $s=>$slider )
+        <div class="carousel-dark"></div>
         <div class="carousel-item {{ $s == 0 ? 'active' : '' }}">
-        <img src="{{ asset('assets/upload/image/' . $slider->gambar) }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('assets/upload/image/' . $slider->gambar) }}" class="d-block w-100 carousel-1" alt="...">
         </div>
     @endforeach
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
