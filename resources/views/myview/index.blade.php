@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PINUS (Pilar Nusantara) adalah lembaga pemberdayaan masyarakat yang berdiri sejak 2006, bergerak di bidang sosial, pendidikan, dan ekonomi umat di Indonesia.">
     <title class="notranslate">Pinus</title>
     {{-- <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.$site_config->icon) }}"> --}}
     <link rel="shortcut icon" href="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}">
