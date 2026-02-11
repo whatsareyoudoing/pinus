@@ -44,7 +44,6 @@
           <li class="batas"><hr></li>
 
 
-
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
@@ -72,7 +71,9 @@
             </ul>
           </li>
 
+          @if(Session::get('akses_level') == 'Admin')
 
+           
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-download"></i>
@@ -161,8 +162,8 @@
 
             </ul>
           </li>
-
-
+          
+          @endif <!-- End Menu Admin -->
 
         </ul>
       </nav>

@@ -227,7 +227,7 @@ class Agenda extends Controller
                 'slug_agenda'       => $slug_agenda,
                 'judul_agenda'      => $request->judul_agenda,
                 'isi'               => $request->isi,
-                'jenis_agenda'      => $request->jenis_agenda,
+                
                 'status_agenda'     => $request->status_agenda,
                 
                 'tanggal_mulai'     => tanggal('tanggal_input',$request->tanggal_mulai),
@@ -249,7 +249,7 @@ class Agenda extends Controller
                 'slug_agenda'       => $slug_agenda,
                 'judul_agenda'      => $request->judul_agenda,
                 'isi'               => $request->isi,
-                'jenis_agenda'      => $request->jenis_agenda,
+                
                 'status_agenda'     => $request->status_agenda,
                 'tanggal_mulai'     => tanggal('tanggal_input',$request->tanggal_mulai),
                 'tanggal_selesai'   => tanggal('tanggal_input',$request->tanggal_selesai),
@@ -294,7 +294,7 @@ class Agenda extends Controller
                 'slug_agenda'       => $slug_agenda,
                 'judul_agenda'      => $request->judul_agenda,
                 'isi'               => $request->isi,
-                'jenis_agenda'      => $request->jenis_agenda,
+                
                 'status_agenda'     => $request->status_agenda,
                 'tanggal_mulai'     => tanggal('tanggal_input',$request->tanggal_mulai),
                 'tanggal_selesai'   => tanggal('tanggal_input',$request->tanggal_selesai),
@@ -312,7 +312,7 @@ class Agenda extends Controller
                 'slug_agenda'       => $slug_agenda,
                 'judul_agenda'      => $request->judul_agenda,
                 'isi'               => $request->isi,
-                'jenis_agenda'      => $request->jenis_agenda,
+               
                 'status_agenda'     => $request->status_agenda,
                 'tanggal_mulai'     => tanggal('tanggal_input',$request->tanggal_mulai),
                 'tanggal_selesai'   => tanggal('tanggal_input',$request->tanggal_selesai),

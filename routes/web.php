@@ -129,7 +129,7 @@ Route::post('admin/kategori_agenda/tambah', 'App\Http\Controllers\Admin\Kategori
 Route::post('admin/kategori_agenda/edit', 'App\Http\Controllers\Admin\Kategori_agenda@edit');
 Route::get('admin/kategori_agenda/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_agenda@delete');
 
-
+Route::middleware(['cek.level:admin'])->group(function () {
 
 // mitra
 
@@ -206,3 +206,4 @@ Route::get('myview-berita', function () {
 Route::get('myview-event', function () {
     return view('myview/event');
 })->name('event');
+});

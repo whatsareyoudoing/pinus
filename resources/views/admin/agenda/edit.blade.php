@@ -30,18 +30,10 @@
 
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">Jenis &amp; Kategori</label>
-        <div class="col-md-3">
-            <select name="jenis_agenda" class="form-control select2">
-                <option value="Event">Event</option>
-                <option value="Agenda" <?php if ($agenda->jenis_agenda == 'Agenda') {
-                    echo 'selected';
-                } ?>>Agenda</option>
-            </select>
-            <small class="text-success">Jenis konten</small>
-        </div>
+        <label class="col-md-3 text-right">Kategori</label>
+        
 
-        <div class="col-md-3">
+        <div class="col-md-6">
             <select name="id_kategori_agenda" class="form-control select2">
                 <?php foreach($kategori_agenda as $kategori_agenda) { ?>
                 <option value="<?php echo $kategori_agenda->id_kategori_agenda; ?>" <?php if ($agenda->id_kategori_agenda == $kategori_agenda->id_kategori_agenda) {
