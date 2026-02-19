@@ -5,8 +5,14 @@
 }
 
 
-.card-img, .card-img-bottom, .card-img-top{
+.card-img, .card-img-bottom{
     height: 300px;
+    object-fit: cover;
+
+}
+
+ .card-img-top{
+    height: 500px;
     object-fit: cover;
 
 }
@@ -34,7 +40,7 @@ object-fit:cover; /* penting biar gak gepeng */
 .carousel-dark {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1); /* makin besar = makin gelap */
+    background: rgba(0, 0, 0, 0.241); /* makin besar = makin gelap */
     z-index: 1;
 }
 
@@ -88,6 +94,17 @@ object-fit:cover; /* penting biar gak gepeng */
     }
 }
 
+.content-carousel{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content-carousel h1{
+    font-weight: 300; /* cukup, ga usah !important */
+}
 
 /* Default: mobile → border aktif */
 .mobile-border {
@@ -192,19 +209,13 @@ div#google_translate_element .goog-te-gadget-simple {
   transition: background 0.3s ease;
 }
 
-.reset-btn:hover {
-  background: green;
-}
+
 
 .reset-btn svg {
   width: 18px;
   height: 18px;
 }
 
-.card-img, .card-img-top {
-    border-top-left-radius: calc(1.9rem - 16px)!important;
-    border-top-right-radius: calc(1.9rem - 16px)!important;
-}
 
 .goog-te-gadget-icon{
     display: none;
@@ -215,4 +226,67 @@ div#google_translate_element .goog-te-gadget-simple {
 }
 
 
+.kotak{
+    height: 300px;
+}
+
+
+.ijo-cel{
+
+    background-color: #073124;
+
+}
+.text-ijo-cel{
+
+    color: #073124;
+
+}.btn-ijo-cel {
+    color: #fff!important;
+    background-color: #073124!important;
+    border-color: #073124!important;
+}
+.nav-top {
+    top: 0;
+    height: 70px;
+    background: transparent;
+    z-index: 1040;
+}
+
+.nav-main {
+    top: 90px; /* HARUS sama dengan tinggi nav-top */
+    z-index: 1030;
+}
+@media (max-width: 992px) {
+.nav-main {
+    top: 90px;/* HARUS sama dengan tinggi nav-top */
+    z-index: 1030;
+}
+}
+
+
+.no-top {
+    top:0px;
+}
+
+.navbar .dropdown-menu {
+    background-color: #073124; /* contoh ijo-cel */
+    border: none;
+    color: #fff;
+    font-size: 11px;
+}
+.navbar .dropdown-menu:hover {
+    background-color: #073124!important; /* contoh ijo-cel */
+    border: none;
+    color: #fff;
+    font-size: 11px;
+}
+
+.dropdown-item{
+    color:rgba(255,255,255,.5)!important;
+}
+.dropdown-item:hover{
+    background-color: #ffffff!important; /* contoh ijo-cel */
+
+    color:rgb(0, 0, 0)!important;
+}
 

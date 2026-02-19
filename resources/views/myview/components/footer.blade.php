@@ -76,7 +76,7 @@
                     Hubungi kami untuk pertanyaan, kerjasama, atau informasi lebih lanjut mengenai EFT Indonesia.
                 </div>
                 <div class="d-flex justify-content-end pb-3">
-                    <button class="btn btn-success align-items-end">Kontak Kami</button>
+                    <button class="btn btn-ijo-cel align-items-end">Kontak Kami</button>
                 </div>
             </div>
         </div>

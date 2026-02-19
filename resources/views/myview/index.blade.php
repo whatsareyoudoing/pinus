@@ -67,17 +67,81 @@
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
 <script>
 
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 50) {
-            $('#mainNavbar')
-                .addClass('navbar-scrolled bg-success')
-                .removeClass('bg-transparent');
-        } else {
-            $('#mainNavbar')
-                .removeClass('navbar-scrolled bg-success')
-                .addClass('bg-transparent');
-        }
+    // $(document).ready(function () {
+
+    //     $('#navbarNav')
+    //         .on('show.bs.collapse', function () {
+    //             $('#mainNavbar')
+    //                 .addClass('ijo-cel')
+    //                 .removeClass('bg-transparent');
+    //         })
+    //         .on('hide.bs.collapse', function () {
+    //             $('#mainNavbar')
+    //                 .removeClass('ijo-cel')
+    //                 .addClass('bg-transparent');
+    //         });
+
+    // });
+
+    // $(window).on('scroll', function () {
+    //     if ($(this).scrollTop() > 50) {
+    //         $('#mainNavbar')
+    //             .addClass('navbar-scrolled ijo-cel no-top')
+    //             .removeClass('bg-transparent');
+
+    //     } else {
+    //         $('#mainNavbar')
+    //             .removeClass('navbar-scrolled ijo-cel no-top')
+    //             .addClass('bg-transparent');
+
+    //     }
+    // });
+
+    $(document).ready(function () {
+
+        let isNavOpen = false;
+
+        $('#navbarNav')
+            .on('show.bs.collapse', function () {
+                isNavOpen = true;
+
+                $('#mainNavbar')
+                    .addClass('ijo-cel')
+                    .removeClass('bg-transparent');
+            })
+            .on('hide.bs.collapse', function () {
+                isNavOpen = false;
+
+                if ($(window).scrollTop() <= 50) {
+                    $('#mainNavbar')
+                        .removeClass('ijo-cel navbar-scrolled no-top')
+                        .addClass('bg-transparent');
+                }
+            });
+
+        $(window).on('scroll', function () {
+
+            if (isNavOpen) return; // ⛔ STOP kalau menu lagi terbuka
+
+            if ($(this).scrollTop() > 50) {
+                $('#mainNavbar')
+                    .addClass('navbar-scrolled ijo-cel no-top')
+                    .removeClass('bg-transparent');
+            } else {
+                $('#mainNavbar')
+                    .removeClass('navbar-scrolled ijo-cel no-top')
+                    .addClass('bg-transparent');
+            }
+
+        });
+
+
+
+
+
+
     });
+
 
     // ========== FUNGSI RESET YANG BERFUNGSI ==========
 
