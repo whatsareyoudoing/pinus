@@ -93,12 +93,13 @@ object-fit:cover; /* penting biar gak gepeng */
 
 .content-carousel{
     position: absolute;
-    inset: 0;
+    inset: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    padding-top: 14%;
 
     /* Ubah ini. 50% itu setengah layar,
        makanya teksnya jadi terlalu ke kanan atau hilang */
@@ -108,20 +109,21 @@ object-fit:cover; /* penting biar gak gepeng */
     box-sizing: border-box;/* Memberi jarak dari pinggir kiri layar */
 }
 .content-carousel h1 {
-    font-size: 15rem;         /* Ukuran besar untuk nama (CELIOS) */
+    font-size: 10rem;         /* Ukuran besar untuk nama (CELIOS) */
     font-weight: 800;         /* Bold tebal */
     margin: 0;
     line-height: 1;
 }
 
 .content-carousel h2 {
-    font-size: 6rem;       /* Ukuran sedang untuk deskripsi */
-    font-weight: 100;
+    font-size: 3rem;       /* Ukuran sedang untuk deskripsi */
+    font-weight: 200;
     margin-top: 5px;
 }
 
 /* Jika ada teks tambahan di bawahnya (italic) */
 .content-carousel p {
+    font-style: italic;
     font-size: 1rem;
     margin-top: 20px;
 }
