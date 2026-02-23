@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle"
                         href="#"
-                        id="navbarDropdown"
+                        id="navbarDropdown1"
                         role="button"
                         data-toggle="dropdown"
                         aria-haspopup="true"
@@ -41,23 +41,73 @@
                         Tentang Kami
                     </a>
 
-                    <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Profil</a>
-                        <a class="dropdown-item" href="#">Visi & Misi</a>
-                        <a class="dropdown-item" href="#">Struktur Organisasi</a>
+                    <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Visi & Misi</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Tim</a>
+                        <a class="dropdown-item notranslate" href="#" style="font-size: 15px;">Good Governance</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Portofolio</a>
                     </div>
                 </li>
                 <li class="nav-item px-2 {{ request()->is('berita*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
-                <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
+                {{-- <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('agenda') }}">Publikasi</a>
+                </li> --}}
+                <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown2"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        Publikasi
+                    </a>
+
+                    <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item notranslate" href="#" style="font-size: 15px;">Policy Brief</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Video</a>
+                    </div>
                 </li>
-                <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">
+                {{-- <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('kontak') }}">Layanan</a>
+                </li> --}}
+                <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown3"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        Layanan
+                    </a>
+
+                    <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Pelatihan SAR</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">EFT</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Produk Dampingan</a>
+                    </div>
                 </li>
-                <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
+                {{-- <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('dokumen') }}">Dokumentasi</a>
+                </li> --}}
+                <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown4"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        Dokumentasi
+                    </a>
+
+                    <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">File</a>
+                        <a class="dropdown-item" href="#" style="font-size: 15px;">Modul</a>
+                    </div>
                 </li>
                 <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('kontak') }}">Kontak Kami</a>

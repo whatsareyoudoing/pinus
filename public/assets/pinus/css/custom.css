@@ -5,14 +5,10 @@
 }
 
 
-.card-img, .card-img-bottom{
-    height: 300px;
-    object-fit: cover;
 
-}
 
  .card-img-top{
-    height: 500px;
+    height: 400px;
     object-fit: cover;
 
 }
@@ -32,8 +28,9 @@ body, p {
 
 .carousel-1{
 min-height:760px!important;
-max-height:760px!important;
+max-height:930px!important;
 width:100%;
+height:930px;
 object-fit:cover; /* penting biar gak gepeng */
 }
 
@@ -98,12 +95,58 @@ object-fit:cover; /* penting biar gak gepeng */
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+
+    /* Ubah ini. 50% itu setengah layar,
+       makanya teksnya jadi terlalu ke kanan atau hilang */
+    padding-left: 20%;
+
+    /* Tambahkan ini untuk memastikan padding tidak merusak lebar */
+    box-sizing: border-box;/* Memberi jarak dari pinggir kiri layar */
 }
-.content-carousel h1{
-    font-weight: 300; /* cukup, ga usah !important */
+.content-carousel h1 {
+    font-size: 15rem;         /* Ukuran besar untuk nama (CELIOS) */
+    font-weight: 800;         /* Bold tebal */
+    margin: 0;
+    line-height: 1;
+}
+
+.content-carousel h2 {
+    font-size: 6rem;       /* Ukuran sedang untuk deskripsi */
+    font-weight: 100;
+    margin-top: 5px;
+}
+
+/* Jika ada teks tambahan di bawahnya (italic) */
+.content-carousel p {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* --- VERSI MOBILE (Tambahkan ini di bawah) --- */
+@media (max-width: 768px) {
+    .content-carousel {
+        /* Di HP, padding jangan terlalu besar agar teks tidak sempit */
+        padding-left: 10%; 
+    }
+
+    .content-carousel h1 {
+        /* Kecilkan drastis agar tidak overflow */
+        font-size: 3.5rem; 
+    }
+
+    .content-carousel h2 {
+        /* Kecilkan agar tetap proporsional di bawah h1 */
+        font-size: 1.8rem;
+    }
+
+    .content-carousel p {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
 }
 
 /* Default: mobile → border aktif */
@@ -242,7 +285,7 @@ div#google_translate_element .goog-te-gadget-simple {
 
 }.btn-ijo-cel {
     color: #fff!important;
-    background-color: #073124!important;
+    background-color: #145f54 !important;
     border-color: #073124!important;
 }
 .nav-top {
@@ -253,7 +296,7 @@ div#google_translate_element .goog-te-gadget-simple {
 }
 
 .nav-main {
-    top: 90px; /* HARUS sama dengan tinggi nav-top */
+    top: 70px; /* HARUS sama dengan tinggi nav-top */
     z-index: 1030;
 }
 @media (max-width: 992px) {
@@ -290,3 +333,58 @@ div#google_translate_element .goog-te-gadget-simple {
     color:rgb(0, 0, 0)!important;
 }
 
+.carousel-mitra{
+    margin: 50px auto;
+    width: 80%;
+    /* border: 5px solid red; */
+    display: flex;
+    overflow-x: auto;
+    --mask: linear-gradient(
+        90deg, transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+}
+
+.carousel-mitra::-webkit-scrollbar{
+    display: none;
+
+
+
+}
+
+.grup-mitra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 15s infinite linear;
+    padding-right: 1em;
+}
+
+.card-mitra{
+    flex: 0 0 5em;
+    height: 5em;
+    width: 5em;
+    font-size: 3rem;
+    border-radius: .2em;
+    text-align: center;
+    align-content: center;
+}
+.card-img-mitra{
+    width: 90%;
+    height: 87%;
+    object-fit: contain;
+    border-radius: 10px;
+
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}

@@ -1,5 +1,5 @@
 {{-- footer --}}
-<div class="container-fluid bg-light pb-5 pt-5" style="">
+<div class="container-fluid bg-light pb-5 pt-5" style="margin-top: 100px;">
     <div class="container border-bottom">
         <div class="row">
             <div class="col-md-6 notranslate" style="font-size:7vh;">
@@ -37,7 +37,7 @@
             <div class="col-12 mobile-border col-md-4 text-justify">
                 <h5>Tentang Kami</h5>
                 <div class="clamp-3">
-                    {!! $site->tentang !!}
+                    PINUS dimulai dari inisiasi beberapa pendiri yang memulai gerakan sejak tahun 2006, dengan kegiatan utama melakukan pemberdayaan umat. Beberapa orang perintis PINUS melakukan berbagai kegiatan-kegiatan kemasyarakatan seperti pembinaan masyarakat di Garut, 5 Ulu Palembang dan Mariso Makasar dalam bentuk pemberian donasi, pembinaan balita sehat, pembuatan perpustakaan terapung di 5 Ulu, pelatihan kesenian Marawis anak-anak, dan pembinaan ekonomi yang dilakukan secara swadaya hingga saat ini.  Iden pendirian PINUS sebagai sebuah lembaga merupakan sebuah strategi untuk mencapai tujuan yang dicita-citakan yaitu terciptanya kesejahteraan masyarakat.
                 </div>
             </div>
             <div class="col-12 mobile-border col-md-2">
