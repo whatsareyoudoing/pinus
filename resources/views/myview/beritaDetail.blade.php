@@ -19,15 +19,15 @@
                                 <div class="border">
                                     <div class="d-flex border-bottom mx-2 p-3">
                                         <div class="mx-2">
-                                            <i class="fas fa-user" style="color:green;"></i>
+                                            <i class="fas fa-user text-ijo-cel"></i>
                                             {{ $read->nama }}
                                         </div>
                                         <div class="mx-2">
-                                            <i class="fas fa-calendar" style="color:green;"></i>
+                                            <i class="fas fa-calendar text-ijo-cel"></i>
                                             {{ \Carbon\Carbon::parse($read->tanggal)->translatedFormat('l, d F Y') }}
                                         </div>
                                         <div class="mx-2">
-                                            <i class="fas fa-folder" style="color:green;"></i>
+                                            <i class="fas fa-folder text-ijo-cel"></i>
                                             {{ $read->nama_kategori }}
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Cari Berita" aria-label="Cari Berita" name="keywords" aria-describedby="button-addon2">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Cari</button>
+                                        <button class="btn btn-ijo-cel" type="button" id="button-addon2">Cari</button>
                                     </div>
                                 </div>
                             </form>
@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-12">
                             <ul class="list-group pb-5">
-                                <li class="list-group-item bg-success text-white font-weight-bold">
+                                <li class="list-group-item bg-ijo-cel text-white font-weight-bold">
                                     <h5>
                                         Kategori
                                     </h5>
