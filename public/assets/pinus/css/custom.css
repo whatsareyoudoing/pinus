@@ -132,12 +132,13 @@ object-fit:cover; /* penting biar gak gepeng */
 @media (max-width: 768px) {
     .content-carousel {
         /* Di HP, padding jangan terlalu besar agar teks tidak sempit */
-        padding-left: 10%; 
+        padding-top: 55%;
+        padding-left: 10%;
     }
 
     .content-carousel h1 {
         /* Kecilkan drastis agar tidak overflow */
-        font-size: 3.5rem; 
+        font-size: 3.5rem;
     }
 
     .content-carousel h2 {
@@ -184,12 +185,12 @@ object-fit:cover; /* penting biar gak gepeng */
 
 
 .page-item.active .page-link {
-    background-color: #28a745 !important;
-    border-color: #28a745 !important;
+    background-color: #145f54 !important;
+    border-color: #145f54 !important;
     color:#fff !important;
 }
 .page-link {
-    color: #28a745!important;
+    color: #145f54!important;
  }
 
  /* google translate*/
@@ -279,6 +280,11 @@ div#google_translate_element .goog-te-gadget-simple {
 .ijo-cel{
 
     background-color: #073124;
+
+}
+.bg-ijo-cel{
+
+    background-color: #145f54!important;
 
 }
 .text-ijo-cel{
@@ -389,4 +395,19 @@ div#google_translate_element .goog-te-gadget-simple {
 @keyframes spin {
     from {translate: 0;}
     to {translate: -100%;}
+}
+
+#logo1, #logo2 {
+    transition: opacity 0.5s ease, visibility 3s;
+}
+
+/* Kondisi saat logo disembunyikan */
+.hidden-logo {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.9) rotate(0deg);
+}
+
+.visible-logo {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
 }

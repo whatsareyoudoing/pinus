@@ -120,19 +120,28 @@
             });
 
         $(window).on('scroll', function () {
+            // 1. Ambil nilai scroll sekali saja simpan di variabel
+            const scrollTop = $(this).scrollTop();
+            const $navbar = $('#mainNavbar');
+            const $logo1 = $('#logo1');
+            const $logo2 = $('#logo2');
 
-            if (isNavOpen) return; // ⛔ STOP kalau menu lagi terbuka
+            // 2. Gunakan logic toggle agar lebih efisien
+            if (isNavOpen) return;
 
-            if ($(this).scrollTop() > 50) {
-                $('#mainNavbar')
-                    .addClass('navbar-scrolled ijo-cel no-top')
-                    .removeClass('bg-transparent');
+            if (scrollTop > 50) {
+                $navbar.addClass('navbar-scrolled ijo-cel no-top').removeClass('bg-transparent');
+
+                // Ganti d-none dengan class opacity
+                $logo1.addClass('hidden-logo').removeClass('visible-logo');
+                $logo2.removeClass('hidden-logo').addClass('visible-logo');
             } else {
-                $('#mainNavbar')
-                    .removeClass('navbar-scrolled ijo-cel no-top')
-                    .addClass('bg-transparent');
-            }
+                $navbar.removeClass('navbar-scrolled ijo-cel no-top').addClass('bg-transparent');
 
+                // Kembalikan logo asal
+                $logo1.removeClass('hidden-logo').addClass('visible-logo');
+                $logo2.addClass('hidden-logo').removeClass('visible-logo');
+            }
         });
 
 

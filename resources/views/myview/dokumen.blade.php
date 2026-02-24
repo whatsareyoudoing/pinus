@@ -14,7 +14,7 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cari Dokumen" aria-label="Cari Dokumen" name="keywords" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="submit" id="button-addon2">Cari</button>
+                        <button class="btn btn-ijo-cell" type="submit" id="button-addon2">Cari</button>
                     </div>
                 </div>
             </form>
@@ -35,7 +35,7 @@
         <div class="col-2">
         </div>
         <div class="col-6 ml-auto text-right">
-            <a href="{{ asset('assets/upload/file/'.$d->file) }}" class="btn btn-success btn-sm px-5 py-2" target="_blank">
+            <a href="{{ asset('assets/upload/file/'.$d->file) }}" class="btn btn-ijo-cel btn-sm px-5 py-2" target="_blank">
                 <i class="fa fa-download mr-2"></i>Unduh
             </a>
         </div>

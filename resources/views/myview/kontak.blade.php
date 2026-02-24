@@ -11,7 +11,7 @@
 <div class="continer m-5">
     <div class="row">
         <div class="col-6">
-            <h5 class="text-success">Formulir Kontak</h5>
+            <h5 class="text-ijo-cel">Formulir Kontak</h5>
             <h1>Kontak Kami</h1>
             <div class="embed-responsive embed-responsive-16by9 border rounded shadow-sm mt-5">
                 <iframe
@@ -42,7 +42,7 @@
                     <textarea  cols="30" rows="10" class="form-control" id="exampleInputMessage"></textarea>
                 </div>
                 <div class="text-right">
-                    <button type="submit" class="btn btn-success px-5 py-2">Kirim</button>
+                    <button type="submit" class="btn btn-ijo-cel px-5 py-2">Kirim</button>
                 </div>
             </form>
         </div>

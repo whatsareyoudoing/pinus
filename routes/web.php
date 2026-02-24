@@ -21,6 +21,11 @@ Route::get('/', 'App\Http\Controllers\Home@index')->name('beranda');
 Route::get('home', 'App\Http\Controllers\Home@index');
 Route::get('tentang', 'App\Http\Controllers\Home@info')->name('tentang');
 Route::get('kontak', 'App\Http\Controllers\Home@kontak');
+
+//tentang
+Route::get('/tentang/visimisi', 'App\Http\Controllers\About@visiMisi')->name('visimisi');
+Route::get('/tentang/tim', 'App\Http\Controllers\About@tim')->name('tim');
+Route::get('/tentang/good-governance', 'App\Http\Controllers\About@goodGovernance')->name('good-governance');
 // Login
 Route::get('login', 'App\Http\Controllers\Login@index');
 Route::post('login/check', 'App\Http\Controllers\Login@check');
