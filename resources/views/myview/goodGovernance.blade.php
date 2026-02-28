@@ -1,4 +1,4 @@
-@section('title', 'Good Governance Pilar Nusantara')
+@section('title', 'Good Governance')
 @extends('myview.index')
 @section('content')
 @section('link')

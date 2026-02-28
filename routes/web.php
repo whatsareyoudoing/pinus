@@ -26,6 +26,10 @@ Route::get('kontak', 'App\Http\Controllers\Home@kontak');
 Route::get('/tentang/visimisi', 'App\Http\Controllers\About@visiMisi')->name('visimisi');
 Route::get('/tentang/tim', 'App\Http\Controllers\About@tim')->name('tim');
 Route::get('/tentang/good-governance', 'App\Http\Controllers\About@goodGovernance')->name('good-governance');
+//publikasi
+Route::get('/publikasi/video', 'App\Http\Controllers\Publikasi@video')->name('video');
+Route::get('/publikasi/policy', 'App\Http\Controllers\Publikasi@policy')->name('policy');
+Route::get('/publikasi/good-governance', 'App\Http\Controllers\Publikasi@goodGovernance')->name('good-governance');
 // Login
 Route::get('login', 'App\Http\Controllers\Login@index');
 Route::post('login/check', 'App\Http\Controllers\Login@check');

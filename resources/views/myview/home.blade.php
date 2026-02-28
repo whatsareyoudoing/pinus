@@ -10,7 +10,12 @@
             <div class="content-carousel">
                 <h1 class="text-white notranslate">Pinus</h1>
                 <h2 class="text-white notranslate">Pilar Nusantara</h2>
-                <p class="text-white notranslate">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit tempore soluta pariatur. Nam odit est deleniti ut ex facere doloribus.</p>
+                <p class="text-white notranslate" style="padding-left: 4px;">
+                    Membangun Kemitraan bersama Pemerintah, Bisnis dan Masyarakat untuk
+                </p>
+                <p class="text-white" style="margin-top:-18px;padding-left: 4px;">
+                    Penerapan Tata Kelola yang baik bagi Kesejahteraan Masyarakat
+                </p>
             </div>
         </div>
         <div class="carousel-item {{ $s == 0 ? 'active' : '' }}">
@@ -30,7 +35,7 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-12">
-            <h4 class="text-ijo-cel">Selamat Datang di 
+            <h4 class="text-ijo-cel">Selamat Datang di
                 <span class="notranslate">
                 Pilar Nusantara
                 </span>
@@ -39,7 +44,7 @@
             <div class="text-justify mb-3">
                 PINUS dimulai dari inisiasi beberapa pendiri yang memulai gerakan sejak tahun 2006, dengan kegiatan utama melakukan pemberdayaan umat. Beberapa orang perintis PINUS melakukan berbagai kegiatan-kegiatan kemasyarakatan seperti pembinaan masyarakat di Garut, 5 Ulu Palembang dan Mariso Makasar dalam bentuk pemberian donasi, pembinaan balita sehat, pembuatan perpustakaan terapung di 5 Ulu, pelatihan kesenian Marawis anak-anak, dan pembinaan ekonomi yang dilakukan secara swadaya hingga saat ini.  Iden pendirian PINUS sebagai sebuah lembaga merupakan sebuah strategi untuk mencapai tujuan yang dicita-citakan yaitu terciptanya kesejahteraan masyarakat.
             </div>
-            <a href="{{ route('tentang') }}" class="btn btn-ijo-cel mb-3">
+            <a href="{{ route('visimisi') }}" class="btn btn-ijo-cel mb-3">
                 Selengkapnya
             </a>
         </div>
@@ -78,12 +83,13 @@
         </div>
     </div>
 </div>
-<div class="my-5 pt-5">
-    <h5 class="text-center text-ijo-cel">Blog Kami</h5>
-    <h1 class="text-center text-ijo-cel">Berita Terkini</h1>
-</div>
+
 
 <div class="container-fluid py-5 px-lg-5" style="background-color: #073124;">
+    <div class=" pt-3">
+        <h5 class="text-center" style="color: #6eca6e">Blog Kami</h5>
+        <h1 class="text-center" style="color: #ffffff">Berita Terkini</h1>
+    </div>
     <div class="container-fluid px-lg-5">
 
         <div class="row d-flex justify-content-center">
@@ -110,14 +116,13 @@
 
 
 {{-- Mitra --}}
-<h5 class="text-center text-ijo-cel mt-5 pt-5">Partner Kami</h5>
+<h5 class="text-center mt-5 pt-5" style="color: #6eca6e">Partner Kami</h5>
 <h1 class="text-center">Mitra</h1>
 <div class="carousel-mitra">
     <div class="grup-mitra">
         @foreach ($mitra as $m )
         <div class="card-mitra">
             <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-mitra" alt="...">
-            <p style="font-size: 1rem">{{ $m->nama_mitra }}</p>
         </div>
         @endforeach
     </div>
@@ -125,7 +130,6 @@
         @foreach ($mitra as $m )
         <div class="card-mitra">
             <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-mitra" alt="...">
-            <p style="font-size: 1rem">{{ $m->nama_mitra }}</p>
         </div>
         @endforeach
     </div>
@@ -133,7 +137,6 @@
         @foreach ($mitra as $m )
         <div class="card-mitra">
             <img src="{{ asset('assets/upload/image/' . $m->gambar) }}" class="card-img-mitra" alt="...">
-            <p style="font-size: 1rem">{{ $m->nama_mitra }}</p>
         </div>
         @endforeach
     </div>

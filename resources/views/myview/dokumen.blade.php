@@ -1,9 +1,9 @@
-@section('title', 'Dokumen Pilar Nusantara')
+@section('title', 'File Pinus')
 @extends('myview.index')
 @section('content')
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
-    <li class="breadcrumb-item active">Dokumen</li>
+    <li class="breadcrumb-item active">File</li>
 @endsection
 @include('myview.components.hero')
 {{-- Halaman Dokumen --}}
@@ -14,7 +14,7 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cari Dokumen" aria-label="Cari Dokumen" name="keywords" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-ijo-cell" type="submit" id="button-addon2">Cari</button>
+                        <button class="btn btn-ijo-cel" type="submit" id="button-addon2">Cari</button>
                     </div>
                 </div>
             </form>

@@ -10,7 +10,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     {{-- font --}}
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Inter:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS FILES START -->
     <link href="{{ asset('assets/pinus/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/pinus/css/color.css') }}" rel="stylesheet">
@@ -123,8 +126,7 @@
             // 1. Ambil nilai scroll sekali saja simpan di variabel
             const scrollTop = $(this).scrollTop();
             const $navbar = $('#mainNavbar');
-            const $logo1 = $('#logo1');
-            const $logo2 = $('#logo2');
+            const $logo = $('#logo');
 
             // 2. Gunakan logic toggle agar lebih efisien
             if (isNavOpen) return;
@@ -133,14 +135,12 @@
                 $navbar.addClass('navbar-scrolled ijo-cel no-top').removeClass('bg-transparent');
 
                 // Ganti d-none dengan class opacity
-                $logo1.addClass('hidden-logo').removeClass('visible-logo');
-                $logo2.removeClass('hidden-logo').addClass('visible-logo');
+                $logo.addClass('small-logo').removeClass('big-logo');
             } else {
                 $navbar.removeClass('navbar-scrolled ijo-cel no-top').addClass('bg-transparent');
 
                 // Kembalikan logo asal
-                $logo1.removeClass('hidden-logo').addClass('visible-logo');
-                $logo2.addClass('hidden-logo').removeClass('visible-logo');
+                $logo.addClass('big-logo').removeClass('small-logo');
             }
         });
 

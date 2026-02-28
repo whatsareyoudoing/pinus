@@ -5,23 +5,25 @@
 }
 
 
-
-
  .card-img-top{
-    height: 400px;
+    height: 300px;
     object-fit: cover;
 
 }
 
 /* Gunakan Montserrat untuk Judul (seperti di CELIOS) */
-h1, h2, h3, .navbar {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700; /* Tebal */
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500; /* Tebal */
+}
+h2, h3, .navbar {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; /* Tebal */
 }
 
 /* Gunakan Roboto untuk isi teks agar mudah dibaca */
 body, p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400; /* Normal */
     line-height: 1.6; /* Tambahkan jarak antar baris agar lebih lega */
 }
@@ -99,7 +101,7 @@ object-fit:cover; /* penting biar gak gepeng */
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding-top: 14%;
+    padding-top: 20%;
 
     /* Ubah ini. 50% itu setengah layar,
        makanya teksnya jadi terlalu ke kanan atau hilang */
@@ -109,7 +111,7 @@ object-fit:cover; /* penting biar gak gepeng */
     box-sizing: border-box;/* Memberi jarak dari pinggir kiri layar */
 }
 .content-carousel h1 {
-    font-size: 10rem;         /* Ukuran besar untuk nama (CELIOS) */
+    font-size: 7rem;         /* Ukuran besar untuk nama (CELIOS) */
     font-weight: 800;         /* Bold tebal */
     margin: 0;
     line-height: 1;
@@ -118,7 +120,8 @@ object-fit:cover; /* penting biar gak gepeng */
 .content-carousel h2 {
     font-size: 3rem;       /* Ukuran sedang untuk deskripsi */
     font-weight: 200;
-    margin-top: 5px;
+       margin-top: -12px;
+    padding-left: 4px;
 }
 
 /* Jika ada teks tambahan di bawahnya (italic) */
@@ -132,7 +135,7 @@ object-fit:cover; /* penting biar gak gepeng */
 @media (max-width: 768px) {
     .content-carousel {
         /* Di HP, padding jangan terlalu besar agar teks tidak sempit */
-        padding-top: 55%;
+        padding-top: 75%;
         padding-left: 10%;
     }
 
@@ -143,6 +146,7 @@ object-fit:cover; /* penting biar gak gepeng */
 
     .content-carousel h2 {
         /* Kecilkan agar tetap proporsional di bawah h1 */
+        padding-top: 10px;
         font-size: 1.8rem;
     }
 
@@ -397,8 +401,9 @@ div#google_translate_element .goog-te-gadget-simple {
     to {translate: -100%;}
 }
 
-#logo1, #logo2 {
+#logo {
     transition: opacity 0.5s ease, visibility 3s;
+    transform: translateY(0) scale(1) rotate(0);
 }
 
 /* Kondisi saat logo disembunyikan */
@@ -410,4 +415,15 @@ div#google_translate_element .goog-te-gadget-simple {
 .visible-logo {
     opacity: 1;
     transform: translateY(0) scale(1) rotate(0);
+}
+
+.big-logo{
+    z-index: 1000;
+    width: 132px;
+}
+
+.small-logo{
+    z-index: 1000;
+    width: 80px;
+
 }

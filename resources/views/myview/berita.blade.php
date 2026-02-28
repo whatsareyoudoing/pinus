@@ -1,4 +1,4 @@
-@section('title', 'Berita Pilar Nusantara')
+@section('title', 'Berita ')
 @extends('myview.index')
 @section('content')
 @section('link')
