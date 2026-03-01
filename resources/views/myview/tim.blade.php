@@ -1,6 +1,7 @@
-@section('title', 'Tim Pinus')
+@section('title', 'Tim PINUS')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/tentang-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item active">Tim</li>
@@ -22,9 +23,11 @@
     <h1 class="">Direktur Eksekutif</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem; ">
-                <div class="card-body" style="border-radius: 50px!important;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem; ">
+                </div>
+                <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
                 </div>
@@ -37,8 +40,10 @@
     <h1 class="">Direktur</h1>
     <div class="row mb-5">
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -46,8 +51,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -55,8 +62,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -70,8 +79,10 @@
     <h1 class="">Program Officer</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -79,8 +90,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -94,8 +107,10 @@
     <h1 class="">Finance Officer</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -103,8 +118,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -112,8 +129,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -121,8 +140,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -136,8 +157,10 @@
     <h1 class="">Administrasi</h1>
     <div class="row">
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>
@@ -145,8 +168,10 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mt-4" style="width: 23rem;">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 23rem; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text">Rabin Ibnu Zainal</h3>
                     <p>Direktur</p>

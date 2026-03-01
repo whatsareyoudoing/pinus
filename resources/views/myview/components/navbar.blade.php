@@ -36,7 +36,7 @@
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown1"
                         role="button"
@@ -61,7 +61,7 @@
                     <a class="nav-link" href="{{ route('agenda') }}">Publikasi</a>
                 </li> --}}
                 <li class="nav-item dropdown px-2 {{ request()->is('publikasi*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown2"
                         role="button"
@@ -81,7 +81,7 @@
                     <a class="nav-link" href="{{ route('kontak') }}">Layanan</a>
                 </li> --}}
                 <li class="nav-item dropdown px-2 {{ request()->is('layanan*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown3"
                         role="button"
@@ -93,16 +93,16 @@
                     </a>
 
                     <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Pelatihan SAR</a>
+                        <a class="dropdown-item" href="{{ route('pelatihan') }}" style="font-size: 15px;">Pelatihan SAR</a>
                         <a class="dropdown-item" href="https://eftindonesia.org/lembaga-anggota-kmspe/4" style="font-size: 15px;" target="_blank">EFT</a>
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Produk Dampingan</a>
+                        <a class="dropdown-item" href="{{ route('produk') }}" style="font-size: 15px;">Produk Dampingan</a>
                     </div>
                 </li>
                 {{-- <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('dokumen') }}">Dokumentasi</a>
                 </li> --}}
                 <li class="nav-item dropdown px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown4"
                         role="button"
@@ -115,7 +115,7 @@
 
                     <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown4">
                         <a class="dropdown-item" href="{{ route('dokumen') }}" style="font-size: 15px;">Berkas</a>
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Modul</a>
+                        <a class="dropdown-item" href="{{ route('modul') }}" style="font-size: 15px;">Modul</a>
                     </div>
                 </li>
                 <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">

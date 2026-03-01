@@ -11,10 +11,10 @@ use App\Models\Agenda_model;
 use App\Models\Berita_model;
 use Illuminate\Pagination\Paginator;
 
-class Publikasi extends Controller
+class Layanan extends Controller
 {
 // Main page
-    public function video()
+    public function PelatihanSar()
     {
 
         Paginator::useBootstrap();
@@ -32,10 +32,10 @@ class Publikasi extends Controller
 
                     );
 
-        return view('myview/video',$data);
+        return view('myview/pelatihanSar',$data);
     }
 
-    public function videoDetail()
+    public function pelatihanSarDetail()
     {
 
         Paginator::useBootstrap();
@@ -53,10 +53,10 @@ class Publikasi extends Controller
 
                     );
 
-        return view('myview/videoDetail',$data);
+        return view('myview/pelatihanSarDetail',$data);
     }
 
-    public function policy()
+    public function produk()
     {
 
         Paginator::useBootstrap();
@@ -74,10 +74,10 @@ class Publikasi extends Controller
 
                     );
 
-        return view('myview/policy',$data);
+        return view('myview/produk',$data);
     }
 
-    public function goodGovernance()
+    public function produkDetail()
     {
 
         Paginator::useBootstrap();
@@ -95,6 +95,8 @@ class Publikasi extends Controller
 
                     );
 
-        return view('myview/goodGovernance',$data);
+        return view('myview/produkDetail',$data);
     }
+
+
 }

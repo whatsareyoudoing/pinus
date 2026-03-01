@@ -16,7 +16,7 @@ h1 {
     font-family: 'Rubik', sans-serif;
     font-weight: 500; /* Tebal */
 }
-h2, h3, .navbar {
+h2, h3,h4,h5 .navbar {
     font-family: 'Inter', sans-serif;
     font-weight: 500; /* Tebal */
 }
@@ -136,6 +136,30 @@ object-fit:cover; /* penting biar gak gepeng */
     .content-carousel {
         /* Di HP, padding jangan terlalu besar agar teks tidak sempit */
         padding-top: 75%;
+        padding-left: 10%;
+    }
+
+    .content-carousel h1 {
+        /* Kecilkan drastis agar tidak overflow */
+        font-size: 3.5rem;
+    }
+
+    .content-carousel h2 {
+        /* Kecilkan agar tetap proporsional di bawah h1 */
+        padding-top: 10px;
+        font-size: 1.8rem;
+    }
+
+    .content-carousel p {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+}
+
+@media ((min-width:769px) and (max-width:992px)) {
+    .content-carousel {
+        /* Di HP, padding jangan terlalu besar agar teks tidak sempit */
+        padding-top: 40%;
         padding-left: 10%;
     }
 
@@ -426,4 +450,52 @@ div#google_translate_element .goog-te-gadget-simple {
     z-index: 1000;
     width: 80px;
 
+}
+
+.video{
+        height:200px;
+    }
+
+@media (max-width: 992px) {
+    .video{
+        height:300px;
+    }
+}
+
+.video_detail{
+        height:500px;
+    }
+
+@media (max-width: 992px) {
+    .video_detail{
+        height:300px;
+    }
+}
+
+.hero-pt{
+        padding-top:20rem!important;
+    }
+
+@media (max-width: 992px) {
+    .hero-pt{
+        padding-top:15rem!important;
+    }
+}
+
+.img-container {
+    width: 100%; 
+    overflow: hidden;
+    border-radius: 15px 15px 0 0; /* Opsional: agar sudutnya melengkung */
+}
+
+.img-tim{
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+/* Efek saat kursor diarahkan ke gambar */
+.img-tim:hover {
+    /* Perbesar 1.1 kali (10% lebih besar) */
+    transform: scale(1.3); 
 }

@@ -52,21 +52,21 @@
 </div>
 
 <div class="container my-5">
-    <div class="row">
-        <div class="col-lg-6 col-md-12">
-            <div class="container-fluid">
-                <div class="row">
+    <div class="row no-gutters">
+        <div class="col-lg-6 w-100 col-md-12">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
                     <div class="col-lg-6 col-md-12 kotak ijo-cel d-flex flex-column justify-content-center align-items-center" >
                         <i class="text-white fas fa-handshake mb-4" style="font-size: 6rem"></i>
                         <h3 class="text-white">10+ Mitra</h3>
                     </div>
-                    <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center" style="background-color: #daffed">
+                    <div class="col-lg-6 col-md-12 kotak d-flex flex-column justify-content-center align-items-center" style="background-color: #daffed">
                         <i class="fas fa-file-invoice text-ijo-cel mb-4" style="font-size: 6rem"></i>
                         <h3 class="text-ijo-cel">Lorem, ipsum.</h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center bg-light">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 col-md-12 d-flex kotak flex-column justify-content-center align-items-center bg-light">
                         <i class="fas fa-globe-asia text-ijo-cel mb-4" style="font-size: 6rem"></i>
                         <h3 class="text-ijo-cel">Lorem, ipsum.</h3>
                     </div>
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-12 w-100 no-gutters">
             <img src="{{ asset('assets/pinus/img/Untitled.png') }}" class="img-fluid w-100" alt="" style="height:600px">
         </div>
     </div>

@@ -1,6 +1,7 @@
 @section('title', 'Visi & Misi')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/tentang-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item active">Visi & Misi</li>

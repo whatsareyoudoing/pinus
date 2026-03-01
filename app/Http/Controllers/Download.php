@@ -232,4 +232,60 @@ class Download extends Controller
         DB::table('download')->where('id_download',$id_download)->delete();
         return redirect('admin/project')->with(['sukses' => 'Data telah dihapus']);
     }
+
+
+    public function modul()
+    {
+
+        Paginator::useBootstrap();
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Agenda_model();
+		$kategori = $model->kategori_agenda();
+		$recent_agenda = $model->home();
+        $news           = new Berita_model();
+        $berita         = $news->home();
+        $mydownload 			= new Download_model();
+		$download 			= $mydownload->semua();
+        // dd($recent_agenda);
+
+        $data = array(  'title'     => 'Dokumen Pinus',
+                        'deskripsi' => 'Dokumen Pinus',
+                        'keywords'  => 'Dokumen Pinus',
+                        'recent_berita'        => $berita,
+                        'site'		=> $site,
+                        'download'			=> $download,
+                        'kategori'    => $kategori,
+                        'recent_agenda'    => $recent_agenda,
+                    );
+
+        return view('myview/modul',$data);
+    }
+
+        public function modulDetail()
+    {
+
+        Paginator::useBootstrap();
+    	$site 	= DB::table('konfigurasi')->first();
+    	$model 	= new Agenda_model();
+		$kategori = $model->kategori_agenda();
+		$recent_agenda = $model->home();
+        $news           = new Berita_model();
+        $berita         = $news->home();
+        $mydownload 			= new Download_model();
+		$download 			= $mydownload->semua();
+        // dd($recent_agenda);
+
+        $data = array(  'title'     => 'Dokumen Pinus',
+                        'deskripsi' => 'Dokumen Pinus',
+                        'keywords'  => 'Dokumen Pinus',
+                        'recent_berita'        => $berita,
+                        'site'		=> $site,
+                        'download'			=> $download,
+                        'kategori'    => $kategori,
+                        'recent_agenda'    => $recent_agenda,
+                    );
+
+        return view('myview/modulDetail',$data);
+    }
+
 }
