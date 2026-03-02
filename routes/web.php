@@ -200,6 +200,42 @@ Route::post('admin/project/tambah_proses', 'App\Http\Controllers\Admin\Download@
 Route::post('admin/project/edit_proses', 'App\Http\Controllers\Admin\Download@edit_proses');
 Route::post('admin/project/proses', 'App\Http\Controllers\Admin\Download@proses');
 
+
+// video
+
+Route::get('admin/video', 'App\Http\Controllers\Admin\Video@index');
+Route::get('admin/video/cari', 'App\Http\Controllers\Admin\Video@cari');
+Route::get('admin/video/tambah', 'App\Http\Controllers\Admin\Video@tambah');
+Route::get('admin/video/edit/{par1}', 'App\Http\Controllers\Admin\Video@edit');
+Route::get('admin/video/delete/{par1}', 'App\Http\Controllers\Admin\Video@delete');
+Route::post('admin/video/tambah_proses', 'App\Http\Controllers\Admin\Video@tambah_proses');
+Route::post('admin/video/proses_edit', 'App\Http\Controllers\Admin\Video@proses_edit');
+Route::post('admin/video/proses', 'App\Http\Controllers\Admin\Video@proses');
+// produk
+
+Route::get('admin/produk', 'App\Http\Controllers\Admin\Produk@index');
+Route::get('admin/produk/cari', 'App\Http\Controllers\Admin\Produk@cari');
+Route::get('admin/produk/tambah', 'App\Http\Controllers\Admin\Produk@tambah');
+Route::get('admin/produk/edit/{par1}', 'App\Http\Controllers\Admin\Produk@edit');
+Route::get('admin/produk/delete/{par1}', 'App\Http\Controllers\Admin\Produk@delete');
+Route::post('admin/produk/tambah_proses', 'App\Http\Controllers\Admin\Produk@tambah_proses');
+Route::post('admin/produk/proses_edit', 'App\Http\Controllers\Admin\Produk@proses_edit');
+Route::post('admin/produk/proses', 'App\Http\Controllers\Admin\Produk@proses');
+
+
+// Modul
+
+Route::get('admin/modul', 'App\Http\Controllers\Admin\Modul@index');
+Route::get('admin/modul/cari', 'App\Http\Controllers\Admin\Modul@cari');
+Route::get('admin/modul/tambah', 'App\Http\Controllers\Admin\Modul@tambah');
+Route::get('admin/modul/edit/{par1}', 'App\Http\Controllers\Admin\Modul@edit');
+Route::get('admin/modul/delete/{par1}', 'App\Http\Controllers\Admin\Modul@delete');
+Route::post('admin/modul/tambah_proses', 'App\Http\Controllers\Admin\Modul@tambah_proses');
+Route::post('admin/modul/proses_edit', 'App\Http\Controllers\Admin\Modul@proses_edit');
+Route::post('admin/modul/proses', 'App\Http\Controllers\Admin\Modul@proses');
+
+
+
 /* END BACK END*/
 
 Route::get('myview-home', function () {

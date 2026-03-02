@@ -1,22 +1,3 @@
-<p class="text-right">
-	<a href="{{ asset('admin/galeri') }}" class="btn btn-success btn-sm">
-		<i class="fa fa-backward"></i> Kembali
-	</a>
-</p>
-<hr>
-<?php
-// Validasi error
-
-// Error upload
-if(isset($error)) {
-	echo '<div class="alert alert-warning">';
-	echo $error;
-	echo '</div>';
-}
-
-// Form open
-?>
-
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -27,84 +8,50 @@ if(isset($error)) {
     </div>
 @endif
 
-<form action="{{ asset('admin/galeri/edit_proses') }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+<form action="{{ asset('admin/produk/proses_edit') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 {{ csrf_field() }}
-<input type="hidden" name="id_galeri" value="{{ $galeri->id_galeri }}">
-<div class="row form-group">
-	<label class="col-md-3 text-right">Judul galeri</label>
-	<div class="col-md-9">
-		<input type="text" name="judul_galeri" class="form-control" placeholder="Judul galeri" value="<?php echo $galeri->judul_galeri ?>">
+<input type="hidden" name="id_produk" value="<?php echo $produk->id_produk ?>">
+<div class="form-group row">
+	<label class="col-sm-3 control-label text-right">Judul Produk</label>
+	<div class="col-sm-9">
+		<input type="text" name="judul_produk" class="form-control" placeholder="Judul Produk" value="<?php echo $produk->judul_produk ?>" required>
 	</div>
 </div>
 
 <div class="row form-group">
-	<label class="col-md-3 text-right">Posisi, Status Text dan Urutan</label>
-	<div class="col-md-3">
-		<select name="jenis_galeri" class="form-control">
-			<option value="Galeri">Galeri Biasa</option>
-			<option value="Homepage" 
-			<?php if($galeri->jenis_galeri=="Homepage") { echo "selected"; } ?>
-			>Homepage - Gambar Slider</option>
-			<option value="Pop up" <?php if($galeri->jenis_galeri=="Pop up") { echo "selected"; } ?>>Pop up Homepage</option>
-			<option value="Testimonial" <?php if($galeri->jenis_galeri=="Testimonial") { echo "selected"; } ?>>Background Testimonial</option>
-		</select>
-		<small>Posisi galeri</small>
-	</div>
-	<div class="col-md-3">
-		<select name="status_text" class="form-control">
-			<option value="Ya">Ya, tampilkan</option>
-			<option value="Tidak" <?php if($galeri->status_text=="Tidak") { echo "selected"; } ?>>Tidak, jangan tampilkan teks</option>
-		</select>
-		<small>Tampilkan teks</small>
-	</div>
-	
-	<div class="col-md-3">
-		<input type="number" name="urutan" class="form-control" placeholder="No urut tampil"  value="<?php echo $galeri->urutan ?>">
-		<small>Urutan tampil</small>
+	<label class="col-md-3 text-right">Upload gambar Produk</label>
+	<div class="col-md-6">
+		<input type="file" name="path_gambar_produk" class="form-control" placeholder="Upload gambar produk">
 	</div>
 </div>
 
-<div class="row form-group">
-	<label class="col-md-3 text-right">Kategori Galeri</label>
-	<div class="col-md-9">
-		<select name="id_kategori_galeri" class="form-control">
-			<?php foreach($kategori_galeri as $kategori_galeri) { ?>
-				<option value="<?php echo $kategori_galeri->id_kategori_galeri ?>" 
-					<?php if($galeri->id_kategori_galeri==$kategori_galeri->id_kategori_galeri) { echo "selected"; } ?>
-					><?php echo $kategori_galeri->nama_kategori_galeri ?></option>
-				<?php } ?>
-			</select>
-		</div>
+<div class="form-group row">
+	<label class="col-sm-3 control-label text-right">Link Produk </label>
+	<div class="col-sm-9">
+		<textarea name="path_link_produk" class="form-control" placeholder="Link Produk"><?php echo $produk->path_link_produk ?></textarea>
+						
 	</div>
+</div>
 
-	<div class="row form-group">
-		<label class="col-md-3 text-right">Upload gambar</label>
-		<div class="col-md-9">
-			<input type="file" name="gambar" class="form-control" placeholder="Upload gambar">
-		</div>
-	</div>
 
-	<div class="row form-group">
-		<label class="col-md-3 text-right">Isi galeri</label>
-		<div class="col-md-9">
-			<textarea name="isi" id="isi" class="form-control" id="kontenku" placeholder="Isi galeri"><?php echo $galeri->isi ?></textarea>
-		</div>
+<div class="form-group row">
+	<label class="col-sm-3 control-label text-right">Deskripsi</label>
+	<div class="col-sm-9">
+		<textarea name="deskripsi_produk" class="form-control" placeholder="Deskripsi"><?php echo $produk->deskripsi_produk ?></textarea>
 	</div>
+</div>
 
-	<div class="row form-group">
-		<label class="col-md-3 text-right">Link/website terkait Galeri</label>
-		<div class="col-md-9">
-			<input type="url" name="website" class="form-control" placeholder="http://website.com" value="<?php echo $galeri->website ?>">
-		</div>
-	</div>
 
-	<div class="row form-group">
-		<label class="col-md-3 text-right"></label>
-		<div class="col-md-9">
-		<div class="form-group">
-			<input type="submit" name="submit" class="btn btn-success " value="Simpan Data">
-			<input type="reset" name="reset" class="btn btn-info " value="Reset">
+<div class="form-group row">
+	<label class="col-sm-3 control-label text-right"></label>
+	<div class="col-sm-9">
+		<div class="form-group pull-right btn-group">
+			<input type="submit" name="submit" class="btn btn-primary " value="Simpan Data">
+			<input type="reset" name="reset" class="btn btn-success " value="Reset">
+			<a href="{{ asset('admin/produk') }}" class="btn btn-danger">Kembali</a>
 		</div>
 	</div>
+	<div class="clearfix"></div>
 </div>
 </form>
+

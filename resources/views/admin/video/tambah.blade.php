@@ -4,69 +4,40 @@
 		<div class="modal-content">
 			<div class="modal-header">
 
-				<h4 class="modal-title" id="myModalLabel">Tambah data?</h4>
+				<h4 class="modal-title" id="myModalLabel">Tambah data video</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
-				<form action="{{ asset('admin/video/tambah') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-{{ csrf_field() }}
+				<form action="{{ asset('admin/video/tambah_proses') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+				{{ csrf_field() }}
 				<div class="form-group row">
 					<label class="col-sm-3 control-label text-right">Judul Video</label>
 					<div class="col-sm-9">
-						<input type="text" name="judul" class="form-control" placeholder="Judul Video" value="{{ old('judul') }}" required>
+						<input type="text" name="judul_video" class="form-control" placeholder="Judul Video" value="{{ old('judul_video') }}" required>
 					</div>
 				</div>
 				
 
 				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Kode Video Youtube</label>
+					<label class="col-sm-3 control-label text-right">Link Video </label>
 					<div class="col-sm-9">
-						<input type="text" name="video" class="form-control" placeholder="Kode Video Youtube" value="{{ old('video') }}" required>
-						<small class="text-gray">Contoh: <span class="text-success">https://www.youtube.com/watch?v=</span><strong class="text-danger">IvjxrQ8c4-w</strong>.
-							<br>Copy kode <strong class="text-danger">IvjxrQ8c4-w</strong> sebagai kode Youtube.</small>
+						<textarea name="path_link_video" class="form-control" placeholder="Link Video">{{ old('path_link_video') }}</textarea>
+						
 					</div>
 				</div>
 
+				
+				
+
 				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Upload Gambar Cover</label>
+					<label class="col-sm-3 control-label text-right">Deskripsi</label>
 					<div class="col-sm-9">
-						<input type="file" name="gambar" class="form-control" placeholder="Cover Gambar" value="{{ old('gambar') }}">
+						<textarea name="deskripsi_video" class="form-control" placeholder="Deskripsi">{{ old('deskripsi_video') }}</textarea>
 					</div>
 				</div>
 
-				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Nomor urut tampil</label>
-					<div class="col-sm-9">
-						<input type="number" name="urutan" class="form-control" placeholder="Urutan" value="{{ old('urutan') }}" required>
-					</div>
-				</div>
+				
 
-				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Keterangan</label>
-					<div class="col-sm-9">
-						<textarea name="keterangan" class="form-control" placeholder="Keterangan">{{ old('keterangan') }}</textarea>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Posisi Video</label>
-					<div class="col-sm-9">
-						<select name="posisi" class="form-control">
-							<option value="Video">Halaman Video</option>
-							<option value="Homepage">Halaman Homepage</option>
-						</select>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Bahasa</label>
-					<div class="col-sm-9">
-						<select name="bahasa" class="form-control">
-							<option value="Indonesia">Bahasa Indonesia</option>
-							<option value="Inggris">Bahasa Inggris</option>
-						</select>
-					</div>
-				</div>
 
 				<div class="form-group row">
 					<label class="col-sm-3 control-label text-right"></label>

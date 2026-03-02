@@ -102,6 +102,48 @@
           </li>
 
 
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-tags nav-icon"></i>
+              <p>Video<i class="fas fa-angle-left right"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item"><a href="{{ asset('admin/video') }}" class="nav-link"><i class="fa-brands fa-product-hunt"></i><p>Data Video</p></a>
+              </li>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-tags nav-icon"></i>
+              <p>Produk<i class="fas fa-angle-left right"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item"><a href="{{ asset('admin/produk') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Produk</p></a>
+              </li>
+
+
+            </ul>
+          </li>
+
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-tags nav-icon"></i>
+              <p>Modul<i class="fas fa-angle-left right"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item"><a href="{{ asset('admin/modul') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Modul</p></a>
+              </li>
+
+
+            </ul>
+          </li>
+
+
+
           <!-- Website Content -->
           <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Profil &amp; Layanan</span></li>
           <li class="batas"><hr></li>

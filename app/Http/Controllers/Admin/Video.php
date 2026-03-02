@@ -21,11 +21,24 @@ class Video extends Controller
         return view('admin/layout/wrapper',$data);
     }
 
+     // Tambah
+     public function tambah()
+     {
+         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
+       
+ 
+         $data = array(  'title'             => 'Tambah Video',
+                         'content'           => 'admin/video/tambah'
+                     );
+         return view('admin/layout/wrapper',$data);
+     }
+
+     
     // Edit
     public function edit($id_video)
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-        $video   = DB::table('video')->where('id_video',$id_video)->orderBy('urutan','ASC')->first();
+        $video   = DB::table('video')->where('id_video',$id_video)->first();
 
         $data = array(  'title'     => 'Edit Data Video',
                         'video'     => $video,
@@ -50,55 +63,23 @@ class Video extends Controller
     }
 
     // tambah
-    public function tambah(Request $request)
+    public function tambah_proses(Request $request)
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         request()->validate([
-                            'judul'     => 'required|unique:video',
-                            'video'     => 'required|unique:video',
-                            'gambar'    => 'file|image|mimes:jpeg,png,jpg|max:8024'
+                            'judul_video'     => 'required',
+                            'path_link_video'     => 'required|'
                             ]);
-        // UPLOAD START
-        $image                  = $request->file('gambar');
-        if(!empty($image)) {
-            $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
-            $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-            $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath        = './assets/upload/image/thumbs/';
-            $img = Image::make($image->getRealPath(),array(
-                'width'     => 150,
-                'height'    => 150,
-                'grayscale' => false
-            ));
-            $img->save($destinationPath.'/'.$input['nama_file']);
-            $destinationPath = './assets/upload/image/';
-            $image->move($destinationPath, $input['nama_file']);
-            // END UPLOAD
-            // UPLOAD START       
+       
             DB::table('video')->insert([
-                'judul'         => $request->judul,
-                'posisi'        => $request->posisi,
-                'keterangan'    => $request->keterangan,
-                'video'         => $request->video,
-                'urutan'        => $request->urutan,
-                'id_user'       => Session()->get('id_user'),
-                'bahasa'        => $request->bahasa
+                'judul_video'        => $request->judul_video,
+                'deskripsi_video'    => $request->deskripsi_video,
+                'path_link_video'    => $request->path_link_video,
+                'tanggal_video'     => date('Y-m-d H:i:s'),
+                
             ]);
             return redirect('admin/video')->with(['sukses' => 'Data telah ditambah']);
-        }else{
-            // UPLOAD START       
-            DB::table('video')->insert([
-                'judul'         => $request->judul,
-                'posisi'        => $request->posisi,
-                'keterangan'    => $request->keterangan,
-                'video'         => $request->video,
-                'urutan'        => $request->urutan,
-                'id_user'       => Session()->get('id_user'),
-                'bahasa'        => $request->bahasa,
-                'gambar'        => $input['nama_file'],
-            ]);
-            return redirect('admin/video')->with(['sukses' => 'Data telah ditambah']);
-        }
+        
     }
 
     // edit
@@ -106,48 +87,19 @@ class Video extends Controller
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         request()->validate([
-                           'judul'      => 'required',
-                            'video'     => 'required','gambar'    => 'file|image|mimes:jpeg,png,jpg|max:8024'
+                           'judul_video'      => 'required',
+                            'path_link_video'     => 'required'
                             ]);
-        // UPLOAD START
-        $image                  = $request->file('gambar');
-        if(!empty($image)) {
-            $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
-            $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-            $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath        = './assets/upload/image/thumbs/';
-            $img = Image::make($image->getRealPath(),array(
-                'width'     => 150,
-                'height'    => 150,
-                'grayscale' => false
-            ));
-            $img->save($destinationPath.'/'.$input['nama_file']);
-            $destinationPath = './assets/upload/image/';
-            $image->move($destinationPath, $input['nama_file']);
-            // END UPLOAD
+        
             DB::table('video')->where('id_video',$request->id_video)->update([
-                'judul'         => $request->judul,
-                'posisi'        => $request->posisi,
-                'keterangan'    => $request->keterangan,
-                'video'         => $request->video,
-                'urutan'        => $request->urutan,
-                'id_user'       => Session()->get('id_user'),
-                'bahasa'        => $request->bahasa,
-                'gambar'            => $input['nama_file'],
+
+                'judul_video'        => $request->judul_video,
+                'deskripsi_video'    => $request->deskripsi_video,
+                'path_link_video'    => $request->path_link_video,
+               
             ]);
             return redirect('admin/video')->with(['sukses' => 'Data telah diupdate']);
-        }else{
-            DB::table('video')->where('id_video',$request->id_video)->update([
-                'judul'         => $request->judul,
-                'posisi'        => $request->posisi,
-                'keterangan'    => $request->keterangan,
-                'video'         => $request->video,
-                'urutan'        => $request->urutan,
-                'id_user'       => Session()->get('id_user'),
-                'bahasa'        => $request->bahasa
-            ]);
-            return redirect('admin/video')->with(['sukses' => 'Data telah diupdate']);
-        }
+        
     }
 
     // Delete

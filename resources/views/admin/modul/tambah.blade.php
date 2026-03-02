@@ -4,46 +4,34 @@
 		<div class="modal-content">
 			<div class="modal-header">
 
-				<h4 class="modal-title" id="myModalLabel">Tambah data Produk</h4>
+				<h4 class="modal-title" id="myModalLabel">Tambah data Modul</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
-				<form action="{{ asset('admin/produk/tambah_proses') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+				<form action="{{ asset('admin/modul/tambah_proses') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 				{{ csrf_field() }}
 				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Judul Produk</label>
+					<label class="col-sm-3 control-label text-right">Judul Modul</label>
 					<div class="col-sm-9">
-						<input type="text" name="judul_produk" class="form-control" placeholder="Judul Produk" value="{{ old('judul_video') }}" required>
+						<input type="text" name="judul_modul" class="form-control" placeholder="Judul Modul" value="{{ old('judul_modul') }}" required>
 					</div>
 				</div>
-				
-        <div class="row form-group">
-          <label class="col-md-3 text-right">Upload gambar Produk</label>
-          <div class="col-md-6">
-            <input type="file" name="path_gambar_produk" class="form-control" placeholder="Upload gambar produk">
-          </div>
-        </div>
-        
-
-				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Link Produk </label>
-					<div class="col-sm-9">
-						<textarea name="path_link_produk" class="form-control" placeholder="Link Produk">{{ old('path_link_produk') }}</textarea>
-						
-					</div>
-				</div>
-
-				
 				
 
 				<div class="form-group row">
-					<label class="col-sm-3 control-label text-right">Deskripsi</label>
+					<label class="col-sm-3 control-label text-right">Deskripsi 1</label>
 					<div class="col-sm-9">
-						<textarea name="deskripsi_produk" class="form-control" placeholder="Deskripsi">{{ old('deskripsi_produk') }}</textarea>
+						<textarea name="deskripsi1_modul" class="form-control" placeholder="Deskripsi 1">{{ old('deskripsi1_modul') }}</textarea>
 					</div>
 				</div>
 
 				
+				<div class="form-group row">
+					<label class="col-sm-3 control-label text-right">Deskripsi 2</label>
+					<div class="col-sm-9">
+						<textarea name="deskripsi2_modul" class="form-control" placeholder="Deskripsi 2">{{ old('deskripsi2_modul') }}</textarea>
+					</div>
+				</div>
 
 
 				<div class="form-group row">

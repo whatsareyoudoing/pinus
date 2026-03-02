@@ -89,6 +89,69 @@
   </div>
   <!-- /.col -->
 
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-success elevation-1"><i class="fa-solid fa-video"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Video</span>
+        <span class="info-box-number">
+        	<?php 
+          $galeri = DB::table('video')->get(); 
+          echo $galeri->count();
+          ?>
+          <small>Video</small>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-info elevation-1"><i class="fa-solid fa-shop"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Produk</span>
+        <span class="info-box-number">
+        	<?php 
+          $galeri = DB::table('produk')->get(); 
+          echo $galeri->count();
+          ?>
+          <small>Produk</small>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon bg-light elevation-1"><i class="fa-solid fa-book"></i></span>
+  
+        <div class="info-box-content">
+          <span class="info-box-text">Modul</span>
+          <span class="info-box-number">
+            <?php 
+            $galeri = DB::table('modul')->get(); 
+            echo $galeri->count();
+            ?>
+            <small>Modul</small>
+          </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
 </div>
 <!-- /.row -->
 

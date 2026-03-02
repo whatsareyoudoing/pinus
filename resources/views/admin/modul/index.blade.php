@@ -8,9 +8,9 @@
     </div>
 @endif
 <p>
-    @include('admin/produk/tambah')
+    @include('admin/modul/tambah')
 </p>
-<form action="{{ asset('admin/produk/proses') }}" method="post" accept-charset="utf-8">
+<form action="{{ asset('admin/modul/proses') }}" method="post" accept-charset="utf-8">
     {{ csrf_field() }}
     <div class="row">
 
@@ -43,45 +43,33 @@
                             </div>
                         </th>
                         <th width="30%">JUDUL</th>
-                        <th width="35%">PRODUK</th>
-                        <th width="15%">LINK PRODUK</th>
-                        <th width="20%">DESKRIPSI</th>
+                        <th width="15%">DESKRIPSI 1</th>
+                        <th width="20%">DESKRIPSI 2</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <?php $i=1; foreach($produk as $produk) { ?>
+                    <?php $i=1; foreach($modul as $modul) { ?>
 
                     <td class="text-center">
                         <div class="icheck-primary">
-                            <input type="checkbox" class="icheckbox_flat-blue " name="id_produk[]"
-                                value="<?php echo $produk->id_produk; ?>" id="check<?php echo $i; ?>">
+                            <input type="checkbox" class="icheckbox_flat-blue " name="id_modul[]"
+                                value="<?php echo $modul->id_modul; ?>" id="check<?php echo $i; ?>">
                             <label for="check<?php echo $i; ?>"></label>
                         </div>
                     </td>
-                    <td><?php echo $produk->judul_produk; ?></td>
-                    <td class="text-center">
-                      <?php if($produk->path_gambar_produk!="") { ?>
-                        <img src="{{ asset('assets/upload/image/thumbs/'.$produk->path_gambar_produk) }}" class="img-thumbnail img-size-50 mr-2" >
-                        <?php }else{ ?>
-                        <img src="{{ asset('assets/upload/image/thumbs/'.website('icon')) }}" class="img-thumbnail img-size-50 mr-2" >
-                        <?php } ?>
-                      </td>
-                    <td>
-                        <a href=""  onclick="window.open('{{ $produk->path_link_produk }}', '_blank')">{{ $produk->path_link_produk }}</a>
+                    <td><?php echo $modul->judul_modul; ?></td>
+                   
 
-                    </td>
-
-
-                    <td><small><?php echo $produk->deskripsi_produk; ?></small></td>
-
+                    <td><small><?php echo $modul->deskripsi1_modul; ?></small></td>
+                    <td><small><?php echo $modul->deskripsi2_modul; ?></small></td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ asset('admin/produk/edit/' . $produk->id_produk) }}"
+                            <a href="{{ asset('admin/modul/edit/' . $modul->id_modul) }}"
                                 class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
 
-                            <a href="{{ asset('admin/produk/delete/' . $produk->id_produk) }}"
+                            <a href="{{ asset('admin/modul/delete/' . $modul->id_modul) }}"
                                 class="btn btn-danger btn-sm  delete-link">
                                 <i class="fa fa-trash"></i></a>
                         </div>
