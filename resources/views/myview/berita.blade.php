@@ -19,7 +19,7 @@
                         <div class="col-12">
                             <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
                                 <div class="card-hover-effect">
-                                    <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top w-100" alt="..." style="height: 400px; object-fit: cover;">
+                                    <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content w-100" alt="..." style="height: 400px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
 
                                     <div class="border">
                                         <div class="d-flex border-bottom mx-2 p-3" style="font-size: 0.9rem;">

@@ -15,7 +15,7 @@
                     <div class="row mb-5">
                         <div class="col-12">
                             <div class="">
-                                <img src="{{ asset('assets/upload/image/' . $read->gambar) }}" class="img-content rounded-top" alt="...">
+                                <img src="{{ asset('assets/upload/image/' . $read->gambar) }}" class="img-content" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="...">
                                 <div class="border">
                                     <div class="d-flex border-bottom mx-2 p-3">
                                         <div class="mx-2">

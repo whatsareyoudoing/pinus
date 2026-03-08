@@ -57,9 +57,9 @@
                 <li class="nav-item px-2 {{ request()->is('berita*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
-                {{-- <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('agenda') }}">Publikasi</a>
-                </li> --}}
+                <li class="nav-item px-2 {{ request()->is('event*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('event') }}">Events</a>
+                </li>
                 <li class="nav-item dropdown px-2 {{ request()->is('publikasi*') ? 'active' : '' }}">
                     <a class="nav-link"
                         href="#"

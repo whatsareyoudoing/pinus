@@ -49,13 +49,13 @@
                     <a href="{{ route('berita') }}" class="text-reset my-1  {{ request()->is('berita*') ? 'font-weight-bold' : '' }}">
                         Berita
                     </a>
-                    <a href="{{ route('agenda') }}" class="text-reset my-1  {{ request()->is('agenda*') ? 'font-weight-bold' : '' }}">
-                        Program dan kegiatan
+                    <a href="{{ route('event') }}" class="text-reset my-1  {{ request()->is('event*') ? 'font-weight-bold' : '' }}">
+                        Events
                     </a>
-                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
+                    <a href="{{ route('dokumen') }}" class="text-reset my-1  {{ request()->is('dokumen*') ? 'font-weight-bold' : '' }}">
                         Dokumen
                     </a>
-                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
+                    <a href="{{ route('kontak') }}" class="text-reset my-1  {{ request()->is('kontak*') ? 'font-weight-bold' : '' }}">
                         Kontak Kami
                     </a>
                 </div>

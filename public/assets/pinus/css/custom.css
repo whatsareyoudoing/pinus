@@ -473,7 +473,7 @@ div#google_translate_element .goog-te-gadget-simple {
 }
 
 .hero-pt{
-        padding-top:20rem!important;
+        padding-top:16rem!important;
     }
 
 @media (max-width: 992px) {
@@ -489,7 +489,7 @@ div#google_translate_element .goog-te-gadget-simple {
 }
 
 .img-tim{
-    width: 100%;
+    width: 90%;
     object-fit: cover;
     object-position: top;
     transition: transform 0.5s ease;
@@ -498,4 +498,8 @@ div#google_translate_element .goog-te-gadget-simple {
 .img-tim:hover {
     /* Perbesar 1.1 kali (10% lebih besar) */
     transform: scale(1.3); 
+}
+
+.breadcrumb-item{
+    font-size: 1.3rem;
 }

@@ -41,11 +41,11 @@ Route::get('berita', 'App\Http\Controllers\Berita@index')->name('berita');
 Route::get('berita/cari', 'App\Http\Controllers\Berita@cari')->name('cari-berita');
 Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
 Route::get('berita/kategori/{par1}', 'App\Http\Controllers\Berita@kategori');
-//agenda
-Route::get('agenda', 'App\Http\Controllers\Agenda@index')->name('agenda');
-Route::get('agenda/cari', 'App\Http\Controllers\Agenda@cari')->name('cari-agenda');
-Route::get('agenda/read/{par1}', 'App\Http\Controllers\Agenda@read');
-Route::get('agenda/kategori/{par1}', 'App\Http\Controllers\Agenda@kategori');
+//event
+Route::get('event', 'App\Http\Controllers\Event@index')->name('event');
+Route::get('event/cari', 'App\Http\Controllers\Event@cari')->name('cari-event');
+Route::get('event/read/{par1}', 'App\Http\Controllers\Event@read');
+Route::get('event/kategori/{par1}', 'App\Http\Controllers\Event@kategori');
 //dokumen
 Route::get('dokumen', 'App\Http\Controllers\Download@index')->name('dokumen');
 Route::get('dokumen/cari', 'App\Http\Controllers\Download@cari')->name('cari-dokumen');

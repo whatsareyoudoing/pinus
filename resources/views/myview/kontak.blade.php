@@ -14,7 +14,7 @@
         <h5 class="text-ijo-cel">Formulir Kontak</h5>
         <h1>Kontak Kami</h1>
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-12">
                 <div class="embed-responsive embed-responsive-16by9 border rounded shadow-sm mt-4">
                     <iframe
                         class="embed-responsive-item"
@@ -25,7 +25,7 @@
                     </iframe>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-12">
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="exampleInputName"></label>
@@ -50,14 +50,23 @@
 </div>
 <div class="container-fluid ijo-cel mt-5 p-5">
     <div class="row">
-        <div class="col-md-4 d-flex justify-content-center align-items-center text-white" style="height: 10rem;">
-            
+        <div class="col-md-2 d-flex justify-content-center  text-white text-justify" style="height: 10rem;">
+            Kantor PINUS Pusat Main Office : <br>
+            Jl. H. Tohir No.16, RT. 3/RW. 5, Lenteng Agung,  Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630
         </div>
-        <div class="col-md-4 d-flex justify-content-center align-items-center text-white" style="height: 10rem;">
-            
+        <div class="col-md-2 d-flex justify-content-center  text-white text-justify" style="height: 10rem;">
+            Kantor PINUS Sumsel : <br>
+            Komplek Perumahan Bukit Sejahtera, Blok G6, Bukit Baru, Palembang. Telp. 0811-718481
         </div>
-        <div class="col-md-4 d-flex justify-content-center align-items-center  text-white" style="height: 10rem;">
-            
+        <div class="col-md-2 d-flex justify-content-center   text-white text-justify" style="height: 10rem;">
+            Kantor PINUS Sulsel : <br>
+            Jl. Hertasning 5 No. 28 B Makassar, Sulawesi Selatan, Telp. 0411-885110
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="d-flex flex-column">
+                <a href="https://shopee.co.id" class="btn text-white p-2 mx-2 mt-3 text-left" style="background-color: #fa5030;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Shopee</a>
+                <a href="https://tokopedia.com" class="btn text-white p-2 mx-2 mt-3 text-left" style="background-color: #03ac0e;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Tokopedia</a>
+            </div>
         </div>
     </div>
 </div>

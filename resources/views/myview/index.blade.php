@@ -128,13 +128,16 @@
             const $navbar = $('#mainNavbar');
             const $logo = $('#logo');
 
+            if (isNavOpen && scrollTop > 10) {
+                $('#navbarNav').collapse('hide');
+            }
+
             // 2. Gunakan logic toggle agar lebih efisien
             if (isNavOpen) return;
 
             if (scrollTop > 50) {
                 $navbar.addClass('navbar-scrolled ijo-cel no-top').removeClass('bg-transparent');
 
-                // Ganti d-none dengan class opacity
                 $logo.addClass('small-logo').removeClass('big-logo');
             } else {
                 $navbar.removeClass('navbar-scrolled ijo-cel no-top').addClass('bg-transparent');
