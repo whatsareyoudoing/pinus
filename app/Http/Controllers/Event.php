@@ -201,7 +201,7 @@ class Event extends Controller
         $model_berita     = new Berita_model();
         $event     = $model->kategori_depan($id_kategori);
         $kategori = $model->list_kategori();
-		$recent_agenda = $model->home();
+		$recent_event = $model->home();
 		$recent_berita = $model_berita->home();
 
 
@@ -211,9 +211,10 @@ class Event extends Controller
                         'site'      => $site,
                         'event'    => $event,
                         'kategori'    => $kategori,
-                        'recent_agenda'    => $recent_agenda,
+                        'recent_event'    => $recent_event,
                         'recent_berita'    => $recent_berita,
-                        'content'   => 'event/index'
+                        'content'   => 'event/index',
+                        'test'=>'test'
                     );
         return view('myview/event',$data);
     }
