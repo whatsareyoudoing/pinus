@@ -78,9 +78,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-12 w-100 no-gutters">
-            <img src="{{ asset('assets/pinus/img/Untitled.png') }}" class="img-fluid w-100" alt="" style="height:600px">
-        </div>
+        <div class="col-lg-6 col-md-12 px-0">
+                <img src="{{ asset('assets/pinus/img/Untitled.png') }}" 
+                    class="img-fluid w-100 d-block mx-auto" 
+                    alt="Deskripsi Gambar">
+            </div>
     </div>
 </div>
 
@@ -114,9 +116,71 @@
     </div>
 </div>
 
+{{-- <div class="container-fluid" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(https://yiari.or.id/wp-content/uploads/2025/01/Hutan-Musim-5.webp)">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="font-weight-bold mb-3 mt-5 text-white text-center">Video Terbaru</h3>
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-6">
+                        
+                        <div class="border-0 shadow overflow-hidden" style="border-radius: 15px;">
+                            <div class="embed-responsive embed-responsive-21by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5RMg8QTZJLQ" allowfullscreen></iframe>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-4">
+                            <a href="{{ route('video-detail') }}" class="text-decoration-none text-white">
+                                <h3>Judul Video Utama</h3>
+                                <p class="text-white">Deskripsi video utama yang memberikan informasi lebih mendalam mengenai konten di atas.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+<div class="container-fluid py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                                            url('https://yiari.or.id/wp-content/uploads/2025/01/Hutan-Musim-5.webp'); 
+                                            background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center text-white">
+                <h2 class="font-weight-bold text-uppercase" style="letter-spacing: 2px;">Video Terbaru</h2>
+                
+            </div>
+        </div>
+
+        <div class="row align-items-center bg-white-transparent rounded-lg overflow-hidden shadow-lg" style="backdrop-filter: blur(5px);">
+            
+            <div class="col-lg-7 p-0">
+                <div class="embed-responsive embed-responsive-16by9 shadow" style="border-radius: 15px;">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5RMg8QTZJLQ" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-5 p-4 p-md-5">
+                <div class="text-white">
+                    <h2 class="font-weight-bold mb-3">Judul Video Utama</h2>
+                    <p class="text-light opacity-75 mb-4" style="line-height: 1.8;">
+                        Deskripsi video utama yang memberikan informasi lebih mendalam mengenai konten di atas. Jelajahi keindahan alam dan pelajari lebih lanjut tentang konservasi.
+                    </p>
+                    <a href="{{ route('video') }}" class="btn btn-ijo-cel btn-lg rounded-pill px-4 shadow-sm transition-hover">
+                        <i class="fas fa-play-circle mr-2"></i> Selengkapnya
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 {{-- Mitra --}}
-<h5 class="text-center mt-5 pt-5" style="color: #6eca6e">Partner Kami</h5>
+<h5 class="text-center mt-5" style="color: #6eca6e">Partner Kami</h5>
 <h1 class="text-center">Mitra</h1>
 <div class="carousel-mitra">
     <div class="grup-mitra">

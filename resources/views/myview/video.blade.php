@@ -9,155 +9,113 @@
 @include('myview.components.hero')
 {{-- Halaman Article --}}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md">
-            <form class="py-3" action="" method="get">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Video" aria-label="Cari Video" name="keywords" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn btn-ijo-cel px-5" type="submit" id="button-addon2">Cari</button>
+
+<div class="container py-5">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-12">
+            <form action="" method="get">
+                <div class="input-group bg-white border rounded-pill shadow-sm p-1">
+                    
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-transparent border-0 pl-4">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
                     </div>
+
+                    <input type="text" 
+                        class="form-control border-0 shadow-none py-4" 
+                        placeholder="Cari video..." 
+                        name="keywords">
+
+                    <div class="input-group-append">
+                        <button class="btn btn-ijo-cel rounded-pill px-4 m-1 shadow-sm" type="submit">
+                            Cari
+                        </button>
+                    </div>
+                    
                 </div>
             </form>
         </div>
     </div>
+
     <div class="row mb-5">
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/5RMg8QTZJLQ"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
+        <div class="col-12">
+            <h3 class="font-weight-bold mb-3">Video Terbaru</h3>
+            <div class="card border-0 shadow overflow-hidden" style="border-radius: 15px;">
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5RMg8QTZJLQ" allowfullscreen></iframe>
+                </div>
+                <div class="card-body p-4">
+                    <a href="{{ route('video-detail') }}" class="text-decoration-none text-dark">
+                        <h3>Judul Video Utama</h3>
+                        <p class="text-muted">Deskripsi video utama yang memberikan informasi lebih mendalam mengenai konten di atas.</p>
+                    </a>
+                </div>
             </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/83-eTFwsGsk"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/ruGhZqSc_q8"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/sFzI5xENTSc"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/_HjkV7_7ap8"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="mt-4 shadow" style="border-radius: 15px;
-                    width:100% ;
-                    border:1px solid rgb(216, 216, 216)">
-                <iframe class="video" style="border-radius: 15px 15px 0 0;
-                    width:100%;"
-                    src="https://www.youtube.com/embed/Ou8NwGwme_A"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <a href="{{ route('video-detail') }}" class="p-3 text-decoration-none text-dark" style="">
-                    <h5 class="px-3">Judul Video</h5>
-                    <p class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae repellendus perspiciatis a labore, hic quos?</p>
-                </a>
-            </div>
-
         </div>
     </div>
-    <nav>
-        <ul class="pagination">
-            
-                            <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
-                    <span class="page-link" aria-hidden="true">‹</span>
-                </li>
-            
-            
-                            
-                
-                
-                                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
-                                                                                                <li class="page-item"><a class="page-link" href="">2</a></li>
-                                                                        
-            
-                            <li class="page-item">
-                    <a class="page-link" href="" rel="next" aria-label="Next »">›</a>
-                </li>
-                    </ul>
-    </nav>
+
+    <div class="row mt-5 mb-3">
+        <div class="col-12">
+            <h4 class="font-weight-bold">Video Lainnya</h4>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 15px;">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/83-eTFwsGsk" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <a href="{{ route('video-detail') }}" class="text-decoration-none text-dark">
+                        <h5 class="font-weight-bold">Judul Video</h5>
+                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 15px;">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/83-eTFwsGsk" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <a href="{{ route('video-detail') }}" class="text-decoration-none text-dark">
+                        <h5 class="font-weight-bold">Judul Video</h5>
+                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 15px;">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/83-eTFwsGsk" allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <a href="{{ route('video-detail') }}" class="text-decoration-none text-dark">
+                        <h5 class="font-weight-bold">Judul Video</h5>
+                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center">
+            <nav aria-label="Page navigation">
+                <ul class="pagination shadow-sm">
+                    <li class="page-item disabled"><span class="page-link">‹</span></li>
+                    <li class="page-item active"><span class="page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">›</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </div>
 
 @endsection

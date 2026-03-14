@@ -7,16 +7,16 @@
     <li class="breadcrumb-item active">Events</li>
 @endsection
 @include('myview.components.hero')
-    <div class="container mb-5">
+    <div class="container-fluid px-5 d-flex justify-content-center mb-5">
         <div class="row">
             <div class="col-12 col-md-9">
-                <div class="container">
+                <div class="container-fluid pl-5">
                     <div class="row">
                         @if(count($event)== 0)
                             <h5>Tidak Ada Data</h5>
                         @endif
                         @foreach ( $event as $a )
-                            <div class="col-md-4 py-2">
+                            <div class="col-md-3 py-2">
                                 <a href="{{ url('event/read/'.$a->slug_agenda) }}" class="text-decoration-none text-dark">
                                     <div class="card" style="width: 100%; border-radius: 15px; overflow: hidden; transition: transform 0.3s;">
                                         <img src="{{ asset('assets/upload/image/' . $a->gambar) }}" class="card-img-top img-card" alt="..." style="height: 180px; object-fit: cover;">
@@ -25,26 +25,46 @@
                                                 {{ Str::limit($a->judul_agenda, 20, '...') }}
                                             </h5>
 
-                                            <div class="d-flex border-bottom mb-2 pb-2" style="font-size: 0.75rem;">
-                                                <div class="pe-2 border-end">
-                                                    <i class="fas fa-user text-ijo-cel"></i> {{ Str::limit($a->nama, 10, '..') }}
-                                                </div>
-                                                <div class="px-2 border-end">
-                                                    <i class="fas fa-calendar text-ijo-cel"></i>
-                                                    {{ \Carbon\Carbon::parse($a->tanggal)->format('d/m/Y') }}
-                                                </div>
+                                            <div class="d-flex border-top flex-column mb-2 py-2" style="font-size: 0.75rem;">
+                                                @if(\Carbon\Carbon::parse($a->tanggal)->isFuture() || \Carbon\Carbon::parse($a->tanggal)->isToday())
+                                                    <div class="text-center alert alert-success">
+                                                        Event Hari Ini Atau Akan Datang
+                                                    </div>
+                                                @else
+                                                    <div class="text-center alert alert-danger">
+                                                        Event Terdahulu
+                                                    </div>
+                                                @endif
                                                 <div class="ps-2">
-                                                    <i class="fas fa-folder text-ijo-cel"></i>
-                                                    {{ $a->nama_kategori_agenda }}
+                                                    <i class="-4 fas fa-folder " style="color: #f9900a;"></i>
+                                                    <span class="pl-2 text-secondary">
+
+                                                        {{ $a->nama_kategori_agenda }}
+                                                    </span>
                                                 </div>
+                                                <div class="pe-2 border-end">
+                                                    <i class="-4 fas fa-user " style="color: #f9900a;"></i>
+                                                    <span class="pl-2 text-secondary">
+                                                        
+                                                        {{ Str::limit($a->nama, 10, '..') }}
+                                                    </span> 
+                                                </div>
+                                                <div class="border-end">
+                                                    <i class="-4 fas fa-calendar " style="color: #f9900a;"></i>
+                                                    <span class="pl-2 text-secondary">
+
+                                                        {{ \Carbon\Carbon::parse($a->tanggal)->format('d/m/Y') }}
+                                                    </span>
+                                                </div>
+                                                
                                             </div>
 
-                                            <div class="card-text text-muted" style="font-size: 0.9rem;">
+                                            {{-- <div class="card-text text-muted" style="font-size: 0.9rem;">
                                                 {!! Str::limit(strip_tags($a->isi), 30, '...') !!}
-                                            </div>
+                                            </div> --}}
 
-                                            <div class="mt-3 text-ijo-cel fw-bold d-flex justify-content-between" style="font-size: 0.85rem;">
-                                                Selengkapnya <i class="fas fa-arrow-right"></i>
+                                            <div class="mt-1 text-ijo-cel fw-bold d-flex justify-content-between align-items-center" style="font-size: 0.85rem;">
+                                                Selengkapnya <i class="pt-2 fas fa-arrow-right"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +78,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-3">
-                <div class="container-fluid">
+                <div class="container-fluid pr-5">
                     <div class="row">
                         <div class="col-12">
                             <form class="py-3" action="{{ route('cari-event') }}" method="get">
