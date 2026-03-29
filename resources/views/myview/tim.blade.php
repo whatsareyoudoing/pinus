@@ -28,7 +28,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem; ">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -145,7 +145,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>
@@ -173,7 +173,7 @@
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">Rabin Ibnu Zainal</h3>
+                    <h3 class="card-text">Andis Amir</h3>
                     <p>Direktur</p>
                 </div>
             </div>

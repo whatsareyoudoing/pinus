@@ -53,7 +53,9 @@
                     </div>
                     @endforeach
                 </div>
-                {{ $berita->links() }}
+                <div class="d-flex justify-content-center">
+                    {{ $berita->links() }}
+                </div>
             </div>
             <div class="col-12 col-md-3">
                 <div class="container-fluid">

@@ -10,7 +10,7 @@
             <div class="content-carousel">
                 <h1 class="text-white notranslate">Pinus</h1>
                 <h2 class="text-white notranslate">Pilar Nusantara</h2>
-                <p class="text-white notranslate" style="padding-left: 4px;">
+                <p class="text-white" style="padding-left: 4px;">
                     Membangun Kemitraan bersama Pemerintah, Bisnis dan Masyarakat untuk
                 </p>
                 <p class="text-white" style="margin-top:-18px;padding-left: 4px;">
@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<div class="container my-5">
+<div class="container">
     <div class="row no-gutters">
         <div class="col-lg-6 w-100 col-md-12">
             <div class="container-fluid p-0">
@@ -92,11 +92,11 @@
         <h5 class="text-center" style="color: #6eca6e">Blog Kami</h5>
         <h1 class="text-center" style="color: #ffffff">Berita Terkini</h1>
     </div>
-    <div class="container-fluid px-lg-5">
+    <div class="container px-lg-5">
 
         <div class="row d-flex justify-content-center">
             @foreach ($berita as $b)
-                <div class="col-12 col-md-3 p-4">
+                <div class="col-12 col-md-4">
                     <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
                     <div class="card border-0 shadow h-100 " style="border-radius: 30px;">
                         <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="card-img-top " style="border-radius: 20px 20px 0 0;" alt="...">
@@ -108,7 +108,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-12 d-flex justify-content-center">
                 <a href="{{ route('berita') }}" class="btn btn-ijo-cel px-5 py-3">Selengkapnya</a>
             </div>
@@ -148,12 +148,6 @@
                                             url('https://yiari.or.id/wp-content/uploads/2025/01/Hutan-Musim-5.webp'); 
                                             background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="container py-5">
-        <div class="row mb-4">
-            <div class="col-12 text-center text-white">
-                <h2 class="font-weight-bold text-uppercase" style="letter-spacing: 2px;">Video Terbaru</h2>
-                
-            </div>
-        </div>
 
         <div class="row align-items-center bg-white-transparent rounded-lg overflow-hidden shadow-lg" style="backdrop-filter: blur(5px);">
             

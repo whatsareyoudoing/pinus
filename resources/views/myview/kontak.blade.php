@@ -14,20 +14,8 @@
         <h5 class="text-ijo-cel">Formulir Kontak</h5>
         <h1>Kontak Kami</h1>
         <div class="row">
-            {{-- <div class="col-lg-6 col-sm-12">
-                <div class="border rounded shadow-sm mt-4">
-                    <iframe
-                        class="rounded"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.3496014295325!2d112.64370737483693!3d-7.153993792850383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd8005e53c4e819%3A0xa73ae0845e0e3e58!2sRumah%20Sakit%20Grha%20Husada!5e0!3m2!1sid!2sid!4v1708945000000!5m2!1sid!2sid"
-                        allowfullscreen=""
-                        loading="lazy"
-                        style="border:0; width: 100%; height: 100%; min-height: 100%;"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div> --}}
             <div class="col-lg-6 col-sm-12 d-flex align-items-stretch">
-                <div class="border rounded shadow-sm mt-4 w-100" style="min-height: 300px;">
+                <div class="border rounded shadow-sm mt-4 w-100" style="max-height: 419px;">
                     <iframe
                         class="rounded"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.3496014295325!2d112.64370737483693!3d-7.153993792850383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd8005e53c4e819%3A0xa73ae0845e0e3e58!2sRumah%20Sakit%20Grha%20Husada!5e0!3m2!1sid!2sid!4v1708945000000!5m2!1sid!2sid"

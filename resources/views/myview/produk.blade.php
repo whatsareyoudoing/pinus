@@ -10,11 +10,11 @@
 {{-- Halaman Article --}}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md">
+    <div class="row d-flex justify-content-end">
+        <div class="col-md-5">
             <form class="py-3" action="" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Produk" aria-label="Cari Produk" name="keywords" aria-describedby="button-addon2">
+                    <input type="text" class="form-control py-4" placeholder="Cari Produk" aria-label="Cari Produk" name="keywords" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn btn-ijo-cel px-5" type="submit" id="button-addon2">Cari</button>
                     </div>
@@ -72,18 +72,20 @@
             </div>
         </div>
     </div>
-    <nav>
-        <ul class="pagination">  
-            <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
-                <span class="page-link" aria-hidden="true">‹</span>
-            </li>
-            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
-            <li class="page-item"><a class="page-link" href="">2</a></li>
-            <li class="page-item">
-                <a class="page-link" href="" rel="next" aria-label="Next »">›</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="d-flex justify-content-center">
+        <nav>
+            <ul class="pagination">  
+                <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
+                    <span class="page-link" aria-hidden="true">‹</span>
+                </li>
+                <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="" rel="next" aria-label="Next »">›</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
 @endsection

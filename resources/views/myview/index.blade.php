@@ -70,36 +70,6 @@
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
 <script>
 
-    // $(document).ready(function () {
-
-    //     $('#navbarNav')
-    //         .on('show.bs.collapse', function () {
-    //             $('#mainNavbar')
-    //                 .addClass('ijo-cel')
-    //                 .removeClass('bg-transparent');
-    //         })
-    //         .on('hide.bs.collapse', function () {
-    //             $('#mainNavbar')
-    //                 .removeClass('ijo-cel')
-    //                 .addClass('bg-transparent');
-    //         });
-
-    // });
-
-    // $(window).on('scroll', function () {
-    //     if ($(this).scrollTop() > 50) {
-    //         $('#mainNavbar')
-    //             .addClass('navbar-scrolled ijo-cel no-top')
-    //             .removeClass('bg-transparent');
-
-    //     } else {
-    //         $('#mainNavbar')
-    //             .removeClass('navbar-scrolled ijo-cel no-top')
-    //             .addClass('bg-transparent');
-
-    //     }
-    // });
-
     $(document).ready(function () {
 
         let isNavOpen = false;
@@ -147,10 +117,21 @@
             }
         });
 
+    });
 
+    $(document).ready(function(){
 
+        // saat klik thumbnail
+        $('[data-toggle="modal"]').click(function(){
+            var videoID = $(this).data("video");
+            var url = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
+            $("#videoFrame").attr('src', url);
+        });
 
-
+        // saat modal ditutup (klik luar / close)
+        $('#videoModal').on('hidden.bs.modal', function () {
+            $("#videoFrame").attr('src', '');
+        });
 
     });
 

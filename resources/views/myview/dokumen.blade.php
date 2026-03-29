@@ -10,10 +10,10 @@
 {{-- Halaman Dokumen --}}
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12 d-flex justify-content-end">
             <form class="py-3 px-3" action="{{ route('cari-dokumen') }}" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari Dokumen" aria-label="Cari Dokumen" name="keywords" aria-describedby="button-addon2">
+                    <input type="text" class="form-control py-4" placeholder="Cari Dokumen" aria-label="Cari Dokumen" name="keywords" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-ijo-cel px-4" type="submit" id="button-addon2">Cari</button>
                     </div>
