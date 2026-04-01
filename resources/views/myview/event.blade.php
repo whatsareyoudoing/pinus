@@ -16,7 +16,7 @@
                             <h5>Tidak Ada Data</h5>
                         @endif
                         @foreach ( $event as $a )
-                            <div class="col-md-3 py-2">
+                            <div class="col-md-4 py-2">
                                 <a href="{{ url('event/read/'.$a->slug_agenda) }}" class="text-decoration-none text-dark">
                                     <div class="card" style="width: 100%; border-radius: 15px; overflow: hidden; transition: transform 0.3s;">
                                         <img src="{{ asset('assets/upload/image/' . $a->gambar) }}" class="card-img-top img-card" alt="..." style="height: 180px; object-fit: cover;">
@@ -45,9 +45,9 @@
                                                 <div class="pe-2 border-end">
                                                     <i class="-4 fas fa-user " style="color: #f9900a;"></i>
                                                     <span class="pl-2 text-secondary">
-                                                        
+
                                                         {{ Str::limit($a->nama, 10, '..') }}
-                                                    </span> 
+                                                    </span>
                                                 </div>
                                                 <div class="border-end">
                                                     <i class="-4 fas fa-calendar " style="color: #f9900a;"></i>
@@ -56,7 +56,7 @@
                                                         {{ \Carbon\Carbon::parse($a->tanggal)->format('d/m/Y') }}
                                                     </span>
                                                 </div>
-                                                
+
                                             </div>
 
                                             {{-- <div class="card-text text-muted" style="font-size: 0.9rem;">

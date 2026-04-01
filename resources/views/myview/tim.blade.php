@@ -22,7 +22,7 @@
 <div class="container mb-5">
     <h1 class="">Direktur Eksekutif</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem; ">
@@ -39,7 +39,7 @@
 <div class="container mb-5" style=" border-bottom: 1px solid;">
     <h1 class="">Direktur</h1>
     <div class="row mb-5">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -78,7 +78,7 @@
 <div class="container mb-5">
     <h1 class="">Program Officer</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -106,7 +106,7 @@
 <div class="container mb-5">
     <h1 class="">Finance Officer</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -117,7 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -156,7 +156,7 @@
 <div class="container mb-5">
     <h1 class="">Administrasi</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
                 <div class="img-container">
                     <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">

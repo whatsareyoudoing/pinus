@@ -1,8 +1,8 @@
 {{-- footer --}}
-<div class="container-fluid py-5" style="background-color: #f8f7f0">
+<div class="container-fluid py-4" style="background-color: #f8f7f0">
     <div class="container border-bottom">
         <div class="row d-flex justify-content-end">
-            <div class="col-md-6 d-flex justify-content-end mt-5">
+            <div class="col-md-6 d-flex justify-content-end">
                 <ul class="d-flex mr-5" style="font-size:3vh;">
                     <div class="mx-2">
                         @php
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3">
+    <div class="container">
         <div class="row">
             <div class="col-12 mobile-border col-md-4">
                 <h5>Kontak</h5>
