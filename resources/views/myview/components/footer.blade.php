@@ -3,7 +3,7 @@
     <div class="container border-bottom">
         <div class="row d-flex justify-content-end">
             <div class="col-md-6 d-flex justify-content-end">
-                <ul class="d-flex mr-5" style="font-size:3vh;">
+                <ul class="d-flex justify-content-end" style="font-size:3vh;">
                     <div class="mx-2">
                         @php
                             // Ambil nomor
@@ -17,20 +17,20 @@
                                 $telp = '62' . substr($telp, 1);
                             }
                         @endphp
-                        <a class="p-0 text-dark" href="https://wa.me/{{ $telp }}"><i class="fab fa-whatsapp" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://wa.me/{{ $telp }}"><i class="fab fa-whatsapp" style="font-size:25px"></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="https://www.instagram.com/{{ $site->instagram }}"><i class="fab fa-instagram" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.instagram.com/{{ $site->instagram }}"><i class="fab fa-instagram" style="font-size:25px"></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="https://www.facebook.com/{{ $site->facebook }}"><i class="fab fa-facebook-square" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.facebook.com/{{ $site->facebook }}"><i class="fab fa-facebook-square" style="font-size:25px"></i></a>
                     </div>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-around">
             <div class="col-12 mobile-border col-md-4">
                 <h5>Kontak</h5>
                 <div class="mb-3 text-justify">
@@ -40,7 +40,7 @@
                     <a href="{{ route('kontak') }}" class="btn btn-ijo-cel align-items-end">Kontak Kami</a>
                 </div>
             </div>
-            <div class="col-12 mobile-border col-md-2 pl-5">
+            <div class="col-12 mobile-border col-md-2">
                 <h5>Halaman</h5>
                 <div class="d-flex flex-column">
                     <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
@@ -70,11 +70,11 @@
                 </div>
                 @endforeach
             </div>
-            <div class="col-12 mobile-border col-md-3 d-flex justify-content-end text-justify pb-3">
+            <div class="col-12 mobile-border col-md-3 text-justify pb-3">
                 <div class="d-flex flex-column">
                     <h5>Produk Kami</h5>
-                    <a href="https://shopee.co.id" class="btn text-white p-2 mx-2 mt-3 text-left" style="background-color: #fa5030;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Shopee</a>
-                    <a href="https://tokopedia.com" class="btn text-white p-2 mx-2 mt-3 text-left" style="background-color: #03ac0e;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Tokopedia</a>
+                    <a href="https://shopee.co.id" class="btn text-white p-2 mt-3 text-left" style="background-color: #fa5030;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Shopee</a>
+                    <a href="https://tokopedia.com" class="btn text-white p-2 mt-3 text-left" style="background-color: #03ac0e;width: 145px; height: 50px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart px-2"></i>Tokopedia</a>
                 </div>
             </div>
         </div>

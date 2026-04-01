@@ -96,7 +96,7 @@
 
         <div class="row d-flex justify-content-center">
             @foreach ($berita as $b)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 mt-4">
                     <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
                     <div class="card border-0 shadow h-100 " style="border-radius: 30px;">
                         <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="card-img-top " style="border-radius: 20px 20px 0 0;" alt="...">
@@ -149,7 +149,7 @@
 {{-- Mitra --}}
 <h5 class="text-center mt-5" style="color: #6eca6e">Partner Kami</h5>
 <h1 class="text-center">Mitra</h1>
-<div class="carousel-mitra">
+<div class="carousel-mitra pb-3">
     <div class="grup-mitra">
         @foreach ($mitra as $m )
         <div class="card-mitra">
