@@ -7,13 +7,15 @@
     <li class="breadcrumb-item active">Events</li>
 @endsection
 @include('myview.components.hero')
-    <div class="container-fluid px-5 d-flex justify-content-center mb-5">
-        <div class="row">
+    <div class="container-fluid px-5  mb-5">
+        <div class="row d-flex justify-content-between">
             <div class="col-12 col-md-9">
-                <div class="container-fluid pl-5">
+                <div class="container-fluid">
                     <div class="row">
                         @if(count($event)== 0)
-                            <h5>Tidak Ada Data</h5>
+                        <div class="col-md-12">
+                            <h5 class="w-100">Tidak Ada Data</h5>
+                        </div>
                         @endif
                         @foreach ( $event as $a )
                             <div class="col-md-4 py-2">
