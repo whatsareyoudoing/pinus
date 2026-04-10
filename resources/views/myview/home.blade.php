@@ -87,12 +87,12 @@
 </div>
 
 
-<div class="container-fluid py-5 px-lg-5" style="background-color: #073124;">
+<div class="container-fluid py-5" style="background-color: #073124;">
     <div class=" pt-3">
         <h5 class="text-center" style="color: #6eca6e">Blog Kami</h5>
         <h1 class="text-center" style="color: #ffffff">Berita Terkini</h1>
     </div>
-    <div class="container px-lg-5">
+    <div class="container px-lg-4">
 
         <div class="row d-flex justify-content-center">
             @foreach ($berita as $b)
