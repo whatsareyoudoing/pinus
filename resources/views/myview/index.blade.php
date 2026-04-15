@@ -68,6 +68,8 @@
 <script src="{{ asset('assets/pinus/js/isotope.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
+
+
 <script>
 
     $(document).ready(function () {

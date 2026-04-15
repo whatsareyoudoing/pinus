@@ -16,6 +16,14 @@ h1 {
     font-family: 'Rubik', sans-serif;
     font-weight: 500; /* Tebal */
 }
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
+.counterimg{
+    width: 150px;
+}
+
 h2, h3,h4,h5 .navbar {
     font-family: 'Inter', sans-serif;
     font-weight: 500; /* Tebal */

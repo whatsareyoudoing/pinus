@@ -32,7 +32,7 @@
     <div class="container">
         <div class="row d-flex justify-content-around">
             <div class="col-12 mobile-border col-md-3">
-                <h5>Halaman</h5>
+                <h5 class="font-weight-bold">Halaman</h5>
                 <div class="d-flex flex-column">
                     <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
                         Beranda
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col-12 mobile-border col-md-3 text-justify">
-                <h5>Berita</h5>
+                <h5 class="font-weight-bold">Berita</h5>
                 @foreach ( $recent_berita as $r )
                 <div class="d-flex flex-column my-2">
                     <div class="row">
@@ -63,7 +63,7 @@
             </div>
             <div class="col-12 mobile-border col-md-3 text-justify pb-3">
                 <div class="d-flex flex-column">
-                    <h5>Produk Kami</h5>
+                    <h5 class="font-weight-bold">Produk Kami</h5>
 
                     <a href="https://shopee.co.id" class="mt-3 text-white text-left" target="_blank" rel="noopener noreferrer">
                         <img src="{{ asset('assets/pinus/img/shopee.png') }}"
@@ -80,15 +80,17 @@
                 </div>
             </div>
             <div class="col-12 mobile-border col-md-3">
-                <h5>Pengunjung</h5>
+                <h5 class="font-weight-bold">Pengunjung</h5>
                 <div class="mb-3 text-justify">
-
+                     <a class="btn" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
+                     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1532370/t/1"></script>
+                     <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ab608acb03bf2a3a66f1ef7d39262ce18b1b13fe'></script>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid ijo-cel border-top py-5">
+<div class="container-fluid ijo-cel border-top py-4">
     <div class="row">
         <div class="col text-white text-center">
             Copyright © 2026 All Rights Reserved.
