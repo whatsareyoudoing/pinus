@@ -35,8 +35,8 @@
         <div class="col-2">
         </div>
         <div class="col-6 ml-auto text-right">
-            <a href="{{ asset('assets/upload/file/'.$d->file) }}" class="btn btn-ijo-cel btn-sm px-5 py-2" target="_blank">
-                <i class="fa fa-download mr-2"></i>Unduh
+            <a href="{{ filter_var($d->file, FILTER_VALIDATE_URL) ? $d->file : asset('assets/upload/file/'.$d->file) }}" class="btn btn-ijo-cel btn-sm px-5 py-2" target="_blank">
+                <i class="fa fa-link mr-2"></i>Buka Link
             </a>
         </div>
     </div>

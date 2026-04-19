@@ -28,9 +28,9 @@
 
 
 	<div class="row form-group">
-		<label class="col-md-3 text-right">Upload File</label>
+		<label class="col-md-3 text-right">Link File</label>
 		<div class="col-md-9">
-			<input type="file" name="gambar" class="form-control" placeholder="Upload gambar">
+			<input type="url" name="gambar" class="form-control" required="required" placeholder="Masukkan link file (misal: Google Drive, Dropbox, dll)" value="<?php echo $download->file ?>">
 		</div>
 	</div>
 

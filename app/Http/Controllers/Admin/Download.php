@@ -132,26 +132,17 @@ class Download extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         request()->validate([
                             'judul_download'  => 'required|unique:download',
-                            'gambar'        => 'required|file|mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx|max:8024',
+                            'gambar'          => 'required',
                            
                             ]);
                    
-        // UPLOAD START
-        $image                  = $request->file('gambar');
-        $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
-        $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-        $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = './assets/upload/file';
-        $image->move($destinationPath, $input['nama_file']);
-        // END UPLOAD
-       
         DB::table('download')->insert([
             
             'id_user'               => Session()->get('id_user'),
             'judul_download'        => $request->judul_download,
             'jenis_download'        =>'Download',
             'isi'                   => $request->isi,
-            'file'                => $input['nama_file']
+            'file'                => $request->gambar
         
         ]);
         return redirect('admin/project')->with(['sukses' => 'Data telah ditambah']);
@@ -163,38 +154,21 @@ class Download extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         request()->validate([
                             'judul_download'    => 'required',
-                            'gambar'        => 'required|file|mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx|max:8024',
+                            'gambar'            => 'required',
                            
                             ]);
-        // UPLOAD START
-        $image                  = $request->file('gambar');
-        if(!empty($image)) {
-            $filenamewithextension  = $request->file('gambar')->getClientOriginalName();
-            $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-            $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = './assets/upload/file';
-            $image->move($destinationPath, $input['nama_file']);
-            // END UPLOAD
-            DB::table('download')->where('id_download',$request->id_download)->update([
-              
-                'id_user'               => Session()->get('id_user'),
-                'judul_download'        => $request->judul_download,
-                'jenis_download'        =>'Download',
-                'isi'                   => $request->isi,
-                'file'                => $input['nama_file']
-                
-            ]);
-        }else{
-            DB::table('download')->where('id_download',$request->id_download)->update([
-               
-                'id_user'               => Session()->get('id_user'),
-                'judul_download'        => $request->judul_download,
-                'jenis_download'        =>'Download',
-                'isi'                   => $request->isi
-               
-            ]);
-        }
-        return redirect('admin/project')->with(['sukses' => 'Data telah ditambah']);
+
+        DB::table('download')->where('id_download',$request->id_download)->update([
+            
+            'id_user'               => Session()->get('id_user'),
+            'judul_download'        => $request->judul_download,
+            'jenis_download'        =>'Download',
+            'isi'                   => $request->isi,
+            'file'                => $request->gambar
+            
+        ]);
+        
+        return redirect('admin/project')->with(['sukses' => 'Data telah diubah']);
     }
 
     // Delete

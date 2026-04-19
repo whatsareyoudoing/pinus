@@ -31,9 +31,9 @@
 
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">Upload file</label>
+        <label class="col-md-3 text-right">Link file</label>
         <div class="col-md-9">
-            <input type="file" name="gambar" class="form-control" required="required" placeholder="Upload gambar">
+            <input type="url" name="gambar" class="form-control" required="required" placeholder="Masukkan link file (misal: Google Drive, Dropbox, dll)" value="{{ old('gambar') }}">
         </div>
     </div>
 

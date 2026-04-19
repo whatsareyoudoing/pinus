@@ -51,7 +51,7 @@
     <td>
       <div class="btn-group">
         {{-- <a href="{{ asset('admin/project/unduh/'.$download->id_download) }}" class="btn btn-success btn-sm" target="_blank"><i class="fa fa-download"></i> Unduh</a> --}}
-        <a href="{{ asset('assets/upload/file/'.$download->file) }}" class="btn btn-success btn-sm" target="_blank"><i class="fa fa-download"></i> Unduh</a>
+        <a href="{{ filter_var($download->file, FILTER_VALIDATE_URL) ? $download->file : asset('assets/upload/file/'.$download->file) }}" class="btn btn-success btn-sm" target="_blank"><i class="fa fa-link"></i> Buka Link</a>
         <a href="{{ asset('admin/project/edit/'.$download->id_download) }}" 
           class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
           <a href="{{ asset('admin/project/delete/'.$download->id_download) }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i></a>
