@@ -82,7 +82,7 @@
             <div class="col-12 mobile-border col-md-3">
                 <h5 class="font-weight-bold">Pengunjung</h5>
                 <div class="mb-3 text-justify">
-                     <a class="btn" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
+                     <a class="btn d-none" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
                      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1532370/t/1"></script>
                      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ab608acb03bf2a3a66f1ef7d39262ce18b1b13fe'></script>
                 </div>
