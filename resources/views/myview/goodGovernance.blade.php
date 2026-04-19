@@ -1,6 +1,7 @@
-@section('title', 'Good Governance Pilar Nusantara')
+@section('title', 'Good Governance')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/tentang-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item active">Good Governance</li>

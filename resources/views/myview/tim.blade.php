@@ -1,6 +1,7 @@
-@section('title', 'Tim Pilar Nusantara')
+@section('title', 'Tim PINUS')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/tentang-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item active">Tim</li>
@@ -18,118 +19,167 @@
     </div>
 </div>
 
-<h1 class="text-center">Direktur Utama</h1>
 <div class="container mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+    <h1 class="">Direktur Eksekutif</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem; ">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Rabin Ibnu Zainal</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<h1 class="text-center">Staff Utama</h1>
 <div class="container mb-5" style=" border-bottom: 1px solid;">
-    <div class="row justify-content-center mb-5">
+    <h1 class="">Direktur</h1>
+    <div class="row mb-5">
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
                 </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<h1 class="text-center">Direktur Bagian</h1>
 <div class="container mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+    <h1 class="">Program Officer</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+        <div class="col-md-3">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<h1 class="text-center">Staff Bagian</h1>
 <div class="container mb-5">
-    <div class="row justify-content-center">
+    <h1 class="">Finance Officer</h1>
+    <div class="row">
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
-                <img src="https://eftindonesia.org/images/home/hero.jpg" class="card-img-top" style=" height: 18rem;">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="container mb-5">
+    <h1 class="">Administrasi</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mt-4 shadow" style="width: 100%; border-radius:15px">
+                <div class="img-container">
+                    <img src="https://pinus.or.id/wp-content/uploads/2018/08/andis-298x300.jpg" class="img-tim" style=" max-height: 25rem;">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-text">Andis Amir</h3>
+                    <p>Direktur</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection

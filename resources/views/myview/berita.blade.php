@@ -1,15 +1,16 @@
-@section('title', 'Berita Pilar Nusantara')
+@section('title', 'Berita ')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/berita-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item active">Berita</li>
 @endsection
 @include('myview.components.hero')
-    <div class="container-fluid px-0 px-md-5 mb-5">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12 col-md-9">
-                <div class="container-fluid">
+                <div class="container-fluid mt-3">
                     @if(count($berita)== 0)
                             <h5>Tidak Ada Data</h5>
                     @endif
@@ -18,7 +19,7 @@
                         <div class="col-12">
                             <a href="{{ url('berita/read/'.$b->slug_berita) }}" class="text-decoration-none text-dark">
                                 <div class="card-hover-effect">
-                                    <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content rounded-top w-100" alt="..." style="height: 400px; object-fit: cover;">
+                                    <img src="{{ asset('assets/upload/image/' . $b->gambar) }}" class="img-content w-100" alt="..." style="height: 400px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;">
 
                                     <div class="border">
                                         <div class="d-flex border-bottom mx-2 p-3" style="font-size: 0.9rem;">
@@ -52,7 +53,9 @@
                     </div>
                     @endforeach
                 </div>
-                {{ $berita->links() }}
+                <div class="d-flex justify-content-center">
+                    {{ $berita->links() }}
+                </div>
             </div>
             <div class="col-12 col-md-3">
                 <div class="container-fluid">
@@ -78,7 +81,7 @@
                                 </li>
                                 @foreach ( $kategori as $k )
                                 <li class="list-group-item">
-                                    <a href="{{ asset('berita/kategori/'.$k->nama_kategori) }}" style="color:green;">
+                                    <a href="{{ asset('berita/kategori/'.$k->nama_kategori) }}" class="text-ijo-cel">
                                         {{ $k->nama_kategori }}
                                     </a>
                                 </li>
@@ -96,7 +99,7 @@
                                 </li>
                                 @foreach ( $recent_berita as $r )
                                 <li class="list-group-item">
-                                    <a href="{{ url('berita/read/'.$r->slug_berita) }}" style="color:green;">
+                                    <a href="{{ url('berita/read/'.$r->slug_berita) }}" class="text-ijo-cel">
                                         {{ $r->judul_berita }}
                                     </a>
                                 </li>

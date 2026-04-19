@@ -10,7 +10,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     {{-- font --}}
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&family=Inter:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS FILES START -->
     <link href="{{ asset('assets/pinus/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/pinus/css/color.css') }}" rel="stylesheet">
@@ -65,37 +68,9 @@
 <script src="{{ asset('assets/pinus/js/isotope.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/pinus/js/custom.js') }}"></script>
+
+
 <script>
-
-    // $(document).ready(function () {
-
-    //     $('#navbarNav')
-    //         .on('show.bs.collapse', function () {
-    //             $('#mainNavbar')
-    //                 .addClass('ijo-cel')
-    //                 .removeClass('bg-transparent');
-    //         })
-    //         .on('hide.bs.collapse', function () {
-    //             $('#mainNavbar')
-    //                 .removeClass('ijo-cel')
-    //                 .addClass('bg-transparent');
-    //         });
-
-    // });
-
-    // $(window).on('scroll', function () {
-    //     if ($(this).scrollTop() > 50) {
-    //         $('#mainNavbar')
-    //             .addClass('navbar-scrolled ijo-cel no-top')
-    //             .removeClass('bg-transparent');
-
-    //     } else {
-    //         $('#mainNavbar')
-    //             .removeClass('navbar-scrolled ijo-cel no-top')
-    //             .addClass('bg-transparent');
-
-    //     }
-    // });
 
     $(document).ready(function () {
 
@@ -123,8 +98,11 @@
             // 1. Ambil nilai scroll sekali saja simpan di variabel
             const scrollTop = $(this).scrollTop();
             const $navbar = $('#mainNavbar');
-            const $logo1 = $('#logo1');
-            const $logo2 = $('#logo2');
+            const $logo = $('#logo');
+
+            if (isNavOpen && scrollTop > 10) {
+                $('#navbarNav').collapse('hide');
+            }
 
             // 2. Gunakan logic toggle agar lebih efisien
             if (isNavOpen) return;
@@ -132,22 +110,30 @@
             if (scrollTop > 50) {
                 $navbar.addClass('navbar-scrolled ijo-cel no-top').removeClass('bg-transparent');
 
-                // Ganti d-none dengan class opacity
-                $logo1.addClass('hidden-logo').removeClass('visible-logo');
-                $logo2.removeClass('hidden-logo').addClass('visible-logo');
+                $logo.addClass('small-logo').removeClass('big-logo');
             } else {
                 $navbar.removeClass('navbar-scrolled ijo-cel no-top').addClass('bg-transparent');
 
                 // Kembalikan logo asal
-                $logo1.removeClass('hidden-logo').addClass('visible-logo');
-                $logo2.addClass('hidden-logo').removeClass('visible-logo');
+                $logo.addClass('big-logo').removeClass('small-logo');
             }
         });
 
+    });
 
+    $(document).ready(function(){
 
+        // saat klik thumbnail
+        $('[data-toggle="modal"]').click(function(){
+            var videoID = $(this).data("video");
+            var url = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
+            $("#videoFrame").attr('src', url);
+        });
 
-
+        // saat modal ditutup (klik luar / close)
+        $('#videoModal').on('hidden.bs.modal', function () {
+            $("#videoFrame").attr('src', '');
+        });
 
     });
 

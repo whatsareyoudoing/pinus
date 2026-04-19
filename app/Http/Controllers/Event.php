@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Image;
 
-class Agenda extends Controller
+class Event extends Controller
 {
     // Main page
     public function index()
@@ -18,32 +18,32 @@ class Agenda extends Controller
         Paginator::useBootstrap();
     	$site 	= DB::table('konfigurasi')->first();
     	$model 	= new Agenda_model();
-		$agenda = $model->listing();
+		$event = $model->listing();
 		$kategori = $model->kategori_agenda();
-		$recent_agenda = $model->home();
+		$recent_event = $model->home();
         $news           = new Berita_model();
         $berita         = $news->home();
-        // dd($recent_agenda);
+        // dd($recent_event);
 
-        $data = array(  'title'     => 'Agenda dan Update',
-                        'deskripsi' => 'Agenda dan Update',
-                        'keywords'  => 'Agenda dan Update',
+        $data = array(  'title'     => 'Acara dan Update',
+                        'deskripsi' => 'Acara dan Update',
+                        'keywords'  => 'Acara dan Update',
                         'recent_berita'        => $berita,
                         'site'		=> $site,
-                        'agenda'	=> $agenda,
+                        'event'	=> $event,
                         'kategori'    => $kategori,
-                        'recent_agenda'    => $recent_agenda,
+                        'recent_event'    => $recent_event,
                     );
-        return view('myview/agenda',$data);
+        return view('myview/event',$data);
     }
 
 
     // Add
     public function add()
     {
-        $data = array(  'title'       => 'Data Agenda'
+        $data = array(  'title'       => 'Data Acara'
                     );
-        return view('admin/agenda/add',$data);
+        return view('admin/acara/add',$data);
     }
 
     // // Cari
@@ -52,13 +52,13 @@ class Agenda extends Controller
     //     if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     //     $myagenda           = new Agenda_model();
     //     $keywords           = $request->keywords;
-    //     $agenda             = $myagenda->cari($keywords);
+    //     $acara             = $myagenda->cari($keywords);
     //     $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
 
-    //     $data = array(  'title'             => 'Data Agenda',
-    //                     'agenda'            => $agenda,
+    //     $data = array(  'title'             => 'Data Acara',
+    //                     'acara'            => $acara,
     //                     'kategori_agenda'   => $kategori_agenda,
-    //                     'content'           => 'admin/agenda/index'
+    //                     'content'           => 'admin/acara/index'
     //                 );
     //     return view('admin/layout/wrapper',$data);
     // }
@@ -69,22 +69,22 @@ class Agenda extends Controller
     	$site 	= DB::table('konfigurasi')->first();
     	$model 	= new Agenda_model();
     	$model_berita 	= new Berita_model();
-        $agenda = $model->cariFrontend($request->keywords);
+        $event = $model->cariFrontend($request->keywords);
 		$kategori = $model->kategori_agenda();
-		$recent_agenda = $model->home();
+		$recent_event = $model->home();
 		$recent_berita = $model_berita->home();
 
         $data = array(  'title'     => 'Berita dan Update',
                         'deskripsi' => 'Berita dan Update',
                         'keywords'  => 'Berita dan Update',
                         'site'		=> $site,
-                        'agenda'	=> $agenda,
+                        'event'	=> $event,
                         'kategori'    => $kategori,
                         'recent_berita'    => $recent_berita,
-                        'recent_agenda'    => $recent_agenda,
+                        'recent_event'    => $recent_event,
                         'content'   => 'berita/index'
                     );
-        return view('myview/agenda',$data);
+        return view('myview/event',$data);
 
     }
 
@@ -97,14 +97,14 @@ class Agenda extends Controller
         if(isset($_POST['hapus'])) {
             $id_agendanya       = $request->id_agenda;
             for($i=0; $i < sizeof($id_agendanya);$i++) {
-                DB::table('agenda')->where('id_agenda',$id_agendanya[$i])->delete();
+                DB::table('acara')->where('id_agenda',$id_agendanya[$i])->delete();
             }
             return redirect($pengalihan)->with(['sukses' => 'Data telah dihapus']);
         // PROSES SETTING DRAFT
         }elseif(isset($_POST['draft'])) {
             $id_agendanya       = $request->id_agenda;
             for($i=0; $i < sizeof($id_agendanya);$i++) {
-                DB::table('agenda')->where('id_agenda',$id_agendanya[$i])->update([
+                DB::table('acara')->where('id_agenda',$id_agendanya[$i])->update([
                         'id_user'       => Session()->get('id_user'),
                         'status_agenda' => 'Draft'
                     ]);
@@ -114,7 +114,7 @@ class Agenda extends Controller
         }elseif(isset($_POST['publish'])) {
             $id_agendanya       = $request->id_agenda;
             for($i=0; $i < sizeof($id_agendanya);$i++) {
-                DB::table('agenda')->where('id_agenda',$id_agendanya[$i])->update([
+                DB::table('acara')->where('id_agenda',$id_agendanya[$i])->update([
                         'id_user'       => Session()->get('id_user'),
                         'status_agenda' => 'Publish'
                     ]);
@@ -123,7 +123,7 @@ class Agenda extends Controller
         }elseif(isset($_POST['update'])) {
             $id_agendanya       = $request->id_agenda;
             for($i=0; $i < sizeof($id_agendanya);$i++) {
-                DB::table('agenda')->where('id_agenda',$id_agendanya[$i])->update([
+                DB::table('acara')->where('id_agenda',$id_agendanya[$i])->update([
                         'id_user'        => Session()->get('id_user'),
                         'id_kategori_agenda'    => $request->id_kategori_agenda
                     ]);
@@ -138,13 +138,13 @@ class Agenda extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         Paginator::useBootstrap();
         $myagenda    = new Agenda_model();
-        $agenda      = $myagenda->status_agenda($status_agenda);
+        $acara      = $myagenda->status_agenda($status_agenda);
         $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
 
-        $data = array(  'title'             => 'Status Agenda: '.$status_agenda,
-                        'agenda'            => $agenda,
+        $data = array(  'title'             => 'Status Acara: '.$status_agenda,
+                        'acara'            => $acara,
                         'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/index'
+                        'content'           => 'admin/acara/index'
                     );
         return view('admin/layout/wrapper',$data);
     }
@@ -155,13 +155,13 @@ class Agenda extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         Paginator::useBootstrap();
         $myagenda    = new Agenda_model();
-        $agenda      = $myagenda->jenis_agenda($jenis_agenda);
+        $acara      = $myagenda->jenis_agenda($jenis_agenda);
         $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
 
-        $data = array(  'title'             => 'Jenis Agenda: '.$jenis_agenda,
-                        'agenda'            => $agenda,
+        $data = array(  'title'             => 'Jenis Acara: '.$jenis_agenda,
+                        'acara'            => $acara,
                         'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/index'
+                        'content'           => 'admin/acara/index'
                     );
         return view('admin/layout/wrapper',$data);
     }
@@ -172,14 +172,14 @@ class Agenda extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         Paginator::useBootstrap();
         $myagenda           = new Agenda_model();
-        $agenda             = $myagenda->author($id_user);
+        $acara             = $myagenda->author($id_user);
         $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
         $author    = DB::table('users')->where('id_user',$id_user)->orderBy('id_user','ASC')->first();
 
-        $data = array(  'title'             => 'Data Agenda dengan Penulis: '.$author->nama,
-                        'agenda'            => $agenda,
+        $data = array(  'title'             => 'Data Acara dengan Penulis: '.$author->nama,
+                        'acara'            => $acara,
                         'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/index'
+                        'content'           => 'admin/acara/index'
                     );
         return view('admin/layout/wrapper',$data);
     }
@@ -193,15 +193,15 @@ class Agenda extends Controller
         // dd($kategori_show,$slug_kategori);
          if(!$kategori_show)
         {
-            return redirect('agenda');
+            return redirect('event');
         }
         $id_kategori= $kategori_show->id_kategori_agenda;
 
         $model      = new Agenda_model();
         $model_berita     = new Berita_model();
-        $agenda     = $model->kategori_depan($id_kategori);
+        $event     = $model->kategori_depan($id_kategori);
         $kategori = $model->list_kategori();
-		$recent_agenda = $model->home();
+		$recent_event = $model->home();
 		$recent_berita = $model_berita->home();
 
 
@@ -209,13 +209,14 @@ class Agenda extends Controller
                         'deskripsi' => $kategori_show->nama_kategori_agenda,
                         'keywords'  => $kategori_show->nama_kategori_agenda,
                         'site'      => $site,
-                        'agenda'    => $agenda,
+                        'event'    => $event,
                         'kategori'    => $kategori,
-                        'recent_agenda'    => $recent_agenda,
+                        'recent_event'    => $recent_event,
                         'recent_berita'    => $recent_berita,
-                        'content'   => 'agenda/index'
+                        'content'   => 'event/index',
+                        'test'=>'test'
                     );
-        return view('myview/agenda',$data);
+        return view('myview/event',$data);
     }
 
     public function read($slug_agenda)
@@ -223,15 +224,15 @@ class Agenda extends Controller
         Paginator::useBootstrap();
         $site   = DB::table('konfigurasi')->first();
         $slider = DB::table('galeri')->where('jenis_galeri','Beritapage')->orderBy('id_galeri', 'DESC')->first();
-        // $agenda = DB::table('agenda')->where('status_berita','Publish')->orderBy('id_berita', 'DESC')->get();
+        // $acara = DB::table('acara')->where('status_berita','Publish')->orderBy('id_berita', 'DESC')->get();
         $model  = new Agenda_model();
         $model_berita     = new Berita_model();
         $recent_berita = $model_berita->home();
-        $recent_agenda = $model->home();
+        $recent_event = $model->home();
         $read   = $model->read($slug_agenda);
         if(!$read)
         {
-            return redirect('agenda');
+            return redirect('acara');
         }
 
         $data = array(  'title'     => $read->judul_agenda,
@@ -240,12 +241,12 @@ class Agenda extends Controller
                         'slider'    => $slider,
                         'site'      => $site,
                         'read'      => $read,
-                        'recent_agenda'        => $recent_agenda,
+                        'recent_event'        => $recent_event,
                         'recent_berita'    => $recent_berita,
-                        'content'   => 'agenda/read'
+                        'content'   => 'acara/read'
                     );
-        // dd($data);
-        return view('myview/agendaDetail',$data);
+
+        return view('myview/eventDetail',$data);
     }
 
 
@@ -255,9 +256,9 @@ class Agenda extends Controller
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
 
-        $data = array(  'title'             => 'Tambah Agenda',
+        $data = array(  'title'             => 'Tambah Acara',
                         'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/tambah'
+                        'content'           => 'admin/acara/tambah'
                     );
         return view('admin/layout/wrapper',$data);
     }
@@ -267,13 +268,13 @@ class Agenda extends Controller
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         $myagenda           = new Agenda_model();
-        $agenda             = $myagenda->detail($id_agenda);
+        $acara             = $myagenda->detail($id_agenda);
         $kategori_agenda    = DB::table('kategori_agenda')->orderBy('urutan','ASC')->get();
 
-        $data = array(  'title'             => 'Edit Agenda',
-                        'agenda'            => $agenda,
+        $data = array(  'title'             => 'Edit Acara',
+                        'acara'            => $acara,
                         'kategori_agenda'   => $kategori_agenda,
-                        'content'           => 'admin/agenda/edit'
+                        'content'           => 'admin/acara/edit'
                     );
         return view('admin/layout/wrapper',$data);
     }
@@ -283,7 +284,7 @@ class Agenda extends Controller
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         request()->validate([
-                            'judul_agenda'  => 'required|unique:agenda',
+                            'judul_agenda'  => 'required|unique:acara',
                             'isi'           => 'required',
                             'gambar'        => 'file|image|mimes:jpeg,png,jpg|max:8024',
                             ]);
@@ -304,7 +305,7 @@ class Agenda extends Controller
             $image->move($destinationPath, $input['nama_file']);
             // END UPLOAD
             $slug_agenda = Str::slug($request->judul_agenda, '-');
-            DB::table('agenda')->insert([
+            DB::table('acara')->insert([
                 'id_kategori_agenda'       => $request->id_kategori_agenda,
                 'id_user'           => Session()->get('id_user'),
                 'slug_agenda'       => $slug_agenda,
@@ -326,7 +327,7 @@ class Agenda extends Controller
             ]);
         }else{
             $slug_agenda = Str::slug($request->judul_agenda, '-');
-            DB::table('agenda')->insert([
+            DB::table('acara')->insert([
                 'id_kategori_agenda'       => $request->id_kategori_agenda,
                 'id_user'           => Session()->get('id_user'),
                 'slug_agenda'       => $slug_agenda,
@@ -342,7 +343,7 @@ class Agenda extends Controller
                 'tanggal_post'      => date('Y-m-d H:i:s')
             ]);
         }
-        return redirect('admin/agenda')->with(['sukses' => 'Data telah ditambah']);
+        return redirect('admin/acara')->with(['sukses' => 'Data telah ditambah']);
     }
 
     // edit
@@ -371,7 +372,7 @@ class Agenda extends Controller
             $image->move($destinationPath, $input['nama_file']);
             // END UPLOAD
             $slug_agenda = Str::slug($request->judul_agenda, '-');
-            DB::table('agenda')->where('id_agenda',$request->id_agenda)->update([
+            DB::table('acara')->where('id_agenda',$request->id_agenda)->update([
                 'id_kategori_agenda'       => $request->id_kategori_agenda,
                 'id_user'           => Session()->get('id_user'),
                 'slug_agenda'       => $slug_agenda,
@@ -389,7 +390,7 @@ class Agenda extends Controller
             ]);
         }else{
             $slug_agenda = Str::slug($request->judul_agenda, '-');
-            DB::table('agenda')->where('id_agenda',$request->id_agenda)->update([
+            DB::table('acara')->where('id_agenda',$request->id_agenda)->update([
                 'id_kategori_agenda'       => $request->id_kategori_agenda,
                 'id_user'           => Session()->get('id_user'),
                 'slug_agenda'       => $slug_agenda,
@@ -405,14 +406,14 @@ class Agenda extends Controller
             ]);
 
         }
-        return redirect('admin/agenda')->with(['sukses' => 'Data telah ditambah']);
+        return redirect('admin/acara')->with(['sukses' => 'Data telah ditambah']);
     }
 
     // Delete
     public function delete($id_agenda)
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-        DB::table('agenda')->where('id_agenda',$id_agenda)->delete();
-        return redirect('admin/agenda')->with(['sukses' => 'Data telah dihapus']);
+        DB::table('acara')->where('id_agenda',$id_agenda)->delete();
+        return redirect('admin/acara')->with(['sukses' => 'Data telah dihapus']);
     }
 }

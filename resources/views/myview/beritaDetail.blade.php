@@ -1,21 +1,21 @@
-@section('title', 'Berita Pilar Nusantara')
-
+@section('title', 'Berita ')
 @extends('myview.index')
 @section('content')
+@section('hero_bg', asset('assets/pinus/img/berita-hero.jpg'))
 @section('link')
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('beranda') }}">Beranda</a></li>
     <li class="breadcrumb-item"><a class="text-white" href="{{ route('berita') }}">Berita</a></li>
     <li class="breadcrumb-item active">{{ $read->judul_berita }}</li>
 @endsection
 @include('myview.components.hero')
-    <div class="container-fluid px-0 px-md-5 mb-5">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12 col-md-9">
-                <div class="container-fluid">
+                <div class="container-fluid mt-3">
                     <div class="row mb-5">
                         <div class="col-12">
                             <div class="">
-                                <img src="{{ asset('assets/upload/image/' . $read->gambar) }}" class="img-content rounded-top" alt="...">
+                                <img src="{{ asset('assets/upload/image/' . $read->gambar) }}" class="img-content" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="...">
                                 <div class="border">
                                     <div class="d-flex border-bottom mx-2 p-3">
                                         <div class="mx-2">
@@ -64,7 +64,7 @@
                                     </h5>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ asset('berita/kategori/'.$read->nama_kategori) }}" style="color:green;">
+                                    <a href="{{ asset('berita/kategori/'.$read->nama_kategori) }}" class="text-ijo-cel">
                                         {{ $read->nama_kategori }}
                                     </a>
                                 </li>

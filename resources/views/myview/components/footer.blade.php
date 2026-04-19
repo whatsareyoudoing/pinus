@@ -1,12 +1,9 @@
 {{-- footer --}}
-<div class="container-fluid bg-light pb-5 pt-5" style="margin-top: 100px;">
+<div class="container-fluid py-4" style="background-color: #f8f7f0">
     <div class="container border-bottom">
-        <div class="row">
-            <div class="col-md-6 notranslate" style="font-size:7vh;">
-            PINUS
-            </div>
-            <div class="col-md-6 d-flex justify-content-end mt-5">
-                <ul class="d-flex mr-5" style="font-size:3vh;">
+        <div class="row d-flex justify-content-end">
+            <div class="col-md-6 d-flex justify-content-end">
+                <ul class="d-flex justify-content-end" style="font-size:3vh;">
                     <div class="mx-2">
                         @php
                             // Ambil nomor
@@ -20,28 +17,22 @@
                                 $telp = '62' . substr($telp, 1);
                             }
                         @endphp
-                        <a class="p-0 text-dark" href="https://wa.me/{{ $telp }}"><i class="fab fa-whatsapp" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://wa.me/{{ $telp }}"><i class="fab fa-whatsapp" style="font-size:25px"></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="https://www.instagram.com/{{ $site->instagram }}"><i class="fab fa-instagram" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.instagram.com/{{ $site->instagram }}"><i class="fab fa-instagram" style="font-size:25px"></i></a>
                     </div>
                     <div class="mx-2">
-                        <a class="p-0 text-dark" href="https://www.facebook.com/{{ $site->facebook }}"><i class="fab fa-facebook-square" style=""></i></a>
+                        <a class="p-0 text-dark" href="https://www.facebook.com/{{ $site->facebook }}"><i class="fab fa-facebook-square" style="font-size:25px"></i></a>
                     </div>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-12 mobile-border col-md-4 text-justify">
-                <h5>Tentang Kami</h5>
-                <div class="clamp-3">
-                    PINUS dimulai dari inisiasi beberapa pendiri yang memulai gerakan sejak tahun 2006, dengan kegiatan utama melakukan pemberdayaan umat. Beberapa orang perintis PINUS melakukan berbagai kegiatan-kegiatan kemasyarakatan seperti pembinaan masyarakat di Garut, 5 Ulu Palembang dan Mariso Makasar dalam bentuk pemberian donasi, pembinaan balita sehat, pembuatan perpustakaan terapung di 5 Ulu, pelatihan kesenian Marawis anak-anak, dan pembinaan ekonomi yang dilakukan secara swadaya hingga saat ini.  Iden pendirian PINUS sebagai sebuah lembaga merupakan sebuah strategi untuk mencapai tujuan yang dicita-citakan yaitu terciptanya kesejahteraan masyarakat.
-                </div>
-            </div>
-            <div class="col-12 mobile-border col-md-2">
-                <h5>Halaman</h5>
+    <div class="container">
+        <div class="row d-flex justify-content-around">
+            <div class="col-12 mobile-border col-md-3">
+                <h5 class="font-weight-bold">Halaman</h5>
                 <div class="d-flex flex-column">
                     <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
                         Beranda
@@ -49,36 +40,60 @@
                     <a href="{{ route('berita') }}" class="text-reset my-1  {{ request()->is('berita*') ? 'font-weight-bold' : '' }}">
                         Berita
                     </a>
-                    <a href="{{ route('agenda') }}" class="text-reset my-1  {{ request()->is('agenda*') ? 'font-weight-bold' : '' }}">
-                        Program dan kegiatan
+                    <a href="{{ route('event') }}" class="text-reset my-1  {{ request()->is('event*') ? 'font-weight-bold' : '' }}">
+                        Events
                     </a>
-                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
+                    <a href="{{ route('dokumen') }}" class="text-reset my-1  {{ request()->is('dokumen*') ? 'font-weight-bold' : '' }}">
                         Dokumen
                     </a>
-                    <a href="{{ route('beranda') }}" class="text-reset my-1  {{ request()->is('beranda*') ? 'font-weight-bold' : '' }}">
+                    <a href="{{ route('kontak') }}" class="text-reset my-1  {{ request()->is('kontak*') ? 'font-weight-bold' : '' }}">
                         Kontak Kami
                     </a>
                 </div>
             </div>
             <div class="col-12 mobile-border col-md-3 text-justify">
-                <h5>Berita</h5>
+                <h5 class="font-weight-bold">Berita</h5>
                 @foreach ( $recent_berita as $r )
                 <div class="d-flex flex-column my-2">
-                    <div class="row my-2">
-                        <a href="{{ asset('berita/read/'.$r->slug_berita) }}" class="text-reset col-10 mt-1">{{ $r->judul_berita }}</a>
+                    <div class="row">
+                        <a href="{{ asset('berita/read/'.$r->slug_berita) }}" class="text-reset col-10">{{ $r->judul_berita }}</a>
                     </div>
                 </div>
                 @endforeach
             </div>
-            <div class="col-12 mobile-border col-md-3">
-                <h5>Kontak</h5>
-                <div class="mb-3">
-                    Hubungi kami untuk pertanyaan, kerjasama, atau informasi lebih lanjut mengenai EFT Indonesia.
-                </div>
-                <div class="d-flex justify-content-end pb-3">
-                    <button class="btn btn-ijo-cel align-items-end">Kontak Kami</button>
+            <div class="col-12 mobile-border col-md-3 text-justify pb-3">
+                <div class="d-flex flex-column">
+                    <h5 class="font-weight-bold">Produk Kami</h5>
+
+                    <a href="https://shopee.co.id" class="mt-3 text-white text-left" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ asset('assets/pinus/img/shopee.png') }}"
+                        class="" style="width: 140px;"
+                        alt=""
+                        id="logo">
+                    </a>
+                    <a href="https://tokopedia.com" class="mt-3 text-white text-left" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ asset('assets/pinus/img/tokped.png') }}"
+                        class="" style="width: 140px;"
+                        alt=""
+                        id="logo">
+                    </a>
                 </div>
             </div>
+            <div class="col-12 mobile-border col-md-3">
+                <h5 class="font-weight-bold">Pengunjung</h5>
+                <div class="mb-3 text-justify">
+                     <a class="btn d-none" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
+                     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1532370/t/1"></script>
+                     <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ab608acb03bf2a3a66f1ef7d39262ce18b1b13fe'></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ijo-cel border-top py-4">
+    <div class="row">
+        <div class="col text-white text-center">
+            Copyright © 2026 All Rights Reserved.
         </div>
     </div>
 </div>

@@ -1,10 +1,5 @@
 <nav class="navbar nav-top position-absolute w-100 ml-auto mb-2">
-    <div class="container d-flex justify-content-between pt-3 w-100">
-        <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}"
-             class="img-fluid nav-item"
-             style="width:80px"
-             alt=""
-             id="logo1">
+    <div class="container d-flex justify-content-end pt-3 w-100">
         <div class="nav-item shadow" style="border-radius:30px;">
             <div class="translate-container" >
                 <div id="google_translate_element"></div>
@@ -22,22 +17,26 @@
 
 <nav id="mainNavbar" class="nav-main navbar navbar-expand-lg navbar-dark bg-transparent py-4 position-fixed w-100" >
     <div class="container">
-        <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}"
-            class="hidden-logo img-fluid"
+        {{-- <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}"
+            class="hidden-logo img-fluid "
             style="width:80px"
             alt=""
-            id="logo2">
+            id="logo2"> --}}
+        <img src="{{ asset('assets/pinus/img/Pinus-Logo-Hires-w-c.png') }}"
+            class="img-fluid big-logo"
+            alt=""
+            id="logo">
         <button id="navMobile" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav text-custom ml-lg-auto mr-lg-auto">
+            <ul class="navbar-nav text-custom ml-lg-auto mr-lg-auto d-flex align-items-center">
                 <li class="nav-item px-2 {{ request()->routeIs('beranda') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item dropdown px-2 {{ request()->is('tentang*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown1"
                         role="button"
@@ -58,11 +57,11 @@
                 <li class="nav-item px-2 {{ request()->is('berita*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('berita') }}">Berita</a>
                 </li>
-                {{-- <li class="nav-item px-2 {{ request()->is('agenda*') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('agenda') }}">Publikasi</a>
-                </li> --}}
+                <li class="nav-item px-2 {{ request()->is('event*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('event') }}">Events</a>
+                </li>
                 <li class="nav-item dropdown px-2 {{ request()->is('publikasi*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown2"
                         role="button"
@@ -74,15 +73,15 @@
                     </a>
 
                     <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item notranslate" href="#" style="font-size: 15px;">Policy Brief</a>
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Video</a>
+                        <a class="dropdown-item notranslate" href="{{ route('policy') }}" style="font-size: 15px;">Policy Brief</a>
+                        <a class="dropdown-item" href="{{ route('video') }}" style="font-size: 15px;">Video</a>
                     </div>
                 </li>
                 {{-- <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('kontak') }}">Layanan</a>
                 </li> --}}
                 <li class="nav-item dropdown px-2 {{ request()->is('layanan*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown3"
                         role="button"
@@ -94,16 +93,16 @@
                     </a>
 
                     <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Pelatihan SAR</a>
+                        <a class="dropdown-item" href="{{ route('pelatihan') }}" style="font-size: 15px;">Pelatihan SAR</a>
                         <a class="dropdown-item" href="https://eftindonesia.org/lembaga-anggota-kmspe/4" style="font-size: 15px;" target="_blank">EFT</a>
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Produk Dampingan</a>
+                        <a class="dropdown-item" href="{{ route('produk') }}" style="font-size: 15px;">Produk Dampingan</a>
                     </div>
                 </li>
                 {{-- <li class="nav-item px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('dokumen') }}">Dokumentasi</a>
                 </li> --}}
                 <li class="nav-item dropdown px-2 {{ request()->is('dokumen*') ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link"
                         href="#"
                         id="navbarDropdown4"
                         role="button"
@@ -115,8 +114,8 @@
                     </a>
 
                     <div class="dropdown-menu ijo-cel" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="{{ route('dokumen') }}" style="font-size: 15px;">File</a>
-                        <a class="dropdown-item" href="#" style="font-size: 15px;">Modul</a>
+                        <a class="dropdown-item" href="{{ route('dokumen') }}" style="font-size: 15px;">Berkas</a>
+                        <a class="dropdown-item" href="{{ route('modul') }}" style="font-size: 15px;">Modul</a>
                     </div>
                 </li>
                 <li class="nav-item px-2 {{ request()->is('kontak*') ? 'active' : '' }}">

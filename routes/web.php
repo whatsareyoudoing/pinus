@@ -26,6 +26,11 @@ Route::get('kontak', 'App\Http\Controllers\Home@kontak');
 Route::get('/tentang/visimisi', 'App\Http\Controllers\About@visiMisi')->name('visimisi');
 Route::get('/tentang/tim', 'App\Http\Controllers\About@tim')->name('tim');
 Route::get('/tentang/good-governance', 'App\Http\Controllers\About@goodGovernance')->name('good-governance');
+//publikasi
+Route::get('/publikasi/video', 'App\Http\Controllers\Publikasi@video')->name('video');
+Route::get('/publikasi/video/detail', 'App\Http\Controllers\Publikasi@videoDetail')->name('video-detail');
+Route::get('/publikasi/policy', 'App\Http\Controllers\Publikasi@policy')->name('policy');
+Route::get('/publikasi/good-governance', 'App\Http\Controllers\Publikasi@goodGovernance')->name('good-governance');
 // Login
 Route::get('login', 'App\Http\Controllers\Login@index');
 Route::post('login/check', 'App\Http\Controllers\Login@check');
@@ -36,14 +41,24 @@ Route::get('berita', 'App\Http\Controllers\Berita@index')->name('berita');
 Route::get('berita/cari', 'App\Http\Controllers\Berita@cari')->name('cari-berita');
 Route::get('berita/read/{par1}', 'App\Http\Controllers\Berita@read');
 Route::get('berita/kategori/{par1}', 'App\Http\Controllers\Berita@kategori');
-//agenda
-Route::get('agenda', 'App\Http\Controllers\Agenda@index')->name('agenda');
-Route::get('agenda/cari', 'App\Http\Controllers\Agenda@cari')->name('cari-agenda');
-Route::get('agenda/read/{par1}', 'App\Http\Controllers\Agenda@read');
-Route::get('agenda/kategori/{par1}', 'App\Http\Controllers\Agenda@kategori');
+//event
+Route::get('event', 'App\Http\Controllers\Event@index')->name('event');
+Route::get('event/cari', 'App\Http\Controllers\Event@cari')->name('cari-event');
+Route::get('event/read/{par1}', 'App\Http\Controllers\Event@read');
+Route::get('event/kategori/{par1}', 'App\Http\Controllers\Event@kategori');
 //dokumen
 Route::get('dokumen', 'App\Http\Controllers\Download@index')->name('dokumen');
 Route::get('dokumen/cari', 'App\Http\Controllers\Download@cari')->name('cari-dokumen');
+Route::get('dokumen/modul', 'App\Http\Controllers\Download@modul')->name('modul');
+Route::get('dokumen/modul/detail', 'App\Http\Controllers\Download@modulDetail')->name('modul-detail');
+// Route::get('dokumen/modul/cari', 'App\Http\Controllers\Download@modulCari')->name('cari-modul');
+
+//layanan
+Route::get('layanan/pelatihan', 'App\Http\Controllers\Layanan@pelatihanSar')->name('pelatihan');
+Route::get('layanan/pelatihan/detail', 'App\Http\Controllers\Layanan@pelatihanSarDetail')->name('pelatihan-detail');
+Route::get('layanan/produk', 'App\Http\Controllers\Layanan@produk')->name('produk');
+Route::get('layanan/produk/detail', 'App\Http\Controllers\Layanan@produkDetail')->name('produk-detail');
+
 //kontak
 Route::get('kontak', 'App\Http\Controllers\Kontak@index')->name('kontak');
 // Route::get('konfirmasi', 'App\Http\Controllers\Home@konfirmasi');
