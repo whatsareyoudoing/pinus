@@ -85,6 +85,14 @@
                      <a class="btn d-none" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
                      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1532370/t/1"></script>
                      <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ab608acb03bf2a3a66f1ef7d39262ce18b1b13fe'></script>
+                     
+                     <div class="mt-3">
+                         <h6 class="font-weight-bold mb-2">Negara</h6>
+                         <!-- Flagcounter: Menampilkan max 4 bendera/negara pengunjung -->
+                         <a href="https://info.flagcounter.com/83uA" target="_blank">
+                            <img src="https://s11.flagcounter.com/count2/83uA/bg_F8F7F0/txt_000000/border_F8F7F0/columns_2/maxflags_4/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
+                         </a>
+                     </div>
                 </div>
             </div>
         </div>
