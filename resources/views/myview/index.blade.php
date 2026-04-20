@@ -343,6 +343,15 @@
         updateLanguageInfo(`Bahasa terdeteksi: ${langName} (${detectedLang})`);
 
         console.log("Bahasa terdeteksi:", detectedLang);
+
+        if (detectedLang === 'en') {
+            $('.pengunjung').addClass('d-none');
+            $('.visitor').removeClass('d-none');
+        } else {
+            $('.visitor').addClass('d-none');
+            $('.pengunjung').removeClass('d-none');
+        }
+
         return detectedLang;
     };
 

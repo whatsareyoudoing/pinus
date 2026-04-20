@@ -80,11 +80,9 @@
                 </div>
             </div>
             <div class="col-12 mobile-border col-md-3">
-                <h5 class="font-weight-bold">Pengunjung</h5>
                 <div class="mb-3 text-justify">
-                     <a class="btn d-none" href='https://www.free-counters.org/'>https://www.free-Counters.org</a>
-                     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1532370/t/1"></script>
-                     <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ab608acb03bf2a3a66f1ef7d39262ce18b1b13fe'></script>
+                    <a class="pengunjung" href="https://info.flagcounter.com/uyMD"><img src="https://s01.flagcounter.com/countxl/uyMD/bg_f8f7f0/txt_000000/border_f8f7f0/columns_3/maxflags_12/viewers_Pengunjung/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                    <a class="visitor d-none" href="https://info.flagcounter.com/uyMD"><img src="https://s01.flagcounter.com/countxl/uyMD/bg_f8f7f0/txt_000000/border_f8f7f0/columns_3/maxflags_12/viewers_Visitor/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
                 </div>
             </div>
         </div>
