@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     <h3 class="p-3">{{ $read->judul_berita }}</h3>
-                                    <div class="text-justify pb-5 px-3">
+                                    <div class="text-justify pb-5 px-3 isi">
                                         {!! $read->isi !!}
                                     </div>
                                 </div>
