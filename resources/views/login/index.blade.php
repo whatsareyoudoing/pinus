@@ -18,9 +18,9 @@
   <script src="{{ asset('assets/sweetalert/js/sweetalert.min.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/css/sweetalert.css') }}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: #fff!important">
 <div class="login-box">
-  
+
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
@@ -32,7 +32,7 @@
       <div class="text-center">
           <hr>
         <h4>{{ website('namaweb') }}</h4>
-          
+
           <hr>
         </div>
       <p class="login-box-msg">Sign in to start your session</p>
@@ -56,17 +56,17 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
+          {{-- <div class="col-12">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
                 Remember Me
               </label>
             </div>
-          </div>
+          </div> --}}
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-block" style="background-color: #2e5e27; color:#fff;">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
@@ -75,9 +75,9 @@
       <hr>
 
       <p class="text-center link-bawah">
-        <a href="{{ asset('/') }}">Back to Homepage</a> 
+        <a href="{{ asset('/') }}">Back to Homepage</a>
       </p>
-      
+
     </div>
     <!-- /.login-card-body -->
   </div>

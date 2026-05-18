@@ -47,7 +47,7 @@
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
-              <p>Berita / Artikel<i class="fas fa-angle-left right"></i></p>
+              <p>Berita<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/berita') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Berita &amp; Update</p></a>
@@ -60,7 +60,7 @@
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar"></i>
-              <p>Program &amp; Kegiatan<i class="fas fa-angle-left right"></i></p>
+              <p>Events<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/agenda') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Program &amp; Kegiatan</p></a>
@@ -73,7 +73,7 @@
 
           @if(Session::get('akses_level') == 'Admin')
 
-           
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-download"></i>
@@ -108,7 +108,7 @@
               <p>Video<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/video') }}" class="nav-link"><i class="fa-brands fa-product-hunt"></i><p>Data Video</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/video') }}" class="nav-link"><i class="fas fa-newspaper nav-icon"></i><p>Data Video</p></a>
               </li>
 
 
@@ -128,7 +128,7 @@
             </ul>
           </li>
 
-          
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-tags nav-icon"></i>
@@ -204,7 +204,7 @@
 
             </ul>
           </li>
-          
+
           @endif <!-- End Menu Admin -->
 
         </ul>
